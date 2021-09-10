@@ -46,6 +46,7 @@ To place data in `$ARCHIVE`:
 To retrieve data from `$ARCHIVE`: 
 1. copy the tarball back to your `$HOME` (or `$WORK`) directory (use rsync in case the transfer were to fail). 
 2. untar the file on the login node in your `$HOME` (or `$WORK`) directory. Directories can be tarred up in parallel with, for example, [gnu parallel](https://www.gnu.org/software/parallel/) (available via the `parallel` module). This line will create a tarball for each directory more than 180 days old: 
+
 ```
 find . -maxdepth 1 -type d -mtime +180 | parallel [[ -e {}.tar.gz ]] || tar -czf {}.tar.gz {}
 ```
