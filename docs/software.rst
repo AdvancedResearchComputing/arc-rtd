@@ -1,5 +1,5 @@
 
-Resources
+Software
 ==================================================
 
 Contents:
@@ -8,5 +8,5 @@ Contents:
    :maxdepth: 2
    :glob:
 
-   resources/*
+   software/*
 
