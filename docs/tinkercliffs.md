@@ -1,4 +1,6 @@
-# OVERVIEW #
+# TinkerCliffs #
+
+## Overview ##
 TinkerCliffs came online in the summer of 2020. With nearly 42,000 cores and over 93 TB of RAM, TinkerCliffs is nearly seven times the size of BlueRidge, ARC's previous flagship CPU compute system, which was retired at the end of 2019. TinkerCliffs hardware is summarized in the table below.
 
 |  | Base Compute Nodes | High Memory Nodes | Intel Nodes | A100 GPU Nodes | Total |
@@ -24,7 +26,7 @@ A BeeGFS file system supports /projects and /work filesystems for group collabor
 Four nodes nodes equipped with GPU accelerators were added to Tinkercliffs in June 2021. Each of these nodes is designed to be a clone of NVIDIA's DGX nodes to provide a dense GPU resource for the VT research computing community. The eight [NVIDIA A100-80G](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf) GPUs in each node are interconnected with NVIDIA's NVLink technology. For internode communications, each chassis is equipped with four Mellanox HDR-200 Infiniband cards distributed across the PCIe Gen4 bus to provide each GPU with a nearby, high speed, low latency, path to the Infiniband network.
 
 <a name="start"></a>
-# GET STARTED #
+## Get Started ##
 All ARC users can now log into Tinkercliffs:
 
 `tinkercliffs1.arc.vt.edu`
@@ -40,7 +42,7 @@ To do this, log in to the ARC allocation portal https://coldfront.arc.vt.edu,
 Usage needs in excess of 600,000 monthly billing units can be purchased via the [ARC Cost Center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC Cost Center").
 
 <a name="policy"></a>
-# POLICIES #
+## Policies ##
 Limits  are set on the scale and quantity of jobs at the user and allocation (Slurm account) levels to help ensure availability of resources to a broad set of researchers and applications. These are the limits applied to free tier usage (note that the terms "cpu" and "core" are used interchangably here following Slurm terminology):
 
 | | normal_q | dev_q | largemem_q | intel_q | a100_normal_q | a100_dev_q | interactive_q | preemptable_q |
@@ -65,7 +67,7 @@ Limits  are set on the scale and quantity of jobs at the user and allocation (Sl
 Tinkercliffs is part of the [ARC cost center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC cost center"), which provides a substantial "free tier" of usage. Each researcher is provided 600,000 billing units (1 billing unit = 1 TC normal_q core-hour) which can be divided among all projects and allocations they own. Monthly billing is based on usage attributed to jobs which complete in that month, so jobs which start in month A and finish in month B are billed in month B.
 
 <a name="software"></a>
-# MODULES #
+## Modules ##
 TinkerCliffs is different from previous ARC clusters in that it uses a new application stack/module system based on [EasyBuild](https://easybuild.readthedocs.io "EasyBuild"). Our old application stack was home-grown and involved a fair amount of overhead in getting new modules - e.g., new versions of a package - installed. EasyBuild streamlines a lot of that work and should also make it trivial in some cases for users to install their own versions of packages if they so desire. Key differences from a user perspective include:
 * Hierarchies are replaced by toolchains. Right now, there are two:
     * foss ("Free Open Source Software"): gcc compilers, OpenBLAS for linear algebra, OpenMPI for MPI, etc
@@ -89,12 +91,12 @@ $ module reset; module load HPL/2.3-intel-2019b; module list
 * Environment variables (e.g., `$SOFTWARE_LIB`) available in our previous module system may not be provided. Instead, EasyBuild typically provides `$EBROOTSOFTWARE` to point to the software installation location. So for example, to link to NetCDF libraries, one might use `-L$EBROOTNETCDF/lib64` instead of the previous `-L$NETCDF_LIB`.
 
 <a name="architecture"></a>
-# ARCHITECTURE #
+## Architecture ##
 * The AMD Rome architecture is similar to Cascades in that it is x86_64 but lacks the AVX-512 instruction set added to Intel processors in the last couple of years.
 * Nodes are larger (128 cores) and have more memory bandwidth (~350 GB/s).
 * There are eight NUMA (memory locality) domains per node and one L3 cache for every four cores. 
 
-# OPTIMIZATION #
+## Optimization ##
 See also the tuning guides available at https://developer.amd.com/, especially [this guide to compiler flags](https://developer.amd.com/wordpress/media/2020/04/Compiler%20Options%20Quick%20Ref%20Guide%20for%20AMD%20EPYC%207xx2%20Series%20Processors.pdf "this guide to compiler flags").
 * Cache locality really matters - process pinning can make a big difference on performance.
 * Hybrid programming often pays off - one MPI process per L3 cache with 4 threads is often optimal.
@@ -121,10 +123,10 @@ AOCC Compiler:
 
 
 <a name="examples"></a>
-# EXAMPLES #
+## Examples ##
 See below for a series of examples of how to compile code for a variety of compilers and for how to run optimally in a variety of configurations. These and a wide variety of simple application-specific examples can be found [here](https://github.com/AdvancedResearchComputing/examples "here").
 
-## Stream ##
+### Stream ###
 [STREAM](https://www.cs.virginia.edu/stream/ "STREAM") is a memory bandwidth benchmark. To maximize bandwidth, we run in parallel with one process per L3 cache (cores 0, 4, ..., 124).
 
 ```bash
@@ -155,10 +157,10 @@ Results:
 ```
 
 
-## MT-DGEMM ##
+### MT-DGEMM ###
 [mt-dgemm](https://portal.nersc.gov/project/m888/apex/mt-dgemm_160114.tgz "mt-dgemm") is a threaded matrix multiplication program that can be used to benchmark dense linear algebra libraries. Here we use it to show how to link against linear algebra libraries and run efficiently across a socket.
 
-### AOCC ###
+#### AOCC ####
 ```bash
 #Load the aocc and blis modules
 module reset; module load aocc/aocc-compiler-2.1.0 amd-blis/aocc/64/2.1
@@ -177,7 +179,7 @@ clang -mtune=znver2 -march=znver2 -mavx2 -lm -fopenmp -lomp -Ofast -ffp-contract
 OMP_NUM_THREADS=64 GOMP_CPU_AFFINITY=0-63:1 numactl --membind=0-3 ./mt-dgemm.aocc 16000
 ```
 
-### GCC ###
+#### GCC ####
 ```bash
 #Load the foss toolchain
 module reset; module load foss/2020a
@@ -196,7 +198,7 @@ gcc -mtune=znver2 -march=znver2 -mavx2 -lm -fopenmp -Ofast -ffp-contract=fast -f
 OMP_NUM_THREADS=64 numactl -C 0-63 --membind=0-3 ./mt-dgemm.gcc 16000
 ```
 
-### Intel ###
+#### Intel ####
 Here we use intel 2019 as testing indicates that 2020 is substantially slower.
 ```bash
 #Load the intel toolchain
@@ -218,7 +220,7 @@ icpc -march=core-avx2 -qopenmp -O3 -ffreestanding -mkl -D USE_MKL=1 -o mt-dgemm.
 MKL_NUM_THREADS=64 GOMP_CPU_AFFINITY=0-63:1 numactl --membind=0-3 ./mt-dgemm.intel 16000
 ```
 
-### Results ###
+#### Results ####
 The results show the benefits of AMD's optimizations and of MKL's performance over OpenBLAS:
 ```
   aocc+blis 2.1:  1658.861832 GF/s
@@ -226,14 +228,14 @@ The results show the benefits of AMD's optimizations and of MKL's performance ov
   intel/2019b:    1615.846327 GF/s
 ```
 
-## HPL ##
+### HPL ###
 [HPL](https://www.netlib.org/benchmark/hpl/ "HPL") is a computing benchmark. Here we use it to demonstrate how to run in the pure MPI (1 process per core) and hybrid MPI+OpenMP (1 process per L3 cache with 4 OpenMP threads working across the cache) models. To load the HPL module, we can do simply
 ```bash
   module reset; module load HPL/2.3-intel-2019b  #intel
   module reset; module load HPL/2.3-foss-2020a   #gcc
 ```
 
-### MPI Only (1 MPI process/core) ###
+#### MPI Only (1 MPI process/core) ###
 Here we use pure MPI and start one MPI process per core. Jobs in this case should typically be requested with --ntasks-per-node=128 (if you want full node performance).
 * Intel, using mpirun. We use an environment variable to make sure that MPI processes are laid out in order and not moved around by the operating system.
 ```bash
@@ -248,7 +250,7 @@ Here we use pure MPI and start one MPI process per core. Jobs in this case shoul
   srun --cpu-bind=cores xhpl
 ```
 
-### Hybrid MPI+OpenMP (1 MPI process/L3 cache)
+#### Hybrid MPI+OpenMP (1 MPI process/L3 cache)
 Here we start one MPI process per L3 cache (every 4 cores). Jobs in this case should typically be requested with --ntasks-per-node=32 --cpus-per-task=4 so that Slurm knows how many processes you need.
 * Intel, using mpirun. We use environment variables to tell mpirun to start a process on every fourth core and use 4 OpenMP (MKL) threads per process:
 ```bash
@@ -263,7 +265,7 @@ Here we start one MPI process per L3 cache (every 4 cores). Jobs in this case sh
   srun --cpu-bind=mask_cpu=0xF,0xF0,0xF00,0xF000,0xF0000,0xF00000,0xF000000,0xF0000000,0xF00000000,0xF000000000,0xF0000000000,0xF00000000000,0xF000000000000,0xF0000000000000,0xF00000000000000,0xF000000000000000,0xF0000000000000000,0xF00000000000000000,0xF000000000000000000,0xF0000000000000000000,0xF00000000000000000000,0xF000000000000000000000,0xF0000000000000000000000,0xF00000000000000000000000,0xF000000000000000000000000,0xF0000000000000000000000000,0xF00000000000000000000000000,0xF000000000000000000000000000,0xF0000000000000000000000000000,0xF00000000000000000000000000000,0xF000000000000000000000000000000,0xF0000000000000000000000000000000 xhpl
 ```
 
-### Results ###
+#### Results ####
 The results show the benefit of the hybrid MPI+OpenMP model and of MKL over OpenBLAS, particularly in the hybrid model.
 ```
   intel |     mpi  | mpirun | 2,944 GFlops/s
