@@ -1,5 +1,5 @@
 
-Usage
+Getting Started
 ==================================================
 
 Contents:
@@ -8,5 +8,5 @@ Contents:
    :maxdepth: 1
    :glob:
 
-   usage/*
+   started/*
 
