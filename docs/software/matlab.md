@@ -1,21 +1,21 @@
 # MATLAB
 
-## <a name="intro"></a>Introduction
+## Introduction
 
 [MATLAB](http://www.mathworks.com/) handles a range of computing tasks in engineering and science, from data acquisition and analysis to application development. The MATLAB environment integrates mathematical computing, visualization, and a powerful technical language. It is especially well-suited to vectorized calculations and has a Parallel Computing Toolbox (not included in all licenses) that streamlines parallelization of code. 
 
-## <a name="avail"></a>Availability
+## Availability
 
 MATLAB is available on [several ARC systems](/software). ARC maintains a Matlab Distributed Computing Server license for parallel Matlab through cooperation with the university's [IT Procurement and Licensing Solutions](https://itpals.vt.edu/), who also offer discounted licenses to departments and students (note that MATLAB is also included in some of the [Student Bundles](http://www2.ita.vt.edu/software/student/bundles/index.html)). 
 
-## <a name="interface"></a>Interface
+## Interface
 
 There are two types of environments in which the MATLAB application can be used on ARC resources:
 - Graphical interface via [OnDemand](/ondemand)
 - Command-line interface. You can also start MATLAB from the command line on Unix systems where MATLAB is installed. Note that the command line runs on the login node, so big computations should be submitted as jobs, either from via a [traditional job submission](/slurm-scheduler-interaction/) or [from within MATLAB](#remotesub).
 
 
-## <a name="parallel"></a>Parallel Computing in MATLAB
+## Parallel Computing in MATLAB
 
 There are two primary means of obtaining parallelism in MATLAB: 
 - **parfor**: Replacing a for loop with a parfor loop splits the loop iterations among a group of processors. This requires that the loop iterations be independent of each other.
@@ -24,7 +24,7 @@ There are two primary means of obtaining parallelism in MATLAB:
 Slides and example programs for both parfor and spmd are available in the [Resources section](#resources). 
 
 
-## <a name="remotesub"></a> Job Submission
+##  Job Submission
 
 This page contains instructions for submitting jobs from MATLAB to ARC clusters. Right now this documentation applies to TinkerCliffs and Infer only, and only allows intracluster job submission (from cluster login nodes). More general information on jobs on ARC machines is available [here](/slurm-scheduler-interaction/) and in the [video tutorials](/video-tutorials/).
 
@@ -55,7 +55,7 @@ The job structure returned by `batch()` can be queried to get the job state, out
 
 MATLAB also comes with a [Job Monitor](https://www.mathworks.com/help/parallel-computing/job-monitor.html) to allow tracking of remote jobs via a graphical interface. Right-clicking on jobs will allow you to show its output, load its variables, delete it, etc.
 
-### <a name="outputfiles"></a>Remote Output Files
+### Remote Output Files
 
 Remote Matlab jobs start in the directory specified by the `CurrentFolder` parameter to `batch()`. Output files written to remote jobs will be saved in this location. Alternatively, you may specify the full path to where you want it to save the file, e.g.
 ```
@@ -114,12 +114,12 @@ ans =
       664579
 ```
 
-## <a name="submit"></a>Submitting Jobs from the Linux Command Line
+## Submitting Jobs from the Linux Command Line
 
 Matlab jobs can also be submitted from the Linux command line like any other jobs; however, the parallelism is currently limited to the cores on a single node. This [example](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m) uses `parfor` to count in parallel the prime numbers between 1 and 10,000,000. (The correct answer is 664,579.) There are a few ways it can be run on ARC resources:
 - A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). More general information on jobs on ARC machines is available [here](/slurm-scheduler-interaction/) and in the [video tutorials](/video-tutorials/).
 
-## <a name="path"></a>Changing MATLAB\'s Path
+## Changing MATLAB\'s Path
 
 To add a folder to MATLAB's path on ARC's systems, edit the `MATLABPATH` environment variable. This can be made permanent by editing it in your `.bashrc` file. For example, this line would add the folder `mydir` in your Home directory to MATLAB\'s path anytime it opens in your account: 
 ```
@@ -132,7 +132,7 @@ addpath('/home/johndoe/mydir');
 savepath('/home/johndoe/pathdef.m')
 ```
 
-## <a name="compiler"></a>Using the Matlab Compiler (mex)
+## Using the Matlab Compiler (mex)
 
 To compile C/C++ or Fortran code in Matlab, just make sure to load the compiler [module](/software-modules/) that you want to use before you open Matlab. Here is an example of compiling [MatConvNet](http://www.vlfeat.org/matconvnet/), which in this case requires the GCC compiler, which is available via the `foss` module: 
 ```

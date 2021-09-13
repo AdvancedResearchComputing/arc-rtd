@@ -2,7 +2,7 @@
 
 ARC uses the [lmod environment modules system](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod) to enable access to centrally-installed (ARC-maintained) scientific software packages. This provides for the dynamic modification of a user\'s environment for an application or set of applications, enabling streamlined management of software versions and dependencies. 
 
-## <a name="structure"></a>Structure
+## Structure
 
 Modules on ARC systems are based on a hierarchical structure where the modules that are available in one level of the hierarchy depend on the modules loaded from the previous level. This ensures that users do not inadvertently select module combinations that are incompatible and/or give inferior performance. The module levels are: 
 1. **Compiler:** Users first select the compiler that they want to use.
