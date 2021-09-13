@@ -2,7 +2,7 @@
 
 ARC maintains a git repository of example submission scripts [here](https://github.com/AdvancedResearchComputing/examples).
 
-To, for example, run the `stream` example on TinkerCliffs using their `personal` [allocation](docs/usage/allocations), a user might log into TinkerCliffs and issue the following commands:
+To, for example, run the `stream` example on TinkerCliffs using their `personal` [allocation](allocations), a user might log into TinkerCliffs and issue the following commands:
 
 ```
 #clone the repository
