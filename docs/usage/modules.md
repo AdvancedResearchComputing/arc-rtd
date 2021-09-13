@@ -1,3 +1,5 @@
+(modules)=
+
 # Software Modules
 
 ARC uses the [lmod environment modules system](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod) to enable access to centrally-installed (ARC-maintained) scientific software packages. This provides for the dynamic modification of a user\'s environment for an application or set of applications, enabling streamlined management of software versions and dependencies. 

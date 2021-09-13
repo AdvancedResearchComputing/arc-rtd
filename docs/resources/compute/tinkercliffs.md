@@ -1,3 +1,5 @@
+(tinkercliffs)=
+
 # TinkerCliffs #
 
 ## Overview ##
@@ -124,7 +126,7 @@ AOCC Compiler:
 
 <a name="examples"></a>
 ## Examples ##
-See below for a series of examples of how to compile code for a variety of compilers and for how to run optimally in a variety of configurations. These and a wide variety of simple application-specific examples can be found [here](https://github.com/AdvancedResearchComputing/examples "here").
+See below for a series of examples of how to compile code for a variety of compilers and for how to run optimally in a variety of configurations. These and a wide variety of simple application-specific examples can be found [in our examples repository](sw_examples).
 
 ### Stream ###
 [STREAM](https://www.cs.virginia.edu/stream/ "STREAM") is a memory bandwidth benchmark. To maximize bandwidth, we run in parallel with one process per L3 cache (cores 0, 4, ..., 124).

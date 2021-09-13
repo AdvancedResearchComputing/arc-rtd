@@ -1,3 +1,5 @@
+(sw_examples)=
+
 # Examples
 
 ARC maintains a git repository of example submission scripts [here](https://github.com/AdvancedResearchComputing/examples).

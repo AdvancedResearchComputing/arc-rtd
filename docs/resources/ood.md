@@ -1,3 +1,6 @@
+(ood)=
+(ondemand)=
+
 # Open OnDemand
 
 Open OnDemand is a web portal that provides access to ARC HPC clusters. It facilitates clusters’ access and job management without the need for Linux experience or any installations on the client-side. The only requirement is an up-to-date web browser. Firefox or Chrome are preferred.

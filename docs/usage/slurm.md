@@ -1,3 +1,5 @@
+(slurm)=
+
 # Slurm Scheduler Interaction
 
 Jobs are submitted to ARC resources through a job queuing system, or scheduler. Submission of jobs through a queueing system means that jobs may not run immediately, but will wait until the resources it requires are available. The queuing system thus keeps the compute servers from being overloaded and allocates dedicated resources across running jobs. This will allow each job to run optimally once it leaves the queue. ARC uses the Slurm scheduler; descriptions of common interactions with Slurm are provided below. For a more detailed Slurm user guide, check out SchedMD\'s online documentation and videos here: [https://slurm.schedmd.com/tutorials.html](https://slurm.schedmd.com/tutorials.html). If you are familiar commands from another resource manager (e.g., Moab/PBS/Torque) and simply need to translate them to Slurm, see [https://slurm.schedmd.com/rosetta.html](https://slurm.schedmd.com/rosetta.html). 

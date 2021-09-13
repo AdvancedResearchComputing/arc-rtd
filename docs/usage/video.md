@@ -1,3 +1,5 @@
+(video)=
+
 # Video Tutorials
 
 ARC provides a number of video tutorials on [our channel on video.vt.edu](https://video.vt.edu/channel/Advanced%2BResearch%2BComputing/ "our channel on video.vt.edu"). In particular, the following sequence walks a user through the fundamentals of ARC usage in less than an hour:

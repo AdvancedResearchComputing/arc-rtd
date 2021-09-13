@@ -1,3 +1,5 @@
+(infer)=
+
 # Infer #
 
 ## Overview ##
@@ -74,7 +76,7 @@ Limits are set on the scale and quantity of jobs at the user and allocation (Slu
 
 <a name="software"></a>
 ## Modules ##
-Infer's module structure is similar to that of [TinkerCliffs](/tinkercliffs), but  different from previous ARC clusters in that it uses a new application stack/module system based on [EasyBuild](https://easybuild.readthedocs.io "EasyBuild"). <!-- Our old application stack was home-grown and involved a fair amount of overhead in getting new modules - e.g., new versions of a package - installed. EasyBuild streamlines a lot of that work and should also make it trivial in some cases for users to install their own versions of packages if they so desire.--> A video tutorial of module usage under this paradigm is provided [here](https://video.vt.edu/media/ARCA+Using+modules+to+access+software+packages+%28EasyBuild+version%29/0_nhj2cdjy/176584251 "here"); a longer class on EasyBuild, including how you can use it to build your own modules is [here](https://video.vt.edu/media/Using+EasyBuild+to+Access+and+Compile+Scientific+Software/1_jfcy5kc1/176584251 "here"). 
+Infer's module structure is similar to that of [TinkerCliffs](tinkercliffs), but  different from previous ARC clusters in that it uses a new application stack/module system based on [EasyBuild](https://easybuild.readthedocs.io "EasyBuild"). <!-- Our old application stack was home-grown and involved a fair amount of overhead in getting new modules - e.g., new versions of a package - installed. EasyBuild streamlines a lot of that work and should also make it trivial in some cases for users to install their own versions of packages if they so desire.--> A video tutorial of module usage under this paradigm is provided [here](https://video.vt.edu/media/ARCA+Using+modules+to+access+software+packages+%28EasyBuild+version%29/0_nhj2cdjy/176584251 "here"); a longer class on EasyBuild, including how you can use it to build your own modules is [here](https://video.vt.edu/media/Using+EasyBuild+to+Access+and+Compile+Scientific+Software/1_jfcy5kc1/176584251 "here"). 
 
 Key differences between EasyBuild and our legacy paradigm from a user perspective include:
 * Hierarchies are replaced by toolchains. Right now, there are four:

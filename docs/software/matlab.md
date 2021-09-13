@@ -1,3 +1,5 @@
+(matlab)=
+
 # MATLAB
 
 ## Introduction
@@ -11,8 +13,8 @@ MATLAB is available on [several ARC systems](/software). ARC maintains a Matlab 
 ## Interface
 
 There are two types of environments in which the MATLAB application can be used on ARC resources:
-- Graphical interface via [OnDemand](/ondemand)
-- Command-line interface. You can also start MATLAB from the command line on Unix systems where MATLAB is installed. Note that the command line runs on the login node, so big computations should be submitted as jobs, either from via a [traditional job submission](/slurm-scheduler-interaction/) or [from within MATLAB](#remotesub).
+- Graphical interface via [OnDemand](ood)
+- Command-line interface. You can also start MATLAB from the command line on Unix systems where MATLAB is installed. Note that the command line runs on the login node, so big computations should be submitted as jobs, either from via a [traditional job submission](slurm) or [from within MATLAB](matlab_remotesub).
 
 
 ## Parallel Computing in MATLAB
@@ -21,12 +23,12 @@ There are two primary means of obtaining parallelism in MATLAB:
 - **parfor**: Replacing a for loop with a parfor loop splits the loop iterations among a group of processors. This requires that the loop iterations be independent of each other.
 - **spmd**: Single program multiple data (spmd) allows multiple processors to execute a single program (similar to MPI).
 
-Slides and example programs for both parfor and spmd are available in the [Resources section](#resources). 
+[]: # Slides and example programs for both parfor and spmd are available in the [Resources section](#resources). 
 
 
 ##  Job Submission
 
-This page contains instructions for submitting jobs from MATLAB to ARC clusters. Right now this documentation applies to TinkerCliffs and Infer only, and only allows intracluster job submission (from cluster login nodes). More general information on jobs on ARC machines is available [here](/slurm-scheduler-interaction/) and in the [video tutorials](/video-tutorials/).
+This page contains instructions for submitting jobs from MATLAB to ARC clusters. Right now this documentation applies to TinkerCliffs and Infer only, and only allows intracluster job submission (from cluster login nodes). More general information on jobs on ARC machines is available [here](slurm) and in the [video tutorials](video).
 
 ### Setup
 Setup is as simple as starting Matlab on a login node and then running
@@ -61,7 +63,7 @@ Remote Matlab jobs start in the directory specified by the `CurrentFolder` param
 ```
 save('/home/johndoe/output')
 ```
-Note that if you submit from your personal machine, these files will not be copied back to your local machine; you will need to manually [log into the machine](/video-tutorials/) to get them. Alternatively, you can tell Matlab to change to the directory on the ARC cluster where job information is stored; MATLAB will automatically mirror this location to your local machine when the job completes. Here is an example command for switching to the job directory: 
+Note that if you submit from your personal machine, these files will not be copied back to your local machine; you will need to manually [log into the machine](video) to get them. Alternatively, you can tell Matlab to change to the directory on the ARC cluster where job information is stored; MATLAB will automatically mirror this location to your local machine when the job completes. Here is an example command for switching to the job directory: 
 ```
 cd(sprintf('%s/%s',getenv('MDCE_STORAGE_LOCATION'),getenv('MDCE_JOB_LOCATION')));
 ```
@@ -117,7 +119,7 @@ ans =
 ## Submitting Jobs from the Linux Command Line
 
 Matlab jobs can also be submitted from the Linux command line like any other jobs; however, the parallelism is currently limited to the cores on a single node. This [example](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m) uses `parfor` to count in parallel the prime numbers between 1 and 10,000,000. (The correct answer is 664,579.) There are a few ways it can be run on ARC resources:
-- A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). More general information on jobs on ARC machines is available [here](/slurm-scheduler-interaction/) and in the [video tutorials](/video-tutorials/).
+- A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). More general information on jobs on ARC machines is available [here](slurm) and in the [video tutorials](video).
 
 ## Changing MATLAB\'s Path
 
@@ -134,7 +136,7 @@ savepath('/home/johndoe/pathdef.m')
 
 ## Using the Matlab Compiler (mex)
 
-To compile C/C++ or Fortran code in Matlab, just make sure to load the compiler [module](/software-modules/) that you want to use before you open Matlab. Here is an example of compiling [MatConvNet](http://www.vlfeat.org/matconvnet/), which in this case requires the GCC compiler, which is available via the `foss` module: 
+To compile C/C++ or Fortran code in Matlab, just make sure to load the compiler [module](modules) that you want to use before you open Matlab. Here is an example of compiling [MatConvNet](http://www.vlfeat.org/matconvnet/), which in this case requires the GCC compiler, which is available via the `foss` module: 
 ```
 #load modules
 module reset; module load foss/2020b matlab/R2021a
