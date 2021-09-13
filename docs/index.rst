@@ -6,7 +6,7 @@
 Welcome to Advanced Research Computing at Virginia Tech
 ==================================================
 This site provides in depth documentation of how to use our resources. 
-For more general information about ARC, see [our main site](https://arc.vt.edu).
+For more general information about ARC, see `our main site <https://arc.vt.edu>`.
 
 
 Contents:

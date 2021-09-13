@@ -182,7 +182,7 @@ Any member of the group who has files in the shared directory with their GID wil
 
 
 (faq_oom)=
-## What does a Detected 1 oom-kill event(s) error mean?**
+## What does a Detected 1 oom-kill event(s) error mean?
 
 If your job fails with an error like
 
@@ -229,9 +229,9 @@ To add a user to [an existing allocation](allocations), follow these steps:
 6. The page will refresh and the user\'s PID should be included in the Users table. They are now added to the project and its associated allocations.
 
 
-<a name="gdbattach"></a>
+(faq_gdbattach)=
 
-**Question: How do I attach to my process for debugging?**
+## How do I attach to my process for debugging?
 
 **Short Answer:** Attaching to a process for debugging no longer requires any special steps on ARC resources.
 
@@ -240,7 +240,7 @@ To add a user to [an existing allocation](allocations), follow these steps:
 
 (faq_jobdepends)=
 
-## How can I submit a job that depends on the completion of another job?**
+## How can I submit a job that depends on the completion of another job?
 
 Sometimes it may be useful to split one large computation into multiple jobs (e.g. due to queue limits), but submit those jobs all at once. Jobs can be made dependent on each other using the `--dependency=after:job_id` flag to `sbatch`. Additional dependency options can be found in the [documentation for sbatch](https://slurm.schedmd.com/sbatch.html documentation for sbatch). For example, here we submit three jobs, each of which depends on the preceding one:
 
