@@ -32,7 +32,7 @@ The nodes in the Infer cluster have connectivity to network storage systems serv
 
 \* "25TB per PI": each researcher at the PI level is allocated 25TB in the free tier to allocate among projects they own.
 
-<a name="login"></a>
+
 ## Login ##
 ARC users can log into Infer at:
 
@@ -48,13 +48,12 @@ To do this, log in to the ARC allocation portal https://coldfront.arc.vt.edu,
 Usage needs in excess of 600,000 monthly billing units can be purchased via the [ARC Cost Center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC Cost Center").
 -->
 
-<a name="policy"></a>
+
 ## Policies ##
-### Limits on Jobs and Resources Allocated to Jobs
 Limits are set on the scale and quantity of jobs at the user and allocation (Slurm account) levels to help ensure availability of resources to a broad set of researchers and applications:
 
 | | t4_normal_q | t4_dev_q | p100_normal_q | p100_dev_q |
-| ------------ | ------------ | ------------ | ------------ |
+| ------------ | ------------ | ------------ | ------------ | ------------ |
 | Node Type | T4 GPU | T4 GPU | P100 GPU | P100 GPU |
 | Billing Weight | 0 (no billing) | 0 (no billing) | 0 (no billing) | 0 (no billing) |
 | Number of Nodes | 16 | 2 | -coming soon- | -coming soon- |
@@ -68,13 +67,9 @@ Limits are set on the scale and quantity of jobs at the user and allocation (Slu
 | MaxCPUs (Allocation) | 384 | 64 | | |
 | MaxGPUs (User) | 8 | 2 | | |
 | MaxGPUs (Allocation) | 12 | 2 | | |
-| Max Job Duration (hours) | 72 | 4 |
+| Max Job Duration (hours) | 72 | 4 | | |
 
-### Limits on Storage ###
 
-<!-- Tinkercliffs is part of the [ARC cost center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC cost center"), which provides a substantial "free tier" of usage. Each researcher is provided 600,000 billing units (1 billing unit = 1 TC normal_q core-hour) which can be divided among all projects and allocations they own. Monthly billing is based on usage attributed to jobs which complete in that month, so jobs which start in month A and finish in month B are billed in month B. -->
-
-<a name="software"></a>
 ## Modules ##
 Infer's module structure is similar to that of [TinkerCliffs](tinkercliffs), but  different from previous ARC clusters in that it uses a new application stack/module system based on [EasyBuild](https://easybuild.readthedocs.io "EasyBuild"). <!-- Our old application stack was home-grown and involved a fair amount of overhead in getting new modules - e.g., new versions of a package - installed. EasyBuild streamlines a lot of that work and should also make it trivial in some cases for users to install their own versions of packages if they so desire.--> A video tutorial of module usage under this paradigm is provided [here](https://video.vt.edu/media/ARCA+Using+modules+to+access+software+packages+%28EasyBuild+version%29/0_nhj2cdjy/176584251 "here"); a longer class on EasyBuild, including how you can use it to build your own modules is [here](https://video.vt.edu/media/Using+EasyBuild+to+Access+and+Compile+Scientific+Software/1_jfcy5kc1/176584251 "here"). 
 

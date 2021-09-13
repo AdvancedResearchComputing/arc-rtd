@@ -17,8 +17,8 @@ OnDemand provides the following features
 
 - In order to use OnDemand, you will need to be using the university network or on VPN (VT Traffic over SSL VPN)
 - Once connected, go to either:
-  - https://ondemand.arc.vt.edu/ (Legacy site: Older version)
-  - https://ood.arc.vt.edu/ (New site: Newer version and features, but still under development in places)
+  - <https://ondemand.arc.vt.edu> (Legacy site: Older version)
+  - <https://ood.arc.vt.edu> (New site: Newer version and features, but still under development in places)
 - Then, you can log in using your VT credentials (PID and password). If already logged into another VT site, you may not need to enter any credentials at all.
 
 ## Examples

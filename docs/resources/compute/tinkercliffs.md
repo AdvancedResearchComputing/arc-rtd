@@ -29,7 +29,7 @@ Four nodes nodes equipped with GPU accelerators were added to Tinkercliffs in Ju
 
 <a name="start"></a>
 ## Get Started ##
-All ARC users can now log into Tinkercliffs:
+Tinkercliffs can be accessed via one of the two login nodes:
 
 `tinkercliffs1.arc.vt.edu`
 `tinkercliffs2.arc.vt.edu`
@@ -43,7 +43,7 @@ To do this, log in to the ARC allocation portal https://coldfront.arc.vt.edu,
 
 Usage needs in excess of 600,000 monthly billing units can be purchased via the [ARC Cost Center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC Cost Center").
 
-<a name="policy"></a>
+
 ## Policies ##
 Limits  are set on the scale and quantity of jobs at the user and allocation (Slurm account) levels to help ensure availability of resources to a broad set of researchers and applications. These are the limits applied to free tier usage (note that the terms "cpu" and "core" are used interchangably here following Slurm terminology):
 
@@ -68,7 +68,7 @@ Limits  are set on the scale and quantity of jobs at the user and allocation (Sl
 
 Tinkercliffs is part of the [ARC cost center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC cost center"), which provides a substantial "free tier" of usage. Each researcher is provided 600,000 billing units (1 billing unit = 1 TC normal_q core-hour) which can be divided among all projects and allocations they own. Monthly billing is based on usage attributed to jobs which complete in that month, so jobs which start in month A and finish in month B are billed in month B.
 
-<a name="software"></a>
+
 ## Modules ##
 TinkerCliffs is different from previous ARC clusters in that it uses a new application stack/module system based on [EasyBuild](https://easybuild.readthedocs.io "EasyBuild"). Our old application stack was home-grown and involved a fair amount of overhead in getting new modules - e.g., new versions of a package - installed. EasyBuild streamlines a lot of that work and should also make it trivial in some cases for users to install their own versions of packages if they so desire. Key differences from a user perspective include:
 * Hierarchies are replaced by toolchains. Right now, there are two:
@@ -92,11 +92,12 @@ $ module reset; module load HPL/2.3-intel-2019b; module list
 * Lower-level software is included in the module structure (see, e.g., `binutils` in the HPL example above), which should mean less risk of conflicts in adding new versions later.
 * Environment variables (e.g., `$SOFTWARE_LIB`) available in our previous module system may not be provided. Instead, EasyBuild typically provides `$EBROOTSOFTWARE` to point to the software installation location. So for example, to link to NetCDF libraries, one might use `-L$EBROOTNETCDF/lib64` instead of the previous `-L$NETCDF_LIB`.
 
-<a name="architecture"></a>
+
 ## Architecture ##
 * The AMD Rome architecture is similar to Cascades in that it is x86_64 but lacks the AVX-512 instruction set added to Intel processors in the last couple of years.
 * Nodes are larger (128 cores) and have more memory bandwidth (~350 GB/s).
 * There are eight NUMA (memory locality) domains per node and one L3 cache for every four cores. 
+
 
 ## Optimization ##
 See also the tuning guides available at https://developer.amd.com/, especially [this guide to compiler flags](https://developer.amd.com/wordpress/media/2020/04/Compiler%20Options%20Quick%20Ref%20Guide%20for%20AMD%20EPYC%207xx2%20Series%20Processors.pdf "this guide to compiler flags").
@@ -124,7 +125,6 @@ AOCC Compiler:
 
 
 
-<a name="examples"></a>
 ## Examples ##
 See below for a series of examples of how to compile code for a variety of compilers and for how to run optimally in a variety of configurations. These and a wide variety of simple application-specific examples can be found [in our examples repository](sw_examples).
 
