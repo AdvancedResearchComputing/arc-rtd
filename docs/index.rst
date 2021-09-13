@@ -3,8 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Advanced Research Computing
+Welcome to Advanced Research Computing at Virginia Tech
 ==================================================
+This site provides in depth documentation of how to use our resources. 
+For more general information about ARC, see [our main site](https://arc.vt.edu).
+
 
 Contents:
 
