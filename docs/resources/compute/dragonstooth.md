@@ -8,8 +8,9 @@ DragonsTooth is a 48-node system designed to support general batch HPC jobs. The
 
 ## Technical Specifications
 
+| Component | Specification |
+|-----------|----------------------------------------------------|
 | CPU | 2 x Intel Xeon E5-2680v3 (Haswell) 2.5 GHz 12-core |
-|-----|----------------------------------------------------|
 | Memory | 256 GB 2133 MHz DDR4 |
 | Local Storage | 4 x 480 GB SSD Drives |
 | Theoretical Peak (DP) | 806 GFlops/s |
@@ -18,14 +19,14 @@ DragonsTooth is a 48-node system designed to support general batch HPC jobs. The
 
 Note: DragonsTooth is governed by an allocation manager, meaning that in order to run most jobs on it, you must be an authorized user of an allocation that has been submitted and approved. For more on allocations, click [here](allocations). 
 
-As described above, communications between nodes and between a node and storage will have higher latency on DragonsTooth than on other ARC clusters. For this reason the queue structure is designed to allow more jobs and longer-running jobs than on other ARC clusters. DragonsTooth has three partitions (queues) : 
+As described above, communications between nodes and between a node and storage will have higher latency on DragonsTooth than on other ARC clusters. For this reason the queue structure is designed to allow more jobs and longer-running jobs than on other ARC clusters. DragonsTooth has two partitions (queues): 
 * `normal_q` for production (research) runs.
 * `dev_q` for short testing, debugging, and interactive sessions. `dev_q` provides slightly elevated job priority to facilitate code development and job testing prior to production runs.
 
 The settings for the partitions are: 
 
-| QUEUE | NORMAL_Q | DEV_Q |
-|-------|-----------|--------|
+| Partition | `normal_q` | `dev_q` |
+|-----------|-----------|--------|
 | Access to | dt003-dt048 | dt003-dt048 |
 | Max Jobs | 288 per user 432 per allocation | 1 per user |
 | Max Nodes | 12 per user 18 per allocation | 12 per user |
@@ -35,7 +36,7 @@ The settings for the partitions are:
 Other notes: 
 * *Shared* node access: more than one job can run on a node.
 
-* A user cannot, at any one time, have more than this many core-hours allocated across all of their running jobs. So you can run long jobs or large/many jobs, but not both. For illustration, the following table describes how many nodes a user can allocate for a given amount of time: 
+\*A user cannot, at any one time, have more than this many core-hours allocated across all of their running jobs. So you can run long jobs or large/many jobs, but not both. For illustration, the following table describes how many nodes a user can allocate for a given amount of time: 
 
 | Walltime | Max Nodes (per user) | Max Nodes (per allocation) |
 |----------|----------------------|----------------------------|
@@ -70,6 +71,7 @@ Access to all compute nodes is controlled via the Slurm resource manager; see th
 #Request 2 nodes with 12 tasks running on each
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=12
+
 #Request 12 tasks with 20GB memory per core
 #SBATCH --ntasks=12 
 #SBATCH --mem-per-cpu=20G
