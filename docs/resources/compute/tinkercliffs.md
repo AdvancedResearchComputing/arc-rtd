@@ -27,7 +27,6 @@ A BeeGFS file system supports /projects and /work filesystems for group collabor
 ### A100 GPU Nodes ###
 Four nodes nodes equipped with GPU accelerators were added to Tinkercliffs in June 2021. Each of these nodes is designed to be a clone of NVIDIA's DGX nodes to provide a dense GPU resource for the VT research computing community. The eight [NVIDIA A100-80G](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf) GPUs in each node are interconnected with NVIDIA's NVLink technology. For internode communications, each chassis is equipped with four Mellanox HDR-200 Infiniband cards distributed across the PCIe Gen4 bus to provide each GPU with a nearby, high speed, low latency, path to the Infiniband network.
 
-<a name="start"></a>
 ## Get Started ##
 Tinkercliffs can be accessed via one of the two login nodes:
 
@@ -122,7 +121,6 @@ AOCC Compiler:
 * AMD compiler. Very fast on Rome architectures. ARC is working on getting AOCC integrated into a toolchain.
 * Use `-mtune=znver2 -march=znver2` to target the Zen2 architecture
 * Use `-mavx2` to get the optimal vectorization instruction set
-
 
 
 ## Examples ##
