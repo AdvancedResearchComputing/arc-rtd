@@ -18,13 +18,15 @@ Contents:
    *
 
 To request help:
+
 * `Visit Office Hours <https://arc.vt.edu/office-hours/>`_
 * `Request a Consultation <https://arc.vt.edu/help>`_
 
 Other key links:
+
 * `Create an ARC User Account <https://arc.vt.edu/account>`_
-* :ref:`Video tutorials <video>`_
-* :ref:`Frequently asked questions <faq>`_
+* :ref:`Video tutorials <video>`
+* :ref:`Frequently asked questions <faq>`
 
 
 ..
