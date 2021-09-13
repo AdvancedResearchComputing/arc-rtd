@@ -1,6 +1,8 @@
-## <a name="intro"></a>Introduction
+# Slurm Scheduler Interaction
 
-Jobs are submitted to ARC resources through a job queuing system, or scheduler. Submission of jobs through a queueing system means that jobs may not run immediately, but will wait until the resources it requires are available. The queuing system thus keeps the compute servers from being overloaded and allocates dedicated resources across running jobs. This will allow each job to run optimally once it leaves the queue. ARC uses the Slurm scheduler; descriptions of common interactions with Slurm are provided below. For a more detailed Slurm user guide, check out SchedMD\'s online documentation and videos here: [https://slurm.schedmd.com/tutorials.html](https://slurm.schedmd.com/tutorials.html). If you are familiar commands from another resource manager (e.g., Moab/PBS/Torque) and simply need to translate them to Slurm, see [https://slurm.schedmd.com/rosetta.html](https://slurm.schedmd.com/rosetta.html). # <a name="script"></a>Submission Script
+Jobs are submitted to ARC resources through a job queuing system, or scheduler. Submission of jobs through a queueing system means that jobs may not run immediately, but will wait until the resources it requires are available. The queuing system thus keeps the compute servers from being overloaded and allocates dedicated resources across running jobs. This will allow each job to run optimally once it leaves the queue. ARC uses the Slurm scheduler; descriptions of common interactions with Slurm are provided below. For a more detailed Slurm user guide, check out SchedMD\'s online documentation and videos here: [https://slurm.schedmd.com/tutorials.html](https://slurm.schedmd.com/tutorials.html). If you are familiar commands from another resource manager (e.g., Moab/PBS/Torque) and simply need to translate them to Slurm, see [https://slurm.schedmd.com/rosetta.html](https://slurm.schedmd.com/rosetta.html). 
+
+## <a name="script"></a>Submission Script
 
 Jobs are submitted with submission scripts that describe what resources the job requires and what the system should do once the job runs. Example submissions scripts are provided in the documentation for each system and can be used as a template for getting started. Note that jobs can also be started [interactively](/user-info/faq/#interactive), which can be very useful during testing and debugging. The resource requests are similar to PBS/Torque and include: 
 - **Partition** (denoted by `#SBATCH -p`). Indicates the partition (or queue) to which the job should be submitted. Different partitions are intended for different use cases (e.g., production, development, visualization) or hardware and therefore have different usage limits. The partition parameters are described in the documentation for each system.
@@ -26,7 +28,7 @@ As an example, the following is a basic hello world example.
 echo hello world
 ```
 
-# <a name="management"></a>Job Management
+## <a name="management"></a>Job Management
 
 To submit your job to the queuing system, use the command `sbatch`. For example, if your script is in JobScript.sh, the command would be: 
 
@@ -59,7 +61,7 @@ If your job has not started and you are unsure why, [this FAQ](https://secure.ho
 scancel 5123
 ```
 
-# <a name="output"></a>Output
+## <a name="output"></a>Output
 
 When your job has finished running, any outputs to stdout or stderr will be placed in a file in the directory where the job was submitted. For example, for a job submitted from JobScript.sh and with job ID 5123, the output would be in: 
 
