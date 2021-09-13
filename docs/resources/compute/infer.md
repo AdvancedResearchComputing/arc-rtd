@@ -22,31 +22,11 @@ Technical details are below:
 | Local Disk | 480GB SSD | 187GB SSD |
 | Interconnect | EDR-100 IB | Ethernet |
 
-The nodes in the Infer cluster have connectivity to network storage systems serving personal "home" and "work" storage space, and also a multi-user shared storage location "projects".
-
-| Mount | Storage System | Usage Limit (Quota) | Notes |
-| ------------ | ------------ | ------------ |------------ |
-| /home | Qumulo | 640GB per person | Same /home as on all other ARC systems |
-| /work | BeeGFS | 1TB per person | Same /work as on Tinkercliffs, but different from Cascades, Dragonstooth |
-| /projects | BeeGFS | 25TB per PI\* | Same /projects as on Tinkercliffs, not available on other clusters |
-
-\* "25TB per PI": each researcher at the PI level is allocated 25TB in the free tier to allocate among projects they own.
-
 
 ## Login ##
 ARC users can log into Infer at:
 
 `infer1.arc.vt.edu`
-
-<!-- For testing purposes, all users will be alloted 240 core-hours each month in the "personal" allocation. Researchers at the PI level are able to request resource allocations in the "free" tier (usage fully subsidized by VT) and can allocate 600,000 monthly billing units (normal_q core-hours) among their projects.
-
-To do this, log in to the ARC allocation portal https://coldfront.arc.vt.edu,
- - select or create a project
- - click the "+ Request Resource Allocation" button
- - Choose the "Compute (Free) (Cluster)" allocation type
-
-Usage needs in excess of 600,000 monthly billing units can be purchased via the [ARC Cost Center](https://arc.vt.edu/arc-investment-computing-and-cost-center/ "ARC Cost Center").
--->
 
 
 ## Policies ##

@@ -2,10 +2,11 @@
 
 ## Overview
 
-Cascades is a 236-node system capable of tackling the full spectrum of computational workloads, from problems requiring hundreds of compute cores to data-intensive problems requiring large amount of memory and storage resources. Cascade contains four compute engines designed for distinct workloads. - **General** - Distributed, scalable workloads. With Intel’s Broadwell processors, 2 16-core processors and 128 GB of memory on each node, this 190-node compute engine is suitable for traditional HPC jobs and large codes using MPI.
-- **Very Large Memory** - Graph analytics and very large datasets. With 3TB (3072 gigabytes) of memory, four 18-core processors and 6 1.8TB direct attached SAS hard drives, 400 GB SAS SSD drive, and one 2 TB NVMe PCIe flash card , each of these two servers will enable analysis of large highly-connected datasets, in-memory database applications, and speedier solution of other large problems.
-- **K80 GPU** - Data visualization and code acceleration. There are four nodes in this compute engine which have - two Nvidia K80 (Kepler) GPUs, 512 GB of memory, and one 2 TB NVMe PCIe flash card.
-- **V100 GPU** - Extremely fast execution of GPU-enabled codes. There are 40 nodes in this engine, although one of these nodes is reserved for system maintenance. Each node is equipped with two Intel Skylake Xeon Gold 3 Ghz CPU\'s, amounting to 24 cores on each node. There is 384 GB of memory, and two NVIDIA V100 (Volta) GPU\'s. Each of these GPU\'s is capable of more than 7.8 TeraFLOPS of double precision performance.
+Cascades is a 236-node system capable of tackling the full spectrum of computational workloads, from problems requiring hundreds of compute cores to data-intensive problems requiring large amount of memory and storage resources. Cascade contains four compute engines designed for distinct workloads. 
+* **General** - Distributed, scalable workloads. With Intel’s Broadwell processors, 2 16-core processors and 128 GB of memory on each node, this 190-node compute engine is suitable for traditional HPC jobs and large codes using MPI.
+* **Very Large Memory** - Graph analytics and very large datasets. With 3TB (3072 gigabytes) of memory, four 18-core processors and 6 1.8TB direct attached SAS hard drives, 400 GB SAS SSD drive, and one 2 TB NVMe PCIe flash card , each of these two servers will enable analysis of large highly-connected datasets, in-memory database applications, and speedier solution of other large problems.
+* **K80 GPU** - Data visualization and code acceleration. There are four nodes in this compute engine which have - two Nvidia K80 (Kepler) GPUs, 512 GB of memory, and one 2 TB NVMe PCIe flash card.
+* **V100 GPU** - Extremely fast execution of GPU-enabled codes. There are 40 nodes in this engine, although one of these nodes is reserved for system maintenance. Each node is equipped with two Intel Skylake Xeon Gold 3 Ghz CPU\'s, amounting to 24 cores on each node. There is 384 GB of memory, and two NVIDIA V100 (Volta) GPU\'s. Each of these GPU\'s is capable of more than 7.8 TeraFLOPS of double precision performance.
 
 ## Technical Specifications
 
@@ -17,25 +18,25 @@ Cascades is a 236-node system capable of tackling the full spectrum of computati
 | V100 GPU | 40 | ca197-ca236 | 2 x Intel Xeon Gold 6136 3.0GHz (Skylake) | 24 | 384GB, 2666MHz | 2-400 GB SSD (RAID 1) | 2-NVIDIA V100 GPU |
 
 Notes: 
-- K80 GPU Notes: There are 4 CUDA Devices. Although the K80s are a single physical device in 1 PCIe slot, there are 2 separate GPU chips inside. They will be shown as 4 separate devices to CUDA code. nvidia-smi will show this.
-- All nodes have locally mounted SAS and SSDs. `/scratch-local` (and `$TMPDIR`) point to the SAS drive and `/scratch-ssd` points to the SSD on each node. On large memory and GPU nodes, which have multiple of each drive, the storage across the SSDs are combined in `/scratch-ssd` (RAID 0) and the SAS drives are mirrored (RAID 1) for redundancy.
+* K80 GPU Notes: There are 4 CUDA Devices. Although the K80s are a single physical device in 1 PCIe slot, there are 2 separate GPU chips inside. They will be shown as 4 separate devices to CUDA code. nvidia-smi will show this.
+* All nodes have locally mounted SAS and SSDs. `/scratch-local` (and `$TMPDIR`) point to the SAS drive and `/scratch-ssd` points to the SSD on each node. On large memory and GPU nodes, which have multiple of each drive, the storage across the SSDs are combined in `/scratch-ssd` (RAID 0) and the SAS drives are mirrored (RAID 1) for redundancy.
 
 Network:
 
-- 100 Gbps Infiniband interconnect provides low latency communication between compute nodes for MPI traffic.
-- 10 Gbps Ethernet interconnect provides high speed connectivity and access to storage.
+* 100 Gbps Infiniband interconnect provides low latency communication between compute nodes for MPI traffic.
+* 10 Gbps Ethernet interconnect provides high speed connectivity and access to storage.
 
 
 (ca_policy)=
 ## Policies
 
 Cascades is governed by an allocation manager, meaning that in order to run most jobs, you must be an authorized user of an allocation that has been submitted and approved. For more on allocations, click [here](allocations). The Cascades partitions (queues) are: 
-- **normal_q** for production (research) runs.
-- **largemem_q** for production (research) runs on the large memory nodes.
-- **dev_q** for short testing, debugging, and interactive sessions. dev_q provides slightly elevated job priority to facilitate code development and job testing prior to production runs.
-- **k80_q** for runs that require access to K80 GPU nodes
-- **v100_normal_q** for production (research) runs with the V100 nodes
-- **v100_dev_q** short testing, debugging, and interactive sessions with the V100 nodes
+* **normal_q** for production (research) runs.
+* **largemem_q** for production (research) runs on the large memory nodes.
+* **dev_q** for short testing, debugging, and interactive sessions. dev_q provides slightly elevated job priority to facilitate code development and job testing prior to production runs.
+* **k80_q** for runs that require access to K80 GPU nodes
+* **v100_normal_q** for production (research) runs with the V100 nodes
+* **v100_dev_q** short testing, debugging, and interactive sessions with the V100 nodes
 
 The Cascades partition (queue) settings are: 
 
@@ -51,16 +52,16 @@ The Cascades partition (queue) settings are:
 
 Notes: 
 
-- *Shared* node access: more than one job can run on a node
-- The micro-architecture on the V100 nodes is newer than (and distinct from) the Broadwell nodes. For best performance and compatibility, programs that are to run on V100 nodes should be compiled on a V100 node. Note that the login nodes are Broadwell nodes, so compilation on a V100 node should be done as part of the batch job, or during an interactive job on a V100 node (see below).
+* *Shared* node access: more than one job can run on a node
+* The micro-architecture on the V100 nodes is newer than (and distinct from) the Broadwell nodes. For best performance and compatibility, programs that are to run on V100 nodes should be compiled on a V100 node. Note that the login nodes are Broadwell nodes, so compilation on a V100 node should be done as part of the batch job, or during an interactive job on a V100 node (see below).
 
 
 ## Access
 
 Cascades can be accessed via one of the two login nodes:
 
-- `cascades1.arc.vt.edu`
-- `cascades2.arc.vt.edu`
+* `cascades1.arc.vt.edu`
+* `cascades2.arc.vt.edu`
 
 Users may also use [Open OnDemand](ood) to access the cluster.
 
