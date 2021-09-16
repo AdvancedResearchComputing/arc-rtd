@@ -24,6 +24,9 @@ There are two types of environments in which the R application can be used on AR
 - Graphical interface via Rstudio [OnDemand](ood)
 - Command-line interface. You can also start R from the command line through the Singularity container. Note that larger command line computations should be submitted as jobs, either from via a [traditional job submission](slurm).
 
+## Adding packages
+
+## R startup and .Renviron
 
 ## Parallel Computing in R
 
