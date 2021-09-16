@@ -33,8 +33,10 @@ Coming soon-ish
 
 Coming soon-ish
 
+```
 module load containers/singularity
 singularity exec ....
+```
 
 ### Full Example
 
