@@ -26,6 +26,10 @@ conda create -n mypython3 python=3
 source activate mypython3
 ```
 
+## Managing environments
+
+<https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>
+
 ### Full Example
 
 
