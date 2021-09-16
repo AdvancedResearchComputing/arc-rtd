@@ -8,7 +8,7 @@
 
 ## Availability
 
-R is available on all our systems.  We are moving towards making R available via containers, specifically [Singularitiy](https://singularity.hpcng.org/).  Our containers are built using [Docker](https://www.docker.com) and converted to Singularity.  Several version are available for each R version to include different package subset:
+R is available on all our systems.  We are moving towards making R available via containers, specifically [Singularitiy](https://singularity.hpcng.org/).  Our containers are built using [Docker](https://www.docker.com) and converted to Singularity.  Several version R are available, each R version with different package subsets for specific domain usages:
 
 + ood-rstudio-basic  
 + ood-rstudio-bio  
