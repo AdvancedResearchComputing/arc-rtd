@@ -1,0 +1,123 @@
+
+---------------------------------------------------------------------------- /cm/local/modulefiles -----------------------------------------------------------------------------
+   apps              (L)    cmd          cuda-dcgm/2.0.15.1    gcc/8.2.0          module-git     openldap                        python36
+   cluster-tools/8.2        cmsub        dot                   ipmitool/1.8.18    module-info    openmpi/mlnx/gcc/64/4.0.3rc4    shared   (L)
+   cm-cloud-copy/8.2        cray  (L)    freeipmi/1.6.2        lua/5.3.5          null           python2
+
+---------------------------------------------------------------------------- /usr/share/modulefiles ----------------------------------------------------------------------------
+   DefaultModules (L)
+
+---------------------------------------------------------------------------- /cm/shared/modulefiles ----------------------------------------------------------------------------
+   amd-blis/aocc/64/2.1                   cuda-latest/nsight/11.2.0                gdb/8.2                            mvapich2/gcc/64/2.3.2
+   amd-blis/gcc/64/2.1                    cuda-latest/profiler/11.2.0              globalarrays/openmpi/gcc/64/5.7    netcdf/gcc/64/4.6.1
+   amd-libflame/aocc/64/2.1               cuda-latest/toolkit/11.2.0        (L)    hdf5/1.10.1                        netperf/2.7.0
+   amd-libflame/gcc/64/2.1                cuda11.2/blas/11.2.0                     hdf5_18/1.8.20                     openblas/dynamic/0.2.20
+   aocc/aocc-compiler-2.1.0               cuda11.2/fft/11.2.0                      hpl/2.2                            openmpi/gcc/64/1.10.7
+   aocc/aocc-compiler-2.2.0        (D)    cuda11.2/nsight/11.2.0                   hwloc/1.11.11                      openmpi/gcc/64/4.0.3
+   blacs/openmpi/gcc/64/1.1patch03        cuda11.2/profiler/11.2.0                 ics/2020.0                         openmpi/gcc/64/4.0.4           (D)
+   blas/gcc/64/3.8.0                      cuda11.2/toolkit/11.2.0                  intel-tbb-oss/ia32/2020.2          openmpi/ics/64/4.0.3
+   bonnie++/1.97.3                        default-environment                      intel-tbb-oss/intel64/2020.2       scalapack/openmpi/gcc/64/2.0.2
+   cm-pmix3/3.1.4                         fftw2/openmpi/gcc/64/double/2.1.5        iozone/3_482                       sge/2011.11p1
+   cuda-latest/blas/11.2.0                fftw2/openmpi/gcc/64/float/2.1.5         lapack/gcc/64/3.8.0                slurm/20.02.3                  (L)
+   cuda-latest/fft/11.2.0                 fftw3/openmpi/gcc/64/3.3.8               mpich/ge/gcc/64/3.3                ucx/1.6.0
+
+------------------------------------------------------------------------------ /apps/modulefiles -------------------------------------------------------------------------------
+   containers/singularity/3.7.1                        site/tinkercliffs-rome_a100/easybuild/setup (D)    site/tinkercliffs/easybuild/setup    (L,D)    useful_scripts (L)
+   site/tinkercliffs-rome_a100/easybuild/arc.arcadm    site/tinkercliffs/easybuild/arc.arcadm             tinkercliffs-rome_a100/matlab/R2021a
+
+------------------------------------------------------------------------------- /opt/modulefiles -------------------------------------------------------------------------------
+   gcc/8.1.0
+
+---------------------------------------------------------------------------- /opt/cray/modulefiles -----------------------------------------------------------------------------
+   PrgEnv-cray/1.0.6
+
+--------------------------------------------------------------------------- /opt/cray/pe/modulefiles ---------------------------------------------------------------------------
+   cce/10.0.0         cray-fftw/3.3.8.5         cray-libsci/20.03.1          cray-mvapich2_nogpu_gnu/2.3.3               craype/2.6.4         perftools-base/20.03.0
+   cdt/20.05          cray-fftw_impi/3.3.8.5    cray-mvapich2/2.3.3          cray-mvapich2_nogpu_gnu/2.3.4        (D)    craypkg-gen/1.3.7    valgrind4hpc/1.0.1
+   cray-ccdb/3.0.5    cray-impi/5               cray-mvapich2_gnu/2.3.3      craype-dl-plugin-py3/mvapich/20.05.1        gdb4hpc/3.0.10
+   cray-cti/1.0.7     cray-lgdb/3.0.10          cray-mvapich2_nogpu/2.3.4    craype-dl-plugin-py3/openmpi/20.05.1        papi/5.7.0.3
+
+------------------------------------------------------------------- /opt/cray/pe/craype/default/modulefiles --------------------------------------------------------------------
+   craype-accel-nvidia20    craype-accel-nvidia60    craype-haswell      craype-network-infiniband (L)    craype-x86-rome    (L)
+   craype-accel-nvidia35    craype-accel-nvidia70    craype-ivybridge    craype-network-opa               craype-x86-skylake
+   craype-accel-nvidia52    craype-broadwell         craype-mic-knl      craype-sandybridge
+
+-------------------------------------------------------------- /apps/easybuild/modules/tinkercliffs-rome_a100/all --------------------------------------------------------------
+   ABAQUS/2018                                                     OpenBLAS/0.3.12-GCC-10.2.0                    gettext/0.21                             (D)
+   ATK/2.34.1-GCCcore-8.3.0                                        OpenMM/7.5.0-fosscuda-2020b                   giflib/5.2.1-GCCcore-10.2.0
+   ATK/2.36.0-GCCcore-10.2.0                               (D)     OpenMM/7.5.1-fosscuda-2020b            (D)    git/2.28.0-GCCcore-10.2.0-nodocs
+   Anaconda3/2020.07                                               OpenMPI/4.0.5-GCC-10.2.0                      gompi/2020b
+   Anaconda3/2020.11                                       (D)     OpenMPI/4.0.5-gcccuda-2020b            (D)    gompic/2020b
+   Autoconf/2.69-GCCcore-8.3.0                                     PCRE/8.43-GCCcore-8.3.0                       gperf/3.1-GCCcore-8.3.0
+   Autoconf/2.69-GCCcore-10.2.0                            (D)     PCRE/8.44-GCCcore-10.2.0               (D)    gperf/3.1-GCCcore-10.2.0                 (D)
+   Automake/1.16.1-GCCcore-8.3.0                                   PMIx/3.1.5-GCCcore-10.2.0                     groff/1.22.4-GCCcore-8.3.0
+   Automake/1.16.2-GCCcore-10.2.0                          (D)     Perl/5.30.0-GCCcore-8.3.0                     groff/1.22.4-GCCcore-10.2.0              (D)
+   Autotools/20180311-GCCcore-8.3.0                                Perl/5.32.0-GCCcore-10.2.0             (D)    help2man/1.47.4
+   Autotools/20200321-GCCcore-10.2.0                       (D)     Pillow/8.0.1-GCCcore-10.2.0                   help2man/1.47.8-GCCcore-8.3.0
+   Bazel/3.7.2-GCCcore-10.2.0                                      PyTorch/1.7.1-fosscuda-2020b                  help2man/1.47.16-GCCcore-10.2.0          (D)
+   Bison/3.3.2-GCCcore-8.3.0                                       PyYAML/5.3.1-GCCcore-10.2.0                   hwloc/2.2.0-GCCcore-10.2.0
+   Bison/3.3.2                                                     Python/2.7.18-GCCcore-10.2.0                  hypothesis/5.41.2-GCCcore-10.2.0
+   Bison/3.5.3                                                     Python/3.7.4-GCCcore-8.3.0                    hypothesis/5.41.5-GCCcore-10.2.0         (D)
+   Bison/3.7.1-GCCcore-10.2.0                                      Python/3.8.6-GCCcore-10.2.0            (D)    intltool/0.51.0-GCCcore-8.3.0
+   Bison/3.7.1                                             (D)     SQLite/3.29.0-GCCcore-8.3.0                   intltool/0.51.0-GCCcore-10.2.0           (D)
+   CMake/3.15.3-GCCcore-8.3.0                                      SQLite/3.33.0-GCCcore-10.2.0           (D)    libarchive/3.4.3-GCCcore-10.2.0
+   CMake/3.18.4-GCCcore-10.2.0                             (D)     SWIG/4.0.2-GCCcore-10.2.0                     libevent/2.1.12-GCCcore-10.2.0
+   CUDA/11.1.1-GCC-10.2.0                                          ScaLAPACK/2.1.0-gompi-2020b                   libfabric/1.11.0-GCCcore-10.2.0
+   CUDAcore/11.1.1                                                 ScaLAPACK/2.1.0-gompic-2020b           (D)    libffi/3.2.1-GCCcore-8.3.0
+   Check/0.15.2-GCCcore-10.2.0                                     SciPy-bundle/2020.11-fosscuda-2020b           libffi/3.3-GCCcore-10.2.0                (D)
+   DB/18.1.32-GCCcore-8.3.0                                        Szip/2.1.1-GCCcore-10.2.0                     libiconv/1.16-GCCcore-10.2.0
+   DB/18.1.40-GCCcore-10.2.0                               (D)     Tcl/8.6.9-GCCcore-8.3.0                       libjpeg-turbo/2.0.3-GCCcore-8.3.0
+   DBus/1.13.12-GCCcore-8.3.0                                      Tcl/8.6.10-GCCcore-10.2.0              (D)    libjpeg-turbo/2.0.5-GCCcore-10.2.0       (D)
+   Doxygen/1.8.20-GCCcore-10.2.0                                   TensorFlow/2.4.1-fosscuda-2020b               libpciaccess/0.16-GCCcore-10.2.0
+   EasyBuild/4.3.4                                                 UCX/1.9.0-GCCcore-10.2.0-CUDA-11.1.1          libpng/1.6.37-GCCcore-8.3.0
+   EasyBuild/4.4.0                                         (D)     UCX/1.9.0-GCCcore-10.2.0               (D)    libpng/1.6.37-GCCcore-10.2.0             (D)
+   Eigen/3.3.8-GCCcore-10.2.0                                      UnZip/6.0-GCCcore-10.2.0                      libreadline/8.0-GCCcore-8.3.0
+   FFTW/3.3.8-gompi-2020b                                          X11/20190717-GCCcore-8.3.0                    libreadline/8.0-GCCcore-10.2.0           (D)
+   FFTW/3.3.8-gompic-2020b                                 (D)     X11/20201008-GCCcore-10.2.0            (D)    libtool/2.4.6-GCCcore-8.3.0
+   FFmpeg/4.3.1-GCCcore-10.2.0                                     XZ/5.2.4-GCCcore-8.3.0                        libtool/2.4.6-GCCcore-10.2.0             (D)
+   FriBidi/1.0.5-GCCcore-8.3.0                                     XZ/5.2.5-GCCcore-10.2.0                (D)    libxml2/2.9.9-GCCcore-8.3.0
+   FriBidi/1.0.10-GCCcore-10.2.0                           (D)     Yasm/1.3.0-GCCcore-10.2.0                     libxml2/2.9.10-GCCcore-10.2.0            (D)
+   GCC/10.2.0                                                      Zip/3.0-GCCcore-10.2.0                        libyaml/0.2.5-GCCcore-10.2.0
+   GCCcore/8.3.0                                                   binutils/2.32-GCCcore-8.3.0                   magma/2.5.4-fosscuda-2020b
+   GCCcore/10.2.0                                          (D)     binutils/2.32                                 makeinfo/6.7-GCCcore-8.3.0
+   GDRCopy/2.1-GCCcore-10.2.0-CUDA-11.1.1                          binutils/2.34                                 makeinfo/6.7-GCCcore-10.2.0              (D)
+   GLib/2.62.0-GCCcore-8.3.0                                       binutils/2.35-GCCcore-10.2.0                  mpi4py/3.0.2-gompi-2020b-timed-pingpong
+   GLib/2.66.1-GCCcore-10.2.0                              (D)     binutils/2.35                          (D)    mpi4py/3.1.1-gompi-2020b-timed-pingpong  (D)
+   GMP/6.1.2-GCCcore-8.3.0                                         bzip2/1.0.8-GCCcore-8.3.0                     ncurses/6.0
+   GMP/6.2.0-GCCcore-10.2.0                                (D)     bzip2/1.0.8-GCCcore-10.2.0             (D)    ncurses/6.1-GCCcore-8.3.0
+   GObject-Introspection/1.63.1-GCCcore-8.3.0-Python-3.7.4         cURL/7.66.0-GCCcore-8.3.0                     ncurses/6.2-GCCcore-10.2.0
+   GObject-Introspection/1.66.1-GCCcore-10.2.0             (D)     cURL/7.72.0-GCCcore-10.2.0             (D)    ncurses/6.2                              (D)
+   HDF5/1.10.7-gompic-2020b                                        cairo/1.16.0-GCCcore-8.3.0                    nsync/1.24.0-GCCcore-10.2.0
+   ICU/64.2-GCCcore-8.3.0                                          cairo/1.16.0-GCCcore-10.2.0            (D)    numactl/2.0.13-GCCcore-10.2.0
+   ICU/67.1-GCCcore-10.2.0                                 (D)     cuDNN/8.0.4.30-CUDA-11.1.1                    pixman/0.38.4-GCCcore-8.3.0
+   Java/11.0.2                                             (11)    double-conversion/3.1.5-GCCcore-10.2.0        pixman/0.40.0-GCCcore-10.2.0             (D)
+   JsonCpp/1.9.4-GCCcore-10.2.0                                    expat/2.2.7-GCCcore-8.3.0                     pkg-config/0.29.2-GCCcore-8.3.0
+   LAME/3.100-GCCcore-10.2.0                                       expat/2.2.9-GCCcore-10.2.0             (D)    pkg-config/0.29.2-GCCcore-10.2.0         (D)
+   LMDB/0.9.24-GCCcore-10.2.0                                      flatbuffers-python/1.12-GCCcore-10.2.0        pkgconfig/1.5.1-GCCcore-10.2.0-python
+   LibTIFF/4.0.10-GCCcore-8.3.0                                    flatbuffers/1.12.0-GCCcore-10.2.0             protobuf-python/3.14.0-GCCcore-10.2.0
+   LibTIFF/4.1.0-GCCcore-10.2.0                            (D)     flex/2.6.4-GCCcore-8.3.0                      protobuf/3.14.0-GCCcore-10.2.0
+   M4/1.4.18-GCCcore-8.3.0                                         flex/2.6.4-GCCcore-10.2.0                     pybind11/2.6.0-GCCcore-10.2.0
+   M4/1.4.18-GCCcore-10.2.0                                        flex/2.6.4                             (D)    snappy/1.1.8-GCCcore-10.2.0
+   M4/1.4.18                                               (D)     fontconfig/2.13.1-GCCcore-8.3.0               typing-extensions/3.7.4.3-GCCcore-10.2.0
+   MPFR/4.1.0-GCCcore-10.2.0                                       fontconfig/2.13.92-GCCcore-10.2.0      (D)    util-linux/2.34-GCCcore-8.3.0
+   Meson/0.51.2-GCCcore-8.3.0-Python-3.7.4                         foss/2020b                                    util-linux/2.36-GCCcore-10.2.0           (D)
+   Meson/0.55.3-GCCcore-10.2.0                             (D)     fosscuda/2020b                                x264/20201026-GCCcore-10.2.0
+   NASM/2.14.02-GCCcore-8.3.0                                      freetype/2.10.1-GCCcore-8.3.0                 x265/3.3-GCCcore-10.2.0
+   NASM/2.15.05-GCCcore-10.2.0                             (D)     freetype/2.10.3-GCCcore-10.2.0         (D)    xorg-macros/1.19.2-GCCcore-8.3.0
+   NCCL/2.8.3-CUDA-11.1.1                                          gcccuda/2020b                                 xorg-macros/1.19.2-GCCcore-10.2.0        (D)
+   NVHPC/21.2                                                      gettext/0.19.8.1                              zlib/1.2.11-GCCcore-8.3.0
+   Ninja/1.9.0-GCCcore-8.3.0                                       gettext/0.20.1-GCCcore-8.3.0                  zlib/1.2.11-GCCcore-10.2.0
+   Ninja/1.10.1-GCCcore-10.2.0                             (D)     gettext/0.21-GCCcore-10.2.0                   zlib/1.2.11                              (D)
+
+  Where:
+   Aliases:  Aliases exist: foo/1.2.3 (1.2) means that "module load foo/1.2" will load foo/1.2.3
+   D:        Default Module
+   L:        Module is loaded
+
+Module defaults are chosen based on Find First Rules due to Name/Version/Version modules found in the module tree.
+See https://lmod.readthedocs.io/en/latest/060_locating.html for details.
+
+Use "module spider" to find all possible modules and extensions.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+
+
