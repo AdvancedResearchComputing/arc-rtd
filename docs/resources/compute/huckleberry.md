@@ -15,10 +15,6 @@ Huckleberry is a high performance computing system targeted at deep learning app
 - Mellanox EDR Infiniband (100 GB/s) interconnect
 - CentOS 7 OS
 
-Understanding non-uniform memory access (NUMA) patterns important to get the full benefit of the S822LC compute nodes on huckleberry. The memory bandwidth associated with data movement within each compute node is summarized in the diagram below. Note that each Power8 CPU is coupled to two P100 GPU through NVLink, which supports bi-directional data transfer rates of 80 GB/s. The theoretical maximum memory bandwidth for each Power8 CPU is 115 GB/s. The theoretical maximum memory bandwidth for each NVIDIA P100 GPU is 720 GB/s.
-
-![](S822LCforHPCDiagram.jpg) 
-
 
 ## Login
 
@@ -173,6 +169,12 @@ If your job is running on compute node `hu001`, you should point your browser at
 tar xvzf /home/TRAINING/mnist.tar.gz
 ```
 Once the data has been downloaded, you can train a model by following the steps described at <https://github.com/NVIDIA/DIGITS/blob/master/docs/GettingStarted.md>.
+
+
+## NUMA
+Understanding non-uniform memory access (NUMA) patterns important to get the full benefit of the S822LC compute nodes on huckleberry. The memory bandwidth associated with data movement within each compute node is summarized in the diagram below. Note that each Power8 CPU is coupled to two P100 GPU through NVLink, which supports bi-directional data transfer rates of 80 GB/s. The theoretical maximum memory bandwidth for each Power8 CPU is 115 GB/s. The theoretical maximum memory bandwidth for each NVIDIA P100 GPU is 720 GB/s.
+
+![](S822LCforHPCDiagram.jpg) 
 
 
 ## PowerAI Installation & Usage (Updated in April 2019)

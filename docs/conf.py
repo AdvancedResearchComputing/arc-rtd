@@ -30,7 +30,7 @@ import myst_parser
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 #extensions = []
-extensions = ['myst_parser']
+extensions = ['myst_parser','markdown.extensions.admonition']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
