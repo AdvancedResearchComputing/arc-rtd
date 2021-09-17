@@ -4,7 +4,7 @@ To see the docs, go to [ARC User Documentation](https://arc-rtd.readthedocs.io/e
 
 ## Still to do before going live:
 
-* New modules documentation to reflect EasyBuild (Justin)
+* ~~New modules documentation to reflect EasyBuild (Justin)~~
 * New allocation page (Matt)
 * R (Bob)
 * TensorFlow (Bob?)
