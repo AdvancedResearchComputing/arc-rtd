@@ -285,7 +285,7 @@ Now the system knows where the `h5cc` binary is located:
 /opt/apps/intel18_2/hdf5/1.8.17/bin/h5cc
 ```
 
-## Finding a Software Package
+### Finding a Software Package
 
 To see what versions of the molecular dynamics software gromacs are installed, use: 
 ```

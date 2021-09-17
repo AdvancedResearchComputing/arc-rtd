@@ -1,4 +1,4 @@
-(installed)=
+.. _installed:
 
 Lists of Software Installed on ARC Systems
 ==================================================
