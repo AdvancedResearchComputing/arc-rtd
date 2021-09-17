@@ -13,7 +13,7 @@ STATA is available on [Dragonstooth](www.arc.vt.edu/dragonstooth) and [Cascades]
 ## Interface
 
 There are two types of environments in which the STATA application can be used on ARC resources:
-- Graphical interface via Rstudio [OnDemand](ood)
+- Graphical interface via [OnDemand](ood)
 - Command-line interface. You can also start STATA from the command line after loading the software module. Note that larger command line computations should be submitted as jobs, via a [traditional job submission](slurm).
 
 ## STATA from the command line
