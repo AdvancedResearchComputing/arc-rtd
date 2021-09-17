@@ -2,6 +2,7 @@
 
 # Huckleberry
 
+## Overview
 Huckleberry is a high performance computing system targeted at deep learning applications. Huckleberry consists of two login nodes and Fourteen IBM Minksy S822LC compute nodes. Each of the compute nodes is equipped with:
 
 - Two IBM Power8 CPU (3.26 GHz) with 256 GB of memory
@@ -10,7 +11,9 @@ Huckleberry is a high performance computing system targeted at deep learning app
 - Mellanox EDR Infiniband (100 GB/s) interconnect
 - CentOS 7 OS
 
-Understanding non-uniform memory access (NUMA) patterns important to get the full benefit of the S822LC compute nodes on huckleberry. The memory bandwidth associated with data movement within each compute node is summarized in Figure 1. Note that each Power8 CPU is coupled to two P100 GPU through NVLink, which supports bi-directional data transfer rates of 80 GB/s. The theoretical maximum memory bandwidth for each Power8 CPU is 115 GB/s. The theoretical maximum memory bandwidth for each NVIDIA P100 GPU is 720 GB/s [caption id=attachment_9097 align=aligncenter width=300\][![S822LCforHPCDiagram](https://secure.hosting.vt.edu/www.arc.vt.edu/wp-content/uploads/2017/07/S822LCforHPCDiagram-300x245.jpg)](https://secure.hosting.vt.edu/www.arc.vt.edu/wp-content/uploads/2017/07/S822LCforHPCDiagram.jpg) Figure 1. Theoretical memory bandwidth for data transfers within the IBM S822LC Compute node (image source: NVIDIA).[/caption] 
+Understanding non-uniform memory access (NUMA) patterns important to get the full benefit of the S822LC compute nodes on huckleberry. The memory bandwidth associated with data movement within each compute node is summarized in the diagram below. Note that each Power8 CPU is coupled to two P100 GPU through NVLink, which supports bi-directional data transfer rates of 80 GB/s. The theoretical maximum memory bandwidth for each Power8 CPU is 115 GB/s. The theoretical maximum memory bandwidth for each NVIDIA P100 GPU is 720 GB/s.
+
+[![S822LCforHPCDiagram](S822LCforHPCDiagram-300x245.jpg)](S822LCforHPCDiagram.jpg) 
 
 ## Login
 
