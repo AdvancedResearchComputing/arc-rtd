@@ -10,8 +10,9 @@ To see the docs, go to [ARC User Documentation](https://arc-rtd.readthedocs.io/e
 * TensorFlow (Bob?)
 * PyTorch (Bob?)
 * Python (Matt?)
-* GPUs by System (Justin)
+* ~~GPUs by System (Justin)~~
 * ~~Getting Started Guide (Justin)~~
+* ~~Huckleberry (Justin)~~
 * Can we reorganize the website to hide everything we've replaced?
 
 ## For our GRAs:
