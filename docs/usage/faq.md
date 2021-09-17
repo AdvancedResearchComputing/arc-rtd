@@ -53,6 +53,7 @@ Adding the `--start` flag to `squeue` will provide the system\'s best guess as t
 
 
 (faq_interactive)=
+(interact)=
 ## How do I submit an interactive job?
 
 A user can request an interactive session on a compute node (e.g., for debugging purposes), using `interact`, a [wrapper on `srun`](https://github.com/AdvancedResearchComputing/useful_scripts/blob/main/bin/interact). By default, this script will request one core (with one GPU on Infer) for one hour on a default partition (often `interactive_q` or `dev_q`, depending on the cluster). An allocation should be provided:
