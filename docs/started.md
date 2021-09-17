@@ -28,7 +28,7 @@ There can be a learning curve in using high-performance computing (HPC) resource
 
 (hpcuser)=
 ## Familiar with HPC, new to ARC
-If you are an experience HPC user who is just new to ARC, you may just need to know the following:
+If you are an experienced HPC user who is new to ARC, you may just need to know the following:
 - ARC uses the [Slurm scheduler](slurm).
 - ARC uses [EasyBuild](https://easybuild.io/) for software [modules](modules).
 - You will need to have an [allocation](allocations) to charge your jobs to. This is free of charge unless you would like to invest in priority access.
