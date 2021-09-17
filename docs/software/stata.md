@@ -36,7 +36,7 @@ module load stata/14.0
 stata-mp
 ```
 
-The above lines should be typed from one of the Dragonstooth login nodes.  Note, the interactive job request is looking for 16-cores on a single node and \<your account\> should be replaced with a Slurm allocation you have access to.
+The above lines should be typed from one of the Dragonstooth login nodes.  Note, the interactive job request is looking for 16-cores on a single node where <span style="color:blue"> \<your account\> </span> should be replaced with a Slurm allocation you have access to.
 
 
 ### Full Script Example
