@@ -83,6 +83,8 @@ module list
 ###########################################################################
 ###print script to keep a record of what is done
 cat STATA.sh
+echo "stata code"
+cat cool_stata_analysis.do
 ###########################################################################
 echo start running stata
 stata -b cool_stata_analysis.do

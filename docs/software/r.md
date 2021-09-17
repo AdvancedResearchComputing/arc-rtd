@@ -41,7 +41,7 @@ singularity exec -bind=/work,/projects \
 ```
 
 ```{note}
-Note, we have bind mounted `/work` and `/projects` into the container so that we can access files outside the container from those storage containers.
+Note, we have bind mounted `/work` and `/projects` into the container so that we can access files outside the container from those storage locations.
 ```
 
 ## R startup, .Renviron and adding packages
@@ -67,6 +67,59 @@ From the command line, you need to reverse the search path of the installed pack
 > install.packages("package of interest")
 ```
 
+### R from a Script
+
+As we scale up our computing, we will often find the compute takes too long or we need to run many scripts (models) to get our work done.  When this happens, we need to turn to using R via a script.  The R script needs to hands free, ie no user action necessary in execution of the full script.  To accomplish this on ARC, we actually need two scripts:
+
+1. an R script with the actual R code we are needing to run  
+2. a shell script for submission to the cluster batch schedulers  
+
+The R script should load/generate the data, do the compute, and save the results.  As an example:
+
+```
+## hp_mpg.R
+## R script for generating a plot of mpg vs hp
+library(ggplot2)
+attach(mtcars) 
+p <- gglot(data=mtcars, aes(x=hp, y=mpg)) + geom_line()
+ggsave(file="hp_mpg.pdf",p)
+```
+
+Given the R script, we still need a seperate script as the job submission script.  This script should contain Slurm directives detailing what compute resources are needed, loading of any required software, and finally running the application of interest.
+
+```
+#!/bin/bash
+
+### run_R.sh
+###########################################################################
+## environment & variable setup
+####### job customization
+#SBATCH --name="mpg plot"
+#SBATCH -N 1
+#SBATCH -n 16
+#SBATCH -t 1:00:00
+#SBATCH -p normal_q
+#SBATCH -A <your account>
+####### end of job customization
+# end of environment & variable setup
+###########################################################################
+#### add modules:
+module load module load containers/singularity/3.7.1
+module list
+#end of add modules
+###########################################################################
+###print script to keep a record of what is done
+cat hp_mpg.R
+cat run_R.sh
+###########################################################################
+echo start running R
+
+singularity exec -bind=/work,/projects \
+    /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript hp_mpg.R
+
+exit;
+```
+
 ## Parallel Computing in R
 
 ### parallel package
@@ -75,12 +128,6 @@ From the command line, you need to reverse the search path of the installed pack
 Coming soon-ish
 
 
-### Full Script Example
 
-```
-module load containers/singularity/3.7.1
-singularity exec -bind=/work,/projects \
-    /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif R
-```
 
 
