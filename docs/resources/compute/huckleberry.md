@@ -2,9 +2,9 @@
 
 # Huckleberry
 
-!!! warning
-    Huckleberry is scheduled to be retired in Spring 2022. Please consider one of our other [GPU resources](gpu) for deep learning applications.
-
+```{admonition} Warning
+Huckleberry is scheduled to be retired in Spring 2022. Please consider one of our other [GPU resources](gpu) for deep learning applications.
+```
 
 ## Overview
 Huckleberry is a high performance computing system targeted at deep learning applications. Huckleberry consists of two login nodes and Fourteen IBM Minksy S822LC compute nodes. Each of the compute nodes is equipped with:
