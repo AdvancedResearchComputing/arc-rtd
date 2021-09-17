@@ -129,62 +129,62 @@ EasyBuild can also be used by users to install packages. We describe the steps b
 The basic steps are:
 
 1. Load the EasyBuild module to get access to the `eb` executable:
-```
-module reset; module load EasyBuild
-```
+    ```
+    module reset; module load EasyBuild
+    ```
 2. Use `eb -S` to search for the software package that you need (the output is quite long in this case so we only show a snippet):
-```
-[arcuser@tinkercliffs2 ~]$ eb -S ^netCDF
- * $CFGS3/n/netCDF/netCDF-4.7.1-iimpi-2019b.eb
- * $CFGS3/n/netCDF/netCDF-4.7.1-iimpic-2019b.eb
- * $CFGS3/n/netCDF/netCDF-4.7.4-fix-mpi-info-f2c.patch
- * $CFGS3/n/netCDF/netCDF-4.7.4-gompi-2020a.eb
- * $CFGS3/n/netCDF/netCDF-4.7.4-gompi-2020b.eb
- * $CFGS3/n/netCDF/netCDF-4.7.4-gompic-2020a.eb
-```
+    ```
+    [arcuser@tinkercliffs2 ~]$ eb -S ^netCDF
+     * $CFGS3/n/netCDF/netCDF-4.7.1-iimpi-2019b.eb
+     * $CFGS3/n/netCDF/netCDF-4.7.1-iimpic-2019b.eb
+     * $CFGS3/n/netCDF/netCDF-4.7.4-fix-mpi-info-f2c.patch
+     * $CFGS3/n/netCDF/netCDF-4.7.4-gompi-2020a.eb
+     * $CFGS3/n/netCDF/netCDF-4.7.4-gompi-2020b.eb
+     * $CFGS3/n/netCDF/netCDF-4.7.4-gompic-2020a.eb
+    ```
 3. Pick one of the versions and use `eb -Dr filename.eb` to see what it is going to do (the `D` in this case is for "dry run"). The `[x]` lines indicate packages that are already installed. The `[ ]` lines are packages that will need to be installed.
-```
-[arcuser@tinkercliffs2 ~]$ eb -Dr netCDF-4.7.4-gompi-2020b.eb
-== Temporary log file in case of crash /localscratch/eb-ceKHhw/easybuild-asf_l0.log
-== found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
-== found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
-Dry run: printing build status of easyconfigs and dependencies
-CFGS=/apps/easybuild
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/M4/M4-1.4.18.eb (module: M4/1.4.18)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/Bison/Bison-3.7.1.eb (module: Bison/3.7.1)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/bzip2/bzip2-1.0.8-GCCcore-10.2.0.eb (module: bzip2/1.0.8-GCCcore-10.2.0)
- * [ ] $CFGS/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/l/libiconv/libiconv-1.16-GCCcore-10.2.0.eb (module: libiconv/1.16-GCCcore-10.2.0)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/expat/expat-2.2.9-GCCcore-10.2.0.eb (module: expat/2.2.9-GCCcore-10.2.0)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/CMake/CMake-3.18.4-GCCcore-10.2.0.eb (module: CMake/3.18.4-GCCcore-10.2.0)
- * [ ] $CFGS/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/d/Doxygen/Doxygen-1.8.20-GCCcore-10.2.0.eb (module: Doxygen/1.8.20-GCCcore-10.2.0)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/libevent/libevent-2.1.12-GCCcore-10.2.0.eb (module: libevent/2.1.12-GCCcore-10.2.0)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/numactl/numactl-2.0.13-GCCcore-10.2.0.eb (module: numactl/2.0.13-GCCcore-10.2.0)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/OpenMPI/OpenMPI-4.0.5-GCC-10.2.0.eb (module: OpenMPI/4.0.5-GCC-10.2.0)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/gompi/gompi-2020b.eb (module: gompi/2020b)
- * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/HDF5/HDF5-1.10.7-gompi-2020b.eb (module: HDF5/1.10.7-gompi-2020b)
- * [ ] $CFGS/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/n/netCDF/netCDF-4.7.4-gompi-2020b.eb (module: netCDF/4.7.4-gompi-2020b)
-== Temporary log file(s) /localscratch/eb-ceKHhw/easybuild-asf_l0.log* have been removed.
-== Temporary directory /localscratch/eb-ceKHhw has been removed.
-```
+    ```
+    [arcuser@tinkercliffs2 ~]$ eb -Dr netCDF-4.7.4-gompi-2020b.eb
+    == Temporary log file in case of crash /localscratch/eb-ceKHhw/easybuild-asf_l0.log
+    == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
+    == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
+    Dry run: printing build status of easyconfigs and dependencies
+    CFGS=/apps/easybuild
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/M4/M4-1.4.18.eb (module: M4/1.4.18)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/Bison/Bison-3.7.1.eb (module: Bison/3.7.1)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/bzip2/bzip2-1.0.8-GCCcore-10.2.0.eb (module: bzip2/1.0.8-GCCcore-10.2.0)
+     * [ ] $CFGS/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/l/libiconv/libiconv-1.16-GCCcore-10.2.0.eb (module: libiconv/1.16-GCCcore-10.2.0)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/expat/expat-2.2.9-GCCcore-10.2.0.eb (module: expat/2.2.9-GCCcore-10.2.0)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/CMake/CMake-3.18.4-GCCcore-10.2.0.eb (module: CMake/3.18.4-GCCcore-10.2.0)
+     * [ ] $CFGS/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/d/Doxygen/Doxygen-1.8.20-GCCcore-10.2.0.eb (module: Doxygen/1.8.20-GCCcore-10.2.0)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/libevent/libevent-2.1.12-GCCcore-10.2.0.eb (module: libevent/2.1.12-GCCcore-10.2.0)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/numactl/numactl-2.0.13-GCCcore-10.2.0.eb (module: numactl/2.0.13-GCCcore-10.2.0)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/OpenMPI/OpenMPI-4.0.5-GCC-10.2.0.eb (module: OpenMPI/4.0.5-GCC-10.2.0)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/gompi/gompi-2020b.eb (module: gompi/2020b)
+     * [x] $CFGS/ebfiles_repo/tinkercliffs-rome/HDF5/HDF5-1.10.7-gompi-2020b.eb (module: HDF5/1.10.7-gompi-2020b)
+     * [ ] $CFGS/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/n/netCDF/netCDF-4.7.4-gompi-2020b.eb (module: netCDF/4.7.4-gompi-2020b)
+    == Temporary log file(s) /localscratch/eb-ceKHhw/easybuild-asf_l0.log* have been removed.
+    == Temporary directory /localscratch/eb-ceKHhw has been removed.
+    ```
 4. If you are okay with installing the packages marked with `[ ]`, you can install them with `eb -r filename.eb` (i.e., remove the `D` for "dry run" from the previous command):
-```
-[arcuser@tinkercliffs2 ~]$ eb -r netCDF-4.7.4-gompi-2020b.eb
-== Temporary log file in case of crash /localscratch/eb-lsT7pO/easybuild-zdQblI.log
-== found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
-== found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
-== resolving dependencies ...
-== processing EasyBuild easyconfig /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/l/libiconv/libiconv-1.16-GCCcore-10.2.0.eb
-== building and installing libiconv/1.16-GCCcore-10.2.0...
-== fetching files...
-== creating build dir, resetting environment...
-== unpacking...
-== patching...
-== preparing...
-== configuring...
-== building...
-== testing...
-== installing...
-```
+    ```
+    [arcuser@tinkercliffs2 ~]$ eb -r netCDF-4.7.4-gompi-2020b.eb
+    == Temporary log file in case of crash /localscratch/eb-lsT7pO/easybuild-zdQblI.log
+    == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
+    == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
+    == resolving dependencies ...
+    == processing EasyBuild easyconfig /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs/l/libiconv/libiconv-1.16-GCCcore-10.2.0.eb
+    == building and installing libiconv/1.16-GCCcore-10.2.0...
+    == fetching files...
+    == creating build dir, resetting environment...
+    == unpacking...
+    == patching...
+    == preparing...
+    == configuring...
+    == building...
+    == testing...
+    == installing...
+    ```
 This process can be time-consuming depending on the package, so it may be worth starting it in, e.g., a `screen` session. If the process ultimately completes with a line that looks like
 ```
 == COMPLETED: Installation ended successfully
