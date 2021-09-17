@@ -2,7 +2,7 @@
 
 # Huckleberry
 
-```{admonition} Warning
+```{warning}
 Huckleberry is scheduled to be retired in Spring 2022. Please consider one of our other [GPU resources](gpu) for deep learning applications.
 ```
 
