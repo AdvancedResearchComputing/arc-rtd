@@ -2,6 +2,10 @@
 
 # Huckleberry
 
+!!! warning
+    Huckleberry is scheduled to be retired in Spring 2022. Please consider one of our other [GPU resources](gpu) for deep learning applications.
+
+
 ## Overview
 Huckleberry is a high performance computing system targeted at deep learning applications. Huckleberry consists of two login nodes and Fourteen IBM Minksy S822LC compute nodes. Each of the compute nodes is equipped with:
 
@@ -13,17 +17,15 @@ Huckleberry is a high performance computing system targeted at deep learning app
 
 Understanding non-uniform memory access (NUMA) patterns important to get the full benefit of the S822LC compute nodes on huckleberry. The memory bandwidth associated with data movement within each compute node is summarized in the diagram below. Note that each Power8 CPU is coupled to two P100 GPU through NVLink, which supports bi-directional data transfer rates of 80 GB/s. The theoretical maximum memory bandwidth for each Power8 CPU is 115 GB/s. The theoretical maximum memory bandwidth for each NVIDIA P100 GPU is 720 GB/s.
 
-[![S822LCforHPCDiagram](S822LCforHPCDiagram-300x245.jpg)](S822LCforHPCDiagram.jpg) 
+![](S822LCforHPCDiagram.jpg) 
+
 
 ## Login
 
 To access Huckleberry, users should login to: `ssh huckleberry1.arc.vt.edu`
 
 
-Slurm has been installed on Huckleberry and supports the scheduling of both batch job and interactive jobs. 
-
 ## Basic Job Submission and Monitoring
-
 
 The huckleberry `normal_q` imposes the following limits 
 - maximum walltime of 3 days 
@@ -31,7 +33,7 @@ The huckleberry `normal_q` imposes the following limits
 The huckleberry `large_q` imposes the following limits 
 - maximum walltime of 1 day 
 - maximum of four nodes per user 
-The current configuration allows users to run jobs either through the batch scheduler or interactively. The following is a basic hello world job submission script requesting 500 GB memory and all four Pascal P100 GPU on a compute node. **NOTE**: asking for `-N 1` without specifying how many cores per node will default to only 1 core (equivalent to `-n 1`). If you would like to get the full node exclusively, you should ask for all the cores on the node using the flag -n, or, you could use the `--exclusive` flag 
+The current configuration allows users to run jobs either through the batch scheduler or interactively. The following is a basic hello world job submission script requesting 500 GB memory and all four Pascal P100 GPU on a compute node: 
 ```
 #!/bin/bash
 
@@ -45,11 +47,9 @@ The current configuration allows users to run jobs either through the batch sche
 #SBATCH --account=(YOUR ALLOCATION ID)
 echo hello world
 ```
-To submit a job to the batch queue, slurm provides the `sbatch` command. Assuming that the above is copied into a file `hello.sh`, a job can be submitted to the scheduler using 
-```
-mcclurej@hulogin1:~/Slurm$ sbatch hello.sh
-Submitted batch job 5
-```
+**NOTE**: asking for `-N 1` without specifying how many cores per node will default to only 1 core (equivalent to `-n 1`). If you would like to get the full node exclusively, you should ask for all the cores on the node using the flag -n, or, you could use the `--exclusive` flag.
+
+To learn how to submit or monitor your jobs, please see the [Slurm documentation](slurm).
 
 In many cases jobs will require fewer than the four GPU available on each huckleberry compute node. GPU can be requested as a generic resource (GRES) through Slurm by requesting a specific number of processor cores and GPU. To request one processor core and one GPU in an [interactive session](interact) with 8 GB of memory per processor core, 
 ```
