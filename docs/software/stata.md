@@ -95,7 +95,7 @@ exit;
 Finally, to run both the batch script and stata, we type:
 
 ```
-sbatch STATA.do
+sbatch STATA.sh
 ```
 
 This will output a job number.  You will have two output files:  
