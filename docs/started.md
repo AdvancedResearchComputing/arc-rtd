@@ -21,7 +21,7 @@ In addition to the text documentation linked above, we offer [video tutorials](v
 (learning)=
 ## Learning Curve
 There can be a learning curve in using high-performance computing (HPC) resources. In particular:
-- ARC systems run Linux, and traditional use is via the command line. _However_, the latter has become less true in recent years. In particular, via [Open OnDemand](ood) ARC users can now access our systems from their browser and start many popular applications such as Jupyter notebooks via the click of a button.
+- ARC systems run Linux, and traditional use is via the command line. _However_, the latter has become less true in recent years. For example, via [Open OnDemand](ood) ARC users can now access our systems from their browser and start many popular applications such as Jupyter notebooks via the click of a button.
 - To run on ARC systems, you must submit your work through the [scheduler](slurm). This is different from running on, e.g., a lab workstation. _However_, this mostly just involves writing down a list of commands you want the system to run and how many resources you want it to use -- it is not difficult once you get used to it.
 - To leverage HPC resources, your program needs to be able to leverage parallel computing in some way. _However_, may third party programs or libraries exist to make this easier and ARC computational scientists are available if you need assistance.
 
