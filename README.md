@@ -11,7 +11,7 @@ To see the docs, go to [ARC User Documentation](https://arc-rtd.readthedocs.io/e
 * PyTorch (Bob?)
 * Python (Matt?)
 * GPUs by System (Justin)
-* Getting Started Guide (Justin)
+* ~~Getting Started Guide (Justin)~~
 * Can we reorganize the website to hide everything we've replaced?
 
 ## For our GRAs:
