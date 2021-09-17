@@ -40,7 +40,9 @@ singularity exec -bind=/work,/projects \
     /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif R
 ```
 
+```{note}
 Note, we have bind mounted `/work` and `/projects` into the container so that we can access files outside the container from those storage containers.
+```
 
 ## R startup, .Renviron and adding packages
 
