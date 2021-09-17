@@ -20,16 +20,18 @@ Newer (2020 and later) ARC clusters use a module system mostly built around [Eas
 EasyBuild is built around [toolchains](https://docs.easybuild.io/en/latest/Common-toolchains.html), which describe the sequence of dependencies, such as compiler, linear algebra library, and MPI implementation, used to build packages. There are two main ones:
 * `foss` ("Free Open Source Software"): GCC compilers, OpenBLAS for linear algebra, OpenMPI for MPI, etc
 * `intel`: Intel compilers, Intel MKL for linear algebra, Intel MPI
+
 However, we have upon request supported others, such as:
 * `iomkl`: Intel compilers, Intel MKL for linear algebra, and OpenMPI for MPI
 * `gomkl`: GCC compilers, Intel MKL for linear algebra, and OpenMPI for MPI
+
 So please reach out if the toolchains that we provide are not what you need.
 
 Toolchains are typically updated twice per year (`a` and `b` versions) and we try to stay up-to-date with those updates.
 
 As an example, the modules active after loading the `foss/2020b` toolchain are (note that the first few modules in the list are defaults provided by ARC):
 ```
-[jkrometi@tinkercliffs2 ~]$ module reset; module load foss/2020b; module list
+[arcuser@tinkercliffs2 ~]$ module reset; module load foss/2020b; module list
 Resetting modules to system default
 
 Currently Loaded Modules:
@@ -47,12 +49,12 @@ We see here that lower-level software (e.g., `binutils`) is also included in the
 ### Usage
 In this section we will describe how to use EasyBuild\'s module system. We will use [Gromacs](http://www.gromacs.org/) as our example software. We begin by noting that, even though Gromacs is a popular software package on HPC systems, upon login its executable `gmx` is nowhere to be found:
 ```
-[jkrometi@tinkercliffs2 ~]$ which gmx
-/usr/bin/which: no gmx in (/apps/useful_scripts/bin:/cm/shared/apps/slurm/20.02.3/sbin:/cm/shared/apps/slurm/20.02.3/bin:/home/jkrometi/util:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/usr/share/lmod/lmod/libexec)
+[arcuser@tinkercliffs2 ~]$ which gmx
+/usr/bin/which: no gmx in (/apps/useful_scripts/bin:/cm/shared/apps/slurm/20.02.3/sbin:/cm/shared/apps/slurm/20.02.3/bin:/home/arcuser/util:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/usr/share/lmod/lmod/libexec)
 ```
 To find it, we need to load the Gromacs module. To find a software package, you can use `module spider`. For example:
 ```
-[jkrometi@tinkercliffs2 ~]$ module spider gromacs
+[arcuser@tinkercliffs2 ~]$ module spider gromacs
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
   GROMACS:
@@ -73,16 +75,19 @@ To find it, we need to load the Gromacs module. To find a software package, you 
      $ module spider GROMACS/2020.3-foss-2020a-Python-3.8.2
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
-```{note} You can also use `module avail` to list all modules, although the output is quite long. We provide it [here](installed), in case it helps you find what you need.
+
+```{note} 
+You can also use `module avail` to list all modules, although the output is quite long. We provide it [here](installed), in case it helps you find what you need.
 ```
+
 To then load the module, you can use `module load`:
 ```
-[jkrometi@tinkercliffs2 ~]$ module reset; module load GROMACS/2020.3-foss-2020a-Python-3.8.2
+[arcuser@tinkercliffs2 ~]$ module reset; module load GROMACS/2020.3-foss-2020a-Python-3.8.2
 Resetting modules to system default
 ```
 We can use `module list` to list the modules we have loaded now:
 ```
-[jkrometi@tinkercliffs2 ~]$ module list
+[arcuser@tinkercliffs2 ~]$ module list
 
 Currently Loaded Modules:
   1) shared                             14) numactl/2.0.13-GCCcore-9.3.0     27) ncurses/6.2-GCCcore-9.3.0
@@ -101,19 +106,21 @@ Currently Loaded Modules:
 ```
 We can see that the system now can find the Gromacs `gmx` executable:
 ```
-[jkrometi@tinkercliffs2 ~]$ which gmx
+[arcuser@tinkercliffs2 ~]$ which gmx
 /apps/easybuild/software/tinkercliffs-rome/GROMACS/2020.3-foss-2020a-Python-3.8.2/bin/gmx
 ```
 Finally, to clear out modules, we recommend using `module reset`, which will return the modules to their default state:
 ```
-[jkrometi@tinkercliffs2 ~]$ module reset; module list
+[arcuser@tinkercliffs2 ~]$ module reset; module list
 Resetting modules to system default
 
 Currently Loaded Modules:
   1) shared          3) apps                                5) cray              7) craype-network-infiniband   9) DefaultModules
   2) slurm/20.02.3   4) site/tinkercliffs/easybuild/setup   6) craype-x86-rome   8) useful_scripts
 ```
-```{warning} Do not use `module purge`. As you see above, ARC includes a number of important packages, such as the [Slurm scheduler](slurm) in the default modules. `module purge` will remove those, too, [breaking key functionality](faq_purge). If you accidentally use `module purge`, simply use `module reset` to reset to the default.
+
+```{warning} 
+Do not use `module purge`. As you see above, ARC includes a number of important packages, such as the [Slurm scheduler](slurm) in the default modules. `module purge` will remove those, too, [breaking key functionality](faq_purge). If you accidentally use `module purge`, simply use `module reset` to reset to the default.
 ```
 
 ### Using EasyBuild to Build Your Own Software
@@ -127,7 +134,7 @@ module reset; module load EasyBuild
 ```
 2. Use `eb -S` to search for the software package that you need (the output is quite long in this case so we only show a snippet):
 ```
-[jkrometi@tinkercliffs2 ~]$ eb -S ^netCDF
+[arcuser@tinkercliffs2 ~]$ eb -S ^netCDF
  * $CFGS3/n/netCDF/netCDF-4.7.1-iimpi-2019b.eb
  * $CFGS3/n/netCDF/netCDF-4.7.1-iimpic-2019b.eb
  * $CFGS3/n/netCDF/netCDF-4.7.4-fix-mpi-info-f2c.patch
@@ -135,9 +142,9 @@ module reset; module load EasyBuild
  * $CFGS3/n/netCDF/netCDF-4.7.4-gompi-2020b.eb
  * $CFGS3/n/netCDF/netCDF-4.7.4-gompic-2020a.eb
 ```
-3. Pick one of the versions and use `eb -Dr filename.eb` to see what it is going to do (the `D` in this case is for "dry run"):
+3. Pick one of the versions and use `eb -Dr filename.eb` to see what it is going to do (the `D` in this case is for "dry run"). The `[x]` lines indicate packages that are already installed. The `[ ]` lines are packages that will need to be installed.
 ```
-[jkrometi@tinkercliffs2 ~]$ eb -Dr netCDF-4.7.4-gompi-2020b.eb
+[arcuser@tinkercliffs2 ~]$ eb -Dr netCDF-4.7.4-gompi-2020b.eb
 == Temporary log file in case of crash /localscratch/eb-ceKHhw/easybuild-asf_l0.log
 == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
 == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
@@ -159,10 +166,9 @@ CFGS=/apps/easybuild
 == Temporary log file(s) /localscratch/eb-ceKHhw/easybuild-asf_l0.log* have been removed.
 == Temporary directory /localscratch/eb-ceKHhw has been removed.
 ```
-  The `[x]` lines indicate packages that are already installed. The `[ ]` lines are packages that will need to be installed.
 4. If you are okay with installing the packages marked with `[ ]`, you can install them with `eb -r filename.eb` (i.e., remove the `D` for "dry run" from the previous command):
 ```
-[jkrometi@tinkercliffs2 ~]$ eb -r netCDF-4.7.4-gompi-2020b.eb
+[arcuser@tinkercliffs2 ~]$ eb -r netCDF-4.7.4-gompi-2020b.eb
 == Temporary log file in case of crash /localscratch/eb-lsT7pO/easybuild-zdQblI.log
 == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
 == found valid index for /apps/easybuild/software/tinkercliffs-rome/EasyBuild/4.4.0/easybuild/easyconfigs, so using it...
@@ -196,9 +202,9 @@ where we get the module name by converting the first `-` in the `.eb` file name 
 ### Environment variables 
 Sometimes it is important to know where a software package is installed so that you can point to it when installing other software. For this purpose, EasyBuild provides `$EBROOTSOFTWARE` to point to the software installation location. For example:
 ```
-[jkrometi@tinkercliffs2 ~]$ module reset; module load netCDF/4.7.4-gompi-2020a
+[arcuser@tinkercliffs2 ~]$ module reset; module load netCDF/4.7.4-gompi-2020a
 Resetting modules to system default
-[jkrometi@tinkercliffs2 ~]$ ls $EBROOTNETCDF
+[arcuser@tinkercliffs2 ~]$ ls $EBROOTNETCDF
 bin  easybuild  include  lib64  share
 ```
 So to link to NetCDF libraries, one might use `-L$EBROOTNETCDF/lib64`.
