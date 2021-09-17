@@ -8,7 +8,7 @@
 
 ## Availability
 
-Python is available on all clusters in all queues (partitions).  In older installations, python may be available via a python module.  Newer installations are through Anaconda or Singularity containers.
+Python is available on all clusters in all queues (partitions) through Python modules, Anaconda modules or Singularity containers.
 
 ## Interface
 
@@ -22,7 +22,7 @@ larger computations should be submitted as jobs, via a [traditional job submissi
 
 ## Managing environments
 
-The power of python is through extension of the base functionality via python packages.  Mangaing and configuring your local python environment is best accomplished through a combination of a package manager (pip or conda) and an evironment manager Anaconda (or miniconda or micoromamba).  Creation and use of conda environments allows one to activate the environment for later use.  You can have several environments, each with different software dependencies, where you activate the one of interest at run time.  Commonly, you will create a conda env, install software into it via conda/pip and then activate it for use.  For example:
+The power of python is through extension of the base functionality via python packages.  Managing and configuring your local python environment is best accomplished through a combination of a package manager (pip or conda) and an evironment manager Anaconda (or miniconda or micoromamba).  Creation and use of conda environments allows one to activate the environment for later use.  You can have several environments, each with different software dependencies, where you activate the one of interest at run time.  Commonly, you will create a conda env, install software into it via conda/pip and then activate it for use.  For example:
 
 ```
 module load Anaconda3/2020.11
@@ -38,12 +38,7 @@ Source activating the environment ensures later conda or pip installs will insta
 ```{note}
 If you prefer to use python without an environment, you will need to set `PYTHONUSERBASE` env variable to a location you can write to.
 ```
-> export PYTHONUSERBASE=/home/\<pid\>/python3
-
-
-## Parallel Computing in Python
-
-Coming soon-ish
+> export PYTHONUSERBASE=$HOME/python3
 
 ## Command line running of Python scripts
 
@@ -108,5 +103,8 @@ This will output a job number.  You will have two output files:
 The slurm log contains any output you would have seen had you typed `python violins.py` at the command line.
 
 
+## Parallel Computing in Python
+
+Coming soon-ish
 
 
