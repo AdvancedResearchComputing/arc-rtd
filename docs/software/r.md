@@ -24,7 +24,11 @@ If you need additional packages or R versions, please open an issue on GitHub.
 
 There are two types of environments in which the R application can be used on ARC resources:
 - Graphical interface via Rstudio [OnDemand](ood)
-- Command-line interface. You can also start R from the command line through the Singularity container. Note that larger command line computations should be submitted as jobs, via a [traditional job submission](slurm).
+- Command-line interface. You can also start R from the command line through the Singularity container.
+
+```{note}
+larger command line computations should be submitted as jobs, via a [traditional job submission](slurm).
+```
 
 ## R from the command line
 
