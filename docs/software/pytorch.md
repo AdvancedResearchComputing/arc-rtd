@@ -18,8 +18,16 @@ module list ## make sure cuda is loaded if you are using the GPU
 nvidia-smi  ## make sure you see GPUs
 conda create -n pytorch
 source activate pytorch
-conda install pytorch torchvision torchaudio -c pytorch
+conda install pytorch torchvision torchaudio matplotlib numpy -c pytorch
 ```
+
+```{warning}
+NOTE: GPU support for AI/ML codes can offer SIGNIFFICANT computational speed improvments.  Simply installing the defaults as per the docs may or may not result in code utilizing the GPUs.  Test your code with a small example prior to running your full dataset.  You can ssh to the node your job is running on and use nvidia-smi to see that your code is running on the GPU.
+```
+
+## Interaction
+
+OOD vs command line
 
 ## quick example from the pytorch.org site
 
@@ -29,6 +37,7 @@ The PyTorch tutorials are excellant.  For brevity, we can run through the CIFAR1
 Here is the example python script, you can run it manually or via `python cifar10.py`  
 
 ```
+## cifar10.py
 ## import libraries
 import torch
 import torchvision
@@ -172,6 +181,7 @@ source activate mypython3
 <https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>
 
 ### Full Example
+
 
 
 
