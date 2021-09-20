@@ -27,7 +27,7 @@ There are two types of environments in which the R application can be used on AR
 - Command-line interface. You can also start R from the command line through the Singularity container.
 
 ```{note}
-larger command line computations should be submitted as jobs, via a [traditional job submission](slurm).
+larger computations should be submitted as jobs, via a [traditional job submission](slurm) script.
 ```
 
 ## R from the command line
@@ -41,7 +41,7 @@ singularity exec -bind=/work,/projects \
 ```
 
 ```{note}
-Note, we have bind mounted `/work` and `/projects` into the container so that we can access files outside the container from those storage locations.
+both `/work` and `/projects` are mounted into the container (via bind) so that we can access files outside the container from those storage locations.
 ```
 
 ## R startup, .Renviron and adding packages
@@ -51,7 +51,7 @@ R startup is a bit complicated.  There is a really nice writeup here:
 
 The R in the container is expecting a startup file at `~/.Renvron.OOD`.  This file needs to have the location of the user packages, for example:
 
->R_LIBS_USER=/home/\<pid\>/R/OOD/Ubuntu-20.04-4.1.1
+>R_LIBS_USER=~/R/OOD/Ubuntu-20.04-4.1.1
 
 This directory must exist prior to starting R.  If you use the OnDemand Rstudio, it will be automatically created on your first start of Rstudio.
 
@@ -59,7 +59,9 @@ To install packages from Rstudio, simply do:
 
 >install.packages("package of interest")
 
+```{warning}
 From the command line, you need to reverse the search path of the installed packages prior to installing packages:
+```
 
 ```
 > .libPaths()
