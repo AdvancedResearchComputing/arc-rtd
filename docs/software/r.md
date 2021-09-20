@@ -76,7 +76,14 @@ As we scale up our computing, we will often find the compute takes too long or w
 1. an R script with the actual R code we are needing to run  
 2. a shell script for submission to the cluster batch schedulers  
 
-The R script should load/generate the data, do the compute, and save the results.  As an example:
+The R script should load/generate the data, do the compute, and save the results.  As an example, from a login node, you can type:
+
+```
+sbatch run_R.sh
+```
+
+This will submit the script `run_R.sh` to the (slurm) scheduler.  This script in turn, loads the singularity software for running R and runs the R script, `hp_mpg.R`, via Rscript.  Both scripts are shown below.
+
 
 ```
 ## hp_mpg.R
