@@ -60,7 +60,7 @@ To install packages from Rstudio, simply do:
 >install.packages("package of interest")
 
 ```{warning}
-From the command line, you need to reverse the search path of the installed packages prior to installing packages:
+When using R rom the command line, you need to reverse the search path of the installed packages prior to installing packages. Make sure the first path in `.libPaths()` is one you can write to:
 ```
 
 ```
@@ -105,8 +105,9 @@ Given the R script, we still need a seperate script as the job submission script
 ####### end of job customization
 # end of environment & variable setup
 ###########################################################################
-#### add modules:
+#### add modules on TC/Infer
 module load module load containers/singularity/3.7.1
+### from DT/CA, use module load singularity
 module list
 #end of add modules
 ###########################################################################
@@ -115,6 +116,7 @@ cat hp_mpg.R
 cat run_R.sh
 ###########################################################################
 echo start running R
+## note, on DT/CA, you should replace projects with groups
 
 singularity exec -bind=/work,/projects \
     /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript hp_mpg.R
@@ -122,8 +124,7 @@ singularity exec -bind=/work,/projects \
 exit;
 ```
 
-## Parallel Computing in R
-
+### Parallel Computing in R
 ### parallel package
 ### MPI
 
