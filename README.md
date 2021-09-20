@@ -9,11 +9,12 @@ To see the docs, go to [ARC User Documentation](https://arc-rtd.readthedocs.io/e
 * R (Bob)
 * TensorFlow (Bob?)
 * PyTorch (Bob?)
-* Python (Matt?)
+* Python (Bob?)
 * ~~GPUs by System (Justin)~~
 * ~~Getting Started Guide (Justin)~~
 * ~~Huckleberry (Justin)~~
 * Can we reorganize the website to hide everything we've replaced?
+* Should we have a separate PI heading with information about allocations, cost center/investment, proposal statement, etc?
 
 ## For our GRAs:
 
