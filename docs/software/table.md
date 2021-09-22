@@ -1,3 +1,18 @@
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 50%;
+}
+table th:nth-of-type(4) {
+    width: 30%;
+}
+</style>
+
 | SOFTWARE | DESCRIPTION | INFER | TINKERCLIFFS | CASCADES | DRAGONSTOOTH | HUCKLEBERRY |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- 
 | guppyGPU | SOFTWAREDESCRIPTION | 4.5.2 |  |  |  |  
