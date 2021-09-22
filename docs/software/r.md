@@ -90,7 +90,7 @@ This will submit the script `run_R.sh` to the (slurm) scheduler.  This script in
 ## R script for generating a plot of mpg vs hp
 library(ggplot2)
 attach(mtcars) 
-p <- gglot(data=mtcars, aes(x=hp, y=mpg)) + geom_line()
+p <- ggplot(data=mtcars, aes(x=hp, y=mpg)) + geom_line()
 ggsave(file="hp_mpg.pdf",p)
 ```
 
@@ -108,12 +108,12 @@ Given the R script, we still need a seperate script as the job submission script
 #SBATCH -n 16
 #SBATCH -t 1:00:00
 #SBATCH -p normal_q
-#SBATCH -A <your account>
+#SBATCH -A <your account>    #### <------- change me
 ####### end of job customization
 # end of environment & variable setup
 ###########################################################################
 #### add modules on TC/Infer
-module load module load containers/singularity/3.7.1
+module load containers/singularity/3.7.1
 ### from DT/CA, use module load singularity
 module list
 #end of add modules
@@ -125,7 +125,7 @@ cat run_R.sh
 echo start running R
 ## note, on DT/CA, you should replace projects with groups
 
-singularity exec -bind=/work,/projects \
+singularity exec --bind=/work,/projects \
     /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript hp_mpg.R
 
 exit;
