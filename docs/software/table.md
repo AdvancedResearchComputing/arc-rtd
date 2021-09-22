@@ -5,25 +5,25 @@
 
 <style>
 #DataTables_Table_0 {
-	table-layout: fixed;
+  table-layout: fixed;
 }
 #DataTables_Table_0 p {
-	word-break: break-all;
-	white-space: normal;
+  word-break: break-word;
+  white-space: normal;
 }
-
 </style>
 <script>
-	$(document).ready( function () {
+  $(document).ready( function () {
     $('table').DataTable( {
-			"dom": '<"top">rt<"bottom"flip><"clear">',
-			 "columnDefs": [
-			     { "width": "10%", "targets": 0 },
-			     { "width": "10%", "targets": 1 }
-			 ]
-		} );
-	} );
+      "dom": '<"top">rt<"bottom"flip><"clear">',
+       "columnDefs": [
+           { "width": "10%", "targets": 0 },
+           { "width": "10%", "targets": 1 }
+       ]
+    } );
+  } );
 </script>
+
 
 | SOFTWARE | DESCRIPTION | INFER | TINKERCLIFFS | CASCADES | DRAGONSTOOTH | HUCKLEBERRY |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- 
