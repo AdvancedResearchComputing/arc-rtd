@@ -9,13 +9,19 @@ This site provides in depth documentation of how to use our resources.
 For more general information about ARC, see `our main site <https://arc.vt.edu>`_.
 
 
-Contents:
-
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :glob:
-
+   
    *
+
+Contents:
+
+* :ref:`Getting Started <started>`: Basic information for people new to HPC or just new to ARC
+* :ref:`Resources <resources>`: Descriptions of the hardware and services that we offer
+* :ref:`Software <software>`: Lists of and user guides for software installed on ARC systems
+* :ref:`Usage <usage>`: Tutorials for how to use ARC systems
 
 To request help:
 
