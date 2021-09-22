@@ -1,3 +1,11 @@
+<style>
+td {
+ max-width: 100px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+</style>
 | SOFTWARE | DESCRIPTION | INFER | TINKERCLIFFS | CASCADES | DRAGONSTOOTH | HUCKLEBERRY |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- 
 | guppyGPU | SOFTWAREDESCRIPTION | 4.5.2 |  |  |  |  
