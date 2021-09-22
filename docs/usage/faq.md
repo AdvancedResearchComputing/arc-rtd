@@ -160,7 +160,7 @@ setup_app --base=/projects/myproject julia 1.6.1-foss-2020b
 
 
 (faq_diskquota)=
-What does a Disk quota exceeded error mean?
+## What does a Disk quota exceeded error mean?
 
 This typically means that one of your [storage locations](storage) has exceeded the maximum allowable size. You will need to reduce the space consumed in order to run jobs successfully again.
 
