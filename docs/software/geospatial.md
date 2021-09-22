@@ -1,6 +1,6 @@
 (geospatial)=
 
-# Use of ARC for geospatial analysis
+# Use of ARC for geospatial analysis -- WIP, working with Forestry and iGEP to flesh out relevant examples ...
 
 ## Introduction
 
