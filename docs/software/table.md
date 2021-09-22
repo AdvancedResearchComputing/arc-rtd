@@ -8,7 +8,7 @@
     $('table').DataTable( {
 			"dom": '<"top">rt<"bottom"filp><"clear">',
 			 "columnDefs": [
-			     { "width": "10%", "targets": 0 }
+			     { "width": "10%", "targets": 0 },
 			     { "width": "10%", "targets": 1 }
 			 ]
 		} );
