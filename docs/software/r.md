@@ -103,7 +103,7 @@ Given the R script, we still need a seperate script as the job submission script
 ###########################################################################
 ## environment & variable setup
 ####### job customization
-#SBATCH --name="mpg plot"
+#SBATCH --job-name="mpg plot"
 #SBATCH -N 1
 #SBATCH -n 16
 #SBATCH -t 1:00:00
