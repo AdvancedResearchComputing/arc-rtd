@@ -10,6 +10,8 @@ To see the docs, go to [ARC User Documentation](https://arc-rtd.readthedocs.io/e
 * TensorFlow (Bob?)
 * PyTorch (Bob?)
 * Python (Bob?)
+* ARC for Geospatial -- will be a WIP 
+* ~~Singularity (Bob)~~
 * ~~GPUs by System (Justin)~~
 * ~~Getting Started Guide (Justin)~~
 * ~~Huckleberry (Justin)~~
