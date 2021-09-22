@@ -27,9 +27,9 @@ NOTE: GPU support for AI/ML codes can offer SIGNIFFICANT computational speed imp
 
 ## Interaction
 
-OOD vs command line
+You can run PyTorch code from Jupyter Notebooks or via the command line (interactive or scripts).  Ideally, you will prototype your code via Jupyter which is easily accessible from Open OnDemand (ood).  If instead, you would prefer to prototype your code via the command line, first get an interactive job as above in the install notes, then load the required software, eg Anaconda.
 
-## quick example from the pytorch.org site
+## Quick example from the pytorch.org site
 
 The PyTorch tutorials are excellant.  For brevity, we can run through the CIFAR10 example from the PyTorch docs:  
 <https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py>  

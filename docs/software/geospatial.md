@@ -24,6 +24,9 @@ Generally, data should be moved to the local node for the compute nodes during t
 + R  
 + qGIS  
 
+
+pdal
+
 ## Interface
 
 There are two types of environments in which the R application can be used on ARC resources:
