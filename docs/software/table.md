@@ -6,7 +6,7 @@
 <script>
 	$(document).ready( function () {
     $('table').DataTable( {
-			"dom": '<"top">rt<"bottom"iflp><"clear">'
+			"dom": '<"top">rt<"bottom"iflp><"clear">',
 			"columns": [
 				{ "width": "10%" },
 				{ "width": "10%" },
