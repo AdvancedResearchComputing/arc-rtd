@@ -7,6 +7,11 @@
 #DataTables_Table_0 {
 	table-layout: fixed;
 }
+#DataTables_Table_0 p {
+	word-break: break-all;
+	whitespace: normal;
+}
+
 </style>
 <script>
 	$(document).ready( function () {
