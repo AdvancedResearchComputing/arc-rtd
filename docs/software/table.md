@@ -6,7 +6,11 @@
 <script>
 	$(document).ready( function () {
     $('table').DataTable( {
-			"dom": '<"top">rt<"bottom"iflp><"clear">',
+			"dom": '<"top">rt<"bottom"filp><"clear">',
+			 "columnDefs": [
+			     { "width": "10%", "targets": 0 }
+			     { "width": "10%", "targets": 1 }
+			 ]
 		} );
 	} );
 </script>
