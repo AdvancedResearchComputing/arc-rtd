@@ -4,6 +4,9 @@
 # Table of Software on ARC Systems
 
 <style>
+.wy-table-responsive {
+	width: 100%;
+}
 #DataTables_Table_0 {
   table-layout: fixed;
 }
