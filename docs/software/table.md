@@ -3,18 +3,11 @@
  
 # Table of Software on ARC Systems
 
-<style>
-	td p {
-		max-width: 100px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-</style>
-
 <script>
 	$(document).ready( function () {
-    $('table').DataTable();
+    $('table').DataTable( {
+			"dom": '<"top">rt<"bottom"iflp><"clear">'
+		} );
 	} );
 </script>
 
