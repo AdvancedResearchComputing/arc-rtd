@@ -17,19 +17,12 @@ In addition, each compute node has local disk and RAM mounted as a volume.
 
 Generally, data should be moved to the local node for the compute nodes during the computation and results saved, then transfered back to main ARC storage.  To see what local storage is available on each compute node, type `env | grep TMP`.  This will list the environment variables you can use to access the different storage locations.
 
-## Availability
+## Common software and availability
 
-R is available on all our systems.  We are moving towards making R available via containers, specifically [Singularitiy](https://singularity.hpcng.org/).  Our containers are built using [Docker](https://www.docker.com) and converted to Singularity.  Several versions of R are available. Each R version is usually available with different package subsets for specific domain usages:
-
-+ ood-rstudio-basic  
-+ ood-rstudio-bio  
-+ ood-rstudio-geospatial  
-+ ood-rstudio-keras  
-+ ood-rstudio-qiime2
-
-The Dockerfiles are available on [GitHub](https://github.com/rsettlage) searching for "ood-rstudio" and the images available on [DockerHub](https://hub.docker.com) searching for "rsettlag/ood-rstudio".  The easiest way to see what libraries are installed in the container is to simply start the Rstudio app via Open Ondemand.
-
-If you need additional packages or R versions, please open an issue on GitHub.
++ Python  
++ Julia
++ R  
++ qGIS  
 
 ## Interface
 
