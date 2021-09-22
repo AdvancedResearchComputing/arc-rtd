@@ -7,16 +7,6 @@
 	$(document).ready( function () {
     $('table').DataTable( {
 			"dom": '<"top">rt<"bottom"iflp><"clear">',
-			"columns": [
-				{ "width": "10%" },
-				{ "width": "10%" },
-				null,
-				null,
-				null,
-				null,
-				null,
-				null
-			]
 		} );
 	} );
 </script>
