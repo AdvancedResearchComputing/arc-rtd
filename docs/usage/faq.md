@@ -26,7 +26,7 @@ ARC\'s [systems](compute) are free, though privileged access can be purchased th
 (faq_jobstuck)=
 ## Why is my job not starting?
 
-Typically the squeue command will provide the reason a job isn\'t starting. This shows information about all pending or queued jobs, so it may be helpful to query for only your own jobs `squeue -u <your pid>` or only for a particular job `squeue -u <jobid>`. For example:
+Typically the squeue command will provide the reason a job isn\'t starting. This shows information about all pending or queued jobs, so it may be helpful to query for only your own jobs `squeue -u <your pid>` or only for a particular job `squeue -j <jobid>`. For example:
 
 ```
 [brownm12@calogin2 ~]$ squeue -u brownm12
