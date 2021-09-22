@@ -3,10 +3,15 @@
  
 # Table of Software on ARC Systems
 
+<style>
+#DataTables_Table_0 {
+	table-layout: fixed;
+}
+</style>
 <script>
 	$(document).ready( function () {
     $('table').DataTable( {
-			"dom": '<"top">rt<"bottom"filp><"clear">',
+			"dom": '<"top">rt<"bottom"flip><"clear">',
 			 "columnDefs": [
 			     { "width": "10%", "targets": 0 },
 			     { "width": "10%", "targets": 1 }
