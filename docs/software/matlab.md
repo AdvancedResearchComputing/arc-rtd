@@ -23,12 +23,14 @@ There are two primary means of obtaining parallelism in MATLAB:
 - **parfor**: Replacing a for loop with a parfor loop splits the loop iterations among a group of processors. This requires that the loop iterations be independent of each other.
 - **spmd**: Single program multiple data (spmd) allows multiple processors to execute a single program (similar to MPI).
 
-[]: # Slides and example programs for both parfor and spmd are available in the [Resources section](#resources). 
-
 
 ##  Job Submission
 
-This page contains instructions for submitting jobs from MATLAB to ARC clusters. Right now this documentation applies to TinkerCliffs and Infer only, and only allows intracluster job submission (from cluster login nodes). More general information on jobs on ARC machines is available [here](slurm) and in the [video tutorials](video).
+This page contains instructions for submitting jobs from MATLAB to ARC clusters. 
+
+```{note}
+Right now this documentation applies to TinkerCliffs and Infer only, and only allows intracluster job submission (from cluster login nodes). More general information on jobs on ARC machines is available [here](slurm) and in the [video tutorials](video).
+```
 
 ### Setup
 Setup is as simple as starting Matlab on a login node and then running
@@ -49,11 +51,11 @@ After that, the key commands are:
     - `AdditionalSubmitArgs`: Any other standard flags that you want to submit directly to the scheduler
 - `batch(c,...)` to submit the job
 
-An example is below.
+An example is [below](matlab_job_example).
 
 ### Checking Jobs
 
-The job structure returned by `batch()` can be queried to get the job state, outputs, diary (command line output), etc. See the example below.
+The job structure returned by `batch()` can be queried to get the job state, outputs, diary (command line output), etc. See the [example](matlab_job_example) below.
 
 MATLAB also comes with a [Job Monitor](https://www.mathworks.com/help/parallel-computing/job-monitor.html) to allow tracking of remote jobs via a graphical interface. Right-clicking on jobs will allow you to show its output, load its variables, delete it, etc.
 
@@ -70,6 +72,7 @@ cd(sprintf('%s/%s',getenv('MDCE_STORAGE_LOCATION'),getenv('MDCE_JOB_LOCATION')))
 
 Note that once the job completes, you will need to look in its local job directory to get the output files; this location can be configured in your local cluster profile. Be sure to remove any output files you need before deleting your job (e.g. with the `delete` command).
 
+(matlab_job_example)=
 ### Full Example
 Here we set up a cluster profile and then submit a job to compute the number of primes between 1 and 10 million using the [prime_fun](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m "`prime_fun`") parallel MATLAB example. MATLAB runs the job and returns the correct answer: 664,579.
 
@@ -118,8 +121,13 @@ ans =
 
 ## Submitting Jobs from the Linux Command Line
 
-Matlab jobs can also be submitted from the Linux command line like any other jobs; however, the parallelism is currently limited to the cores on a single node. This [example](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m) uses `parfor` to count in parallel the prime numbers between 1 and 10,000,000. (The correct answer is 664,579.) There are a few ways it can be run on ARC resources:
-- A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). More general information on jobs on ARC machines is available [here](slurm) and in the [video tutorials](video).
+Matlab jobs can also be submitted from the Linux command line like any other jobs; however, the parallelism is currently limited to the cores on a single node. This [example](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m) uses `parfor` to count in parallel the prime numbers between 1 and 10,000,000. (The correct answer is 664,579.) A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). To submit it as a job using your `personal` [allocation](allocations) use:
+
+```
+sbatch -Apersonal matlab_tinkercliffs_rome.sh
+```
+
+More general information on jobs on ARC machines is available [here](slurm) and in the [video tutorials](video).
 
 ## Changing MATLAB\'s Path
 
