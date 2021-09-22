@@ -9,7 +9,7 @@
 }
 #DataTables_Table_0 p {
 	word-break: break-all;
-	whitespace: normal;
+	white-space: normal;
 }
 
 </style>
