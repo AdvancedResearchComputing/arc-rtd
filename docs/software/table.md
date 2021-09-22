@@ -1,5 +1,5 @@
 <style>
-td {
+td p {
  max-width: 100px;
  overflow: hidden;
  text-overflow: ellipsis;
