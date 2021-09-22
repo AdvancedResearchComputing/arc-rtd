@@ -136,6 +136,14 @@ html_theme = 'default'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_css_files = [
+	'https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css'
+]
+
+html_js_files = [
+	'https://code.jquery.com/jquery-3.6.0.min.js',
+	'https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js'
+]
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
