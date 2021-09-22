@@ -30,5 +30,5 @@ Our workflow is to:
 
 1. create a docker image
 2. push docker image to dockerhub
-3. singularity build image.sif docker://<docker user>/image:tag
+3. `singularity build image.sif docker://<docker user>/image:tag`
 
