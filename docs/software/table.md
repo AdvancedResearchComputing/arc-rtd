@@ -6,7 +6,7 @@
 <script>
 	$(document).ready( function () {
     $('table').DataTable( {
-			"dom": '<"top"i>rt<"bottom"flp><"clear">'
+			"dom": '<"top">rt<"bottom"iflp><"clear">'
 		} );
 	} );
 </script>
