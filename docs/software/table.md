@@ -15,7 +15,7 @@
 <script>
   $(document).ready( function () {
     $('table').DataTable( {
-      "dom": '<"top">rt<"bottom"flip><"clear">',
+      "dom": '<"top"flip>rt<"bottom"><"clear">',
        "columnDefs": [
            { "width": "10%", "targets": 0 },
            { "width": "10%", "targets": 1 }
