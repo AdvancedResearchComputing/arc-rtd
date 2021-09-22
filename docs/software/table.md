@@ -14,11 +14,10 @@
 
 <script>
 	$(document).ready( function () {
-    $('.datatable > table').DataTable();
+    $('table').DataTable();
 	} );
 </script>
 
-<div class="datatable">
 | SOFTWARE | DESCRIPTION | INFER | TINKERCLIFFS | CASCADES | DRAGONSTOOTH | HUCKLEBERRY |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- 
 | guppyGPU | SOFTWAREDESCRIPTION | 4.5.2 |  |  |  |  
@@ -510,4 +509,3 @@
 | petsc | Portable, Extensible Toolkit for Scientific Computation (PETSc) |  |  |  | 3.5.2 |  
 | singular | Computer algebra system for polynomial computations |  |  |  | 4.0.3 |  
 | nvhpc | NVidia HPC SDK (PGI Compilers, libraries, CUDA, NCCL, NVSHEM, debugger, profiler, HPC container maker, NGC) |  |  |  |  | 20.9 
-</div>
