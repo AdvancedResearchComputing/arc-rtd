@@ -20,7 +20,7 @@ If you have checked all of the above and are still not sure why you cannot log i
 (faq_cost)=
 ## How much does it cost to use ARC\'s systems?
 
-ARC\'s [systems](compute) are free, though privileged access can be purchased through the [Investment Program](https://secure.hosting.vt.edu/www.arc.vt.edu/?page_id=1024). For most systems, this means that Virginia Tech researchers can simply request an account to get access. Use of the clusters (submitting and running jobs) does require an approved [allocation](allocations), which in turn requires some basic information to be provided, but getting an allocation does not require monetary payment of any kind. More information on how to get started with ARC is [here](https://secure.hosting.vt.edu/www.arc.vt.edu/?page_id=136). More information on the Investment Program is [here](https://secure.hosting.vt.edu/www.arc.vt.edu/?page_id=1024).
+ARC\'s [systems](compute) are free, though privileged access can be purchased through the [Investment Program](https://arc.vt.edu/investment/). For most systems, this means that Virginia Tech researchers can simply request an account to get access. Use of the clusters (submitting and running jobs) does require an approved [allocation](allocations), which in turn requires some basic information to be provided, but getting an allocation does not require monetary payment of any kind. More information on how to get started with ARC is [here](started). More information on the Investment Program is [here](https://arc.vt.edu/investment/).
 
 
 (faq_jobstuck)=
@@ -243,7 +243,7 @@ To add a user to [an existing allocation](allocations), follow these steps:
 
 ## How can I submit a job that depends on the completion of another job?
 
-Sometimes it may be useful to split one large computation into multiple jobs (e.g. due to queue limits), but submit those jobs all at once. Jobs can be made dependent on each other using the `--dependency=after:job_id` flag to `sbatch`. Additional dependency options can be found in the [documentation for sbatch](https://slurm.schedmd.com/sbatch.html documentation for sbatch). For example, here we submit three jobs, each of which depends on the preceding one:
+Sometimes it may be useful to split one large computation into multiple jobs (e.g. due to queue limits), but submit those jobs all at once. Jobs can be made dependent on each other using the `--dependency=after:job_id` flag to `sbatch`. Additional dependency options can be found in the [documentation for `sbatch`](https://slurm.schedmd.com/sbatch.html). For example, here we submit three jobs, each of which depends on the preceding one:
 
 ```
 [johndoe@tinkercliffs2 ~]$ sbatch test.sh
