@@ -173,12 +173,13 @@ system.time(
 )
 rowMeans(sapply(results,"["))
 ```
-Can use:  
-`
+To use:  
+````
 interact -N 1 -c 12 --partition=intel_q --time=5:00:00 --account=<your account>
 module load containers/singularity
 singularity exec /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript parallel_mcapply.R
-` 
+````
+ 
 ```{NOTE}
 a)
 specify the number of cores via SLURM `--cores-per-task`, NOT `--ntasks`.
@@ -189,6 +190,7 @@ detectCores() does not work as intended.  detectCores() will query to get the co
 #### doParallel example
 
 ```
+# parallel_doparallel.R
 library(foreach)
 library(doParallel)
 numCores <- parallelly::availableCores()
