@@ -176,7 +176,7 @@ rowMeans(sapply(results,"["))
 Can use:  
 `singularity exec /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript parallel_mcapply.R` 
 ```{NOTE}
-detectCores() does not work as intended.  detectCores() will query to get the cores on the node, not the cores in the job.  Use availableCores() from the parallelly package instead.  remotes::install_github("HenrikBengtsson/parallelly", ref="develop")
+detectCores() does not work as intended.  detectCores() will query to get the cores on the node, not the cores in the job.  Use availableCores() from the parallelly package instead.
 ```
 
 
