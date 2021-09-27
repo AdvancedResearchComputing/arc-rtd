@@ -186,6 +186,20 @@ b)
 detectCores() does not work as intended.  detectCores() will query to get the cores on the node, not the cores in the job.  Use availableCores() from the parallelly package instead.
 ```
 
+#### doParallel example
+
+```
+library(foreach)
+library(doParallel)
+numCores <- parallelly::availableCores()
+
+registerDoParallel(numCores)  # use multicore, set to the number of our cores
+foreach (i=1:100, .combine=c) %dopar% {
+  sqrt(i)
+}
+
+stopImplicitCluster() ## clean up 
+```
 
 ### MPI
 
