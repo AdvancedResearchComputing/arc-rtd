@@ -131,7 +131,7 @@ singularity exec --bind=/work,/projects \
 exit;
 ```
 
-### Parallel Computing in R
+## Parallel Computing in R
 
 There are multiple ways to afford parallelism from within R.  Depending on how you parallelize, you may need to alter your SLURM job request.  
 
@@ -174,8 +174,15 @@ system.time(
 rowMeans(sapply(results,"["))
 ```
 Can use:  
-`singularity exec /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript parallel_mcapply.R` 
+`
+interact -N 1 -c 12 --partition=intel_q --time=5:00:00 --account=<your account>
+module load containers/singularity
+singularity exec /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscript parallel_mcapply.R
+` 
 ```{NOTE}
+a)
+specify the number of cores via SLURM `--cores-per-task`, NOT `--ntasks`.
+b)
 detectCores() does not work as intended.  detectCores() will query to get the cores on the node, not the cores in the job.  Use availableCores() from the parallelly package instead.
 ```
 
