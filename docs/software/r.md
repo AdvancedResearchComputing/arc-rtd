@@ -205,12 +205,14 @@ stopImplicitCluster() ## clean up
 
 ### MPI
 
-Still in testing, but, we are using a bind option to get OpenMPI into the container.  See here <https://sylabs.io/guides/3.7/user-guide/mpi.html#bind-model> for a discussion.  From there, we need to install Rmpi.  
+Still in testing, but, we are using a bind option to get OpenMPI into the container.  See [here](https://sylabs.io/guides/3.7/user-guide/mpi.html#bind-model) for a discussion.  From there, we need to install Rmpi.  
 
 ```
 $ module load OpenMPI/4.0.3-GCC-9.3.0 containers/singularity
 $ export SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
-$ singularity exec --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh,/home/rsettlag/.Renviron.OOD:/usr/local/lib/R/etc/Renviron.site /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif bash
+$ singularity exec --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh \
+      --bind=/home/rsettlag/.Renviron.OOD:/usr/local/lib/R/etc/Renviron.site \
+      /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif bash
 singularity> R CMD INSTALL Rmpi_0.6-7.tar.gz --configure-args=--with-mpi=/apps/easybuild/software/tinkercliffs-cascade_lake/OpenMPI/4.0.3-GCC-9.3.0 --no-test-load
 ```
 
