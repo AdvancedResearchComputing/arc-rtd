@@ -205,7 +205,7 @@ stopImplicitCluster() ## clean up
 
 ### MPI
 
-Still in testing, but, we are using a bind option to get OpenMPI into the container.  From there, we need to install Rmpi.  
+Still in testing, but, we are using a bind option to get OpenMPI into the container.  See here <https://sylabs.io/guides/3.7/user-guide/mpi.html#bind-model> for a discussion.  From there, we need to install Rmpi.  
 
 ```
 $ module load OpenMPI/4.0.3-GCC-9.3.0 containers/singularity
@@ -214,3 +214,9 @@ $ singularity exec --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh,/
 singularity> R CMD INSTALL Rmpi_0.6-7.tar.gz --configure-args=--with-mpi=/apps/easybuild/software/tinkercliffs-cascade_lake/OpenMPI/4.0.3-GCC-9.3.0 --no-test-load
 ```
 
+To use Rmpi, we need to:
+
+a) make sure the configuration of the job matches what we desire in terms of processes and cores  
+b) use `mpirun` to launch R and subsequently Rmpi
+
+Example coming soon...
