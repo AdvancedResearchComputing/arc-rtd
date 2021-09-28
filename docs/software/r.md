@@ -182,7 +182,7 @@ singularity exec /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif Rscrip
  
 ```{NOTE}
 a)
-specify the number of cores via SLURM `--cores-per-task`, NOT `--ntasks`.
+specify the number of cores via SLURM `--cores-per-task`, NOT `--ntasks`.  
 b)
 detectCores() does not work as intended.  detectCores() will query to get the cores on the node, not the cores in the job.  Use availableCores() from the parallelly package instead.
 ```
