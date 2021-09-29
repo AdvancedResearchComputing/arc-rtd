@@ -22,7 +22,7 @@ Contents:
 * :ref:`Resources <resources>`: Descriptions of the hardware and services that we offer
 * :ref:`Software <software>`: Lists of and user guides for software installed on ARC systems
 * :ref:`Usage <usage>`: Tutorials for how to use ARC systems
-* :ref:`PI Information <pi_info>`: Key information for faculty members or project principal investigators (PIs)
+* :ref:`PI Information <pi>`: Key information for faculty members or project principal investigators (PIs)
 
 To request help:
 
