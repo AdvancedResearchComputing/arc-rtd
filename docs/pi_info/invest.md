@@ -19,8 +19,10 @@ An investment Memoradum Of Understanding (MOU) is updated and made available for
 For example investment MOUs, see below:
 * [Compute](../mou/mou_compute.pdf)
 * [Storage](../mou/mou_storage.pdf)
-* {ref}`Compute <../mou/mou_compute.pdf>`
-* {ref}`Storage <../mou/mou_storage.pdf>`
+```{eval-rst}
+* `Compute <../mou/mou_compute.pdf>`_
+* `Storage <../mou/mou_storage.pdf>`_
+```
 
 ## To Invest
 If you have interest in learning more about the Investment Computing Program, please submit a [consultation request](https://arc.vt.edu/help). ARC can provide a brief presentation on the Investment Computing program at department meetings or to research teams if desired.
