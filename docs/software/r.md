@@ -221,4 +221,53 @@ To use Rmpi, we need to:
 a) make sure the configuration of the job matches what we desire in terms of processes and cores  
 b) use `mpirun` to launch R and subsequently Rmpi
 
+```
+# current working example:
+export PMIX_MCA_gds=hash
+mpirun -np 8 --mca mpi_warn_on_fork 0 --mca btl_openib_allow_ib 1 --mca rmaps_base_inherit 1 singularity exec --writable-tmpfs --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh,/home/rsettlag/.Renviron.OOD:/usr/local/lib/R/etc/Renviron.site /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif /home/rsettlag/examples/mpitest
+```
+
+Where mpitest.c is:
+```
+# mpitest.c
+#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+        int rc;
+        int size;
+        int myrank;
+
+        rc = MPI_Init (&argc, &argv);
+        if (rc != MPI_SUCCESS) {
+                fprintf (stderr, "MPI_Init() failed");
+                return EXIT_FAILURE;
+        }
+
+        rc = MPI_Comm_size (MPI_COMM_WORLD, &size);
+        if (rc != MPI_SUCCESS) {
+                fprintf (stderr, "MPI_Comm_size() failed");
+                goto exit_with_error;
+        }
+
+        rc = MPI_Comm_rank (MPI_COMM_WORLD, &myrank);
+        if (rc != MPI_SUCCESS) {
+                fprintf (stderr, "MPI_Comm_rank() failed");
+                goto exit_with_error;
+        }
+
+        fprintf (stdout, "Hello, I am rank %d/%d\n", myrank, size);
+
+        MPI_Finalize();
+
+        return EXIT_SUCCESS;
+
+ exit_with_error:
+        MPI_Finalize();
+        return EXIT_FAILURE;
+}
+```
+compiled from` INSIDE` the container with:
+> mpicc -o mpitest mpitest.c
 Example coming soon...
