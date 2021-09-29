@@ -210,8 +210,6 @@ Still in testing, but, we are using a bind option to get OpenMPI into the contai
 ```
 $ module load OpenMPI/4.1.1-GCC-10.3.0 containers/singularity
 $ export SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
-$ ## may need to unset TMPDIR if singularity complains about not writable /localscratch
-$ ## unset $TMPDIR ## this will be fixed soon
 $ singularity exec --writable-tmpfs 
       --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh \
       --bind=/home/rsettlag/.Renviron.OOD:/usr/local/lib/R/etc/Renviron.site \
