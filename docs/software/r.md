@@ -205,7 +205,7 @@ stopImplicitCluster() ## clean up
 
 WIP:
 
-```{NOTE}
+```{DANGER}
 proceed with caution below, you may encounter bumps...
 ```
 
