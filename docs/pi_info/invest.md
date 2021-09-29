@@ -18,7 +18,7 @@ An investment Memoradum Of Understanding (MOU) is updated and made available for
 
 For example investment MOUs, see below:
 * [Compute](./mous/MOU-Cascades-Investment-Computing-2019-COMPUTE.pdf)
-* [Storage](./mous/MOU-Cascades-Investment-Computing-2019-five-year-storage.pdf)
+* ![Storage](./mous/MOU-Cascades-Investment-Computing-2019-five-year-storage.pdf)
 
 ## To Invest
 If you have interest in learning more about the Investment Computing Program, please submit a [consultation request](https://arc.vt.edu/help). ARC can provide a brief presentation on the Investment Computing program at department meetings or to research teams if desired.
