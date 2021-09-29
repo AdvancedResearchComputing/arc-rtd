@@ -227,6 +227,10 @@ b) use `mpirun` to launch R and subsequently Rmpi
 ```
 # current working example:
 export PMIX_MCA_gds=hash
+
+mpirun -np 8 singularity exec --writable-tmpfs --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif /home/rsettlag/examples/mpitest
+
+## prepping for some of the R errors:
 mpirun -np 8 --mca mpi_warn_on_fork 0 --mca btl_openib_allow_ib 1 --mca rmaps_base_inherit 1 singularity exec --writable-tmpfs --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh,/home/rsettlag/.Renviron.OOD:/usr/local/lib/R/etc/Renviron.site /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif /home/rsettlag/examples/mpitest
 ```
 
