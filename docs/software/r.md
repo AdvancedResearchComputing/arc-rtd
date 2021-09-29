@@ -197,7 +197,7 @@ numCores <- parallelly::availableCores()
 
 registerDoParallel(numCores)  # use multicore, set to the number of our cores
 foreach (i=1:100, .combine=c) %dopar% {
-  sqrt(i)
+  tanh(i)
 }
 
 stopImplicitCluster() ## clean up 
