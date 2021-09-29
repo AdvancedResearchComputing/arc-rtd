@@ -203,6 +203,12 @@ foreach (i=1:100, .combine=c) %dopar% {
 stopImplicitCluster() ## clean up 
 ```
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+```{danger}
+proceed with caution below, you may encounter bumps...
+```
+
 ### MPI
 
 Still in testing, but, we are using a bind option to get OpenMPI into the container.  See [here](https://sylabs.io/guides/3.7/user-guide/mpi.html#bind-model) for a discussion.  From there, we need to install Rmpi.  
@@ -224,7 +230,7 @@ b) use `mpirun` to launch R and subsequently Rmpi
 
 ```
 # current working example:
-export PMIX_MCA_gds=hash
+export PMIX_MCA_gds=hash ## was supposedly fixed in OMPI 4.0.3+, but here we are in 4.1.1...
 
 mpirun -np 8 singularity exec --writable-tmpfs --bind=$TMPFS:/tmp,/usr/include/bits,/apps,/cm,/usr/bin/ssh /projects/arcsingularity/ood-rstudio141717-bio_4.1.0.sif /home/rsettlag/examples/mpitest
 
