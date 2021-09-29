@@ -203,7 +203,7 @@ foreach (i=1:100, .combine=c) %dopar% {
 stopImplicitCluster() ## clean up 
 ```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WIP:
 
 ```{NOTE}
 proceed with caution below, you may encounter bumps...
