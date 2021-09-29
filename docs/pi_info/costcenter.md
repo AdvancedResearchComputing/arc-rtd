@@ -21,16 +21,16 @@ ARC is working to decrease HPC cost to VT, improve access, services and augment 
 
 | Category | User  |  PI (project request) |
 | ------------ | ------------ | ------------ |
-| compute  | 240 core-hours/month  | 600,000 core-hours/month ([TinkerCliffs](tinkercliffs) only)  |
-| /home  | 640 GB  | --  |
-| User workspace  | 1 TB  |  -- |
-| Group project  |  -- | 25 TB  |
-| archive  | /vtarchive/home/_pid_  | /vtarchive/groups/_group_  |
+| Compute | 240 core-hours/month  | 600,000 core-hours/month ([TinkerCliffs](tinkercliffs) only)  |
+| [Home storage](home) | 640 GB  | --  |
+| [User workspace storage](work) | 1 TB  |  -- |
+| [Project storage](project)  |  -- | 25 TB  |
+| [Archive storage](archive)  | /vtarchive/home/_pid_  | /vtarchive/groups/_group_  |
 
 Allocations can also be submitted for class needs; these are \"owned\" by ARC and not billed toward a PI\'s account.
 
 ```{note}
-Usage in Preemptable partitions do _NOT_ count towards user/project usage
+Jobs submitted to preemptable partitions do _NOT_ count against the above user/project limits.
 ```
 
 ## Job Priority
@@ -56,5 +56,5 @@ The fee structure on [TinkerCliffs](tinkercliffs) is as follows:
 ### Storage and other available resources
 Temporary expansion of [`/project` storage](project) can be requested.  This will be billed at $2.1694 per TB per month.
 
-For server hosting, enterprise backup or other needs, please [send Terry Herdman an email](terry.herdman@vt.edu).
+For server hosting, enterprise backup or other needs, please [send Terry Herdman an email](mailto:terry.herdman@vt.edu).
 

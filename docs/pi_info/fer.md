@@ -18,6 +18,7 @@ ARC’s Visionarium Lab also provides an array of visualization resources, inclu
 **Upcoming Resources**
 
 In the next year, ARC plans to release additional resources supporting:
+
 5. **Protected data**: This will be a dedicated cluster and storage supporting data needing elevated protections. This cluster will be available early in the winter of 2021-2022.
 6. **AI/ML**: Additional nodes will be added to the TinkerCliffs cluster to support AI/ML applications. Scheduled to be released in late Spring 2022.
 7. **Cloud**: Kubernetes resource for cloud-like applications.
