@@ -209,6 +209,7 @@ stopImplicitCluster() ## clean up
 proceed with caution below, you may encounter bumps...
 ```
 
+```
 ### MPI
 
 Still in testing, but, we are using a bind option to get OpenMPI into the container.  See [here](https://sylabs.io/guides/3.7/user-guide/mpi.html#bind-model) for a discussion.  From there, we need to install Rmpi.  
