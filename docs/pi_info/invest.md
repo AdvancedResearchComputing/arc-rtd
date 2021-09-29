@@ -17,8 +17,8 @@ If you are less interested in _dedicated_ hardware and just want to use more res
 An investment Memoradum Of Understanding (MOU) is updated and made available for each new cluster as it comes online. The current MOU covers [TinkerCliffs](tinkercliffs).
 
 For example investment MOUs, see below:
-* [Compute](../mou/mou_compute.pdf)
-* [Storage](../mou/mou_storage.pdf)
+* [Compute](mou_compute)
+* [Storage](mou_storage)
 
 ## To Invest
 If you have interest in learning more about the Investment Computing Program, please submit a [consultation request](https://arc.vt.edu/help). ARC can provide a brief presentation on the Investment Computing program at department meetings or to research teams if desired.

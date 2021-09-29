@@ -1,3 +1,6 @@
+.. _mou_compute: ./mou/mou_compute.pdf
+.. _mou_storage: ./mou/mou_storage.pdf
+
 .. _pi:
 
 Information for Faculty/Project PIs
