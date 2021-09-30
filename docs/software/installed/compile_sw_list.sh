@@ -13,7 +13,7 @@ function list_sw() {
   file="${sysid}.md"
   
   #run module avail
-  ssh tc "source util/strip_user_modules.sh && module avail" > $file 2>&1
+  ssh $sys "source util/strip_user_modules.sh && module avail" > $file 2>&1
 
   #insert header
   sed -i '1s/^/\n```\n/' $file

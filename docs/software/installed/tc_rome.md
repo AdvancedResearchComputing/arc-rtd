@@ -184,7 +184,8 @@ We realize this list is long, but we provide it here for users who want to perus
    Dalton/2020-iomkl-2019b                                 (D)
    DendroPy/4.5.2-GCCcore-10.2.0
    Doxygen/1.8.16-GCCcore-8.3.0
-   Doxygen/1.8.17-GCCcore-9.3.0                            (D)
+   Doxygen/1.8.17-GCCcore-9.3.0
+   Doxygen/1.8.20-GCCcore-10.2.0                           (D)
    ELPA/2019.11.001-intel-2019b
    EasyBuild/4.2.2
    EasyBuild/4.3.2
@@ -441,6 +442,7 @@ We realize this list is long, but we provide it here for users who want to perus
    Tk/8.6.10-GCCcore-10.2.0
    Tk/8.6.10-intel-2019b                                   (D)
    Tkinter/3.8.2-GCCcore-9.3.0
+   Tkinter/3.8.6-GCCcore-10.2.0                            (D)
    TopHat/2.1.2-iimpi-2019b
    UCX/1.8.0-GCCcore-8.3.0
    UCX/1.8.0-GCCcore-9.3.0
@@ -454,7 +456,10 @@ We realize this list is long, but we provide it here for users who want to perus
    Valgrind/3.16.1-gompi-2020a
    Valgrind/3.16.1-iimpi-2019b                             (D)
    Voro++/0.4.6-GCCcore-9.3.0
+   WPS/4.2-foss-2020b-dmpar
    WRF/4.1.3-intel-2019b-dmpar
+   WRF/4.2.2-foss-2020b-dm+sm
+   WRF/4.2.2-foss-2020b-dmpar                              (D)
    Wannier90/2.0.1.1-intel-2019b-abinit
    X11/20190717-GCCcore-8.3.0
    X11/20200222-GCCcore-9.3.0
@@ -599,6 +604,7 @@ We realize this list is long, but we provide it here for users who want to perus
    libglvnd/1.2.0-GCCcore-8.3.0
    libglvnd/1.2.0-GCCcore-9.3.0
    libglvnd/1.3.2-GCCcore-10.2.0                           (D)
+   libiconv/1.16-GCCcore-10.2.0
    libjpeg-turbo/2.0.3-GCCcore-8.3.0
    libjpeg-turbo/2.0.4-GCCcore-9.3.0
    libjpeg-turbo/2.0.4-intel-2019b
@@ -644,6 +650,7 @@ We realize this list is long, but we provide it here for users who want to perus
    lz4/1.9.2-GCCcore-9.3.0
    lz4/1.9.2-GCCcore-10.2.0                                (D)
    matplotlib/3.2.1-foss-2020a-Python-3.8.2
+   matplotlib/3.3.3-foss-2020b                             (D)
    minimap2/2.17-GCCcore-9.3.0
    molmod/1.4.5-foss-2020a-Python-3.8.2
    mpi4py/3.0.2-gompi-2020a-timed-pingpong
@@ -657,10 +664,12 @@ We realize this list is long, but we provide it here for users who want to perus
    ncurses/6.2-intel-2019b
    ncurses/6.2                                             (D)
    netCDF-Fortran/4.4.4-intel-2019b
-   netCDF-Fortran/4.5.2-iimpi-2019b                        (D)
+   netCDF-Fortran/4.5.2-iimpi-2019b
+   netCDF-Fortran/4.5.3-gompi-2020b                        (D)
    netCDF/4.6.1-intel-2019b
    netCDF/4.7.1-iimpi-2019b
-   netCDF/4.7.4-gompi-2020a                                (D)
+   netCDF/4.7.4-gompi-2020a
+   netCDF/4.7.4-gompi-2020b                                (D)
    nettle/3.5.1-GCCcore-8.3.0
    nettle/3.6-GCCcore-10.2.0                               (D)
    networkx/2.4-foss-2020a-Python-3.8.2
@@ -705,7 +714,9 @@ We realize this list is long, but we provide it here for users who want to perus
    sparsehash/2.0.3-GCCcore-9.3.0
    tbb/2020.1-GCCcore-9.3.0
    tcsh/6.22.02-GCCcore-8.3.0
+   tcsh/6.22.03-GCCcore-10.2.0                             (D)
    time/1.9-GCCcore-8.3.0
+   time/1.9-GCCcore-10.2.0                                 (D)
    typing-extensions/3.7.4.3-GCCcore-10.2.0
    utf8proc/2.5.0-GCCcore-10.2.0
    util-linux/2.34-GCCcore-8.3.0

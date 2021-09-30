@@ -8,7 +8,7 @@ The following pages describe the software packages installed on ARC\'s systems a
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    software/*
