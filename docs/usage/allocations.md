@@ -1,16 +1,16 @@
 (allocations)=
 
-#Allocations 
+# Allocations 
 
 (introduction)=
-##Introduction
+## Introduction
 
 ARC's primary mission is to facilitate breakthrough research at Virginia Tech. To this end, ARC uses an allocation system to ensure that system time is distributed in a manner appropriate to research needs while allowing faculty members and PIs the flexibility to ensure that the time allocated to a given project is managed (e.g., among graduate students) so as to maximum productivity. An allocation is a system time account requested and managed by a single person (e.g., a project PI). Many users (e.g., Co-PIs or graduate students) can then be granted access to charge against a single allocation.
 
 Note: Allocation applications can also include requests for other resources (e.g., additional storage) required to make a project successful.
 
 (allocation types)=
-##Allocation Types
+## Allocation Types
 
 There are two types of allocations, which differ somewhat in how they are awarded:
 
@@ -30,6 +30,6 @@ Adjunct professors must provide a letter from their department chair, indicating
 Undergraduate and graduate students are not eligible to apply directly for projects and allocations, but must instead work under the sponsorship of a qualified researcher.
 
 (student eligibility)=
-##Student eligibility
+## Student eligibility
 
 Undergraduate and graduate students should ask their advisor or research project PI to submit an allocation request. Once the request has been granted, they can be added to the project and submit jobs.
