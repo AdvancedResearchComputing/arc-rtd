@@ -9,7 +9,7 @@ ARC's primary mission is to facilitate breakthrough research at Virginia Tech. T
 
 Note: Allocation applications can also include requests for other resources (e.g., additional storage) required to make a project successful.
 
-(allocation types)=
+(allocation_types)=
 ## Allocation Types
 
 There are two types of allocations, which differ somewhat in how they are awarded:
@@ -29,7 +29,7 @@ Adjunct professors must provide a letter from their department chair, indicating
 
 Undergraduate and graduate students are not eligible to apply directly for projects and allocations, but must instead work under the sponsorship of a qualified researcher.
 
-(student eligibility)=
+(student_eligibility)=
 ## Student eligibility
 
 Undergraduate and graduate students should ask their advisor or research project PI to submit an allocation request. Once the request has been granted, they can be added to the project and submit jobs.
