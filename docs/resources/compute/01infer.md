@@ -1,6 +1,6 @@
 (infer)=
 
-# Infer #
+# Infer, GPU Cluster
 
 ## Overview ##
 Infer came online in January of 2021 and provides 18 nodes, each with an Nvidia T4 GPU. The cluster’s name "Infer" alludes to the AI/ML inference capabilities of the T4 GPUs derived from the "tensor cores" on these devices. We think they will also be a great all-purpose resource for researchers who are making their first forays into GPU-enabled computations of any type.

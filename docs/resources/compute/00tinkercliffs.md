@@ -1,6 +1,6 @@
 (tinkercliffs)=
 
-# TinkerCliffs #
+# TinkerCliffs, ARC\'s Flagship Resource
 
 ## Overview ##
 TinkerCliffs came online in the summer of 2020. With nearly 42,000 cores and over 93 TB of RAM, TinkerCliffs is nearly seven times the size of BlueRidge, ARC's previous flagship CPU compute system, which was retired at the end of 2019. TinkerCliffs hardware is summarized in the table below.

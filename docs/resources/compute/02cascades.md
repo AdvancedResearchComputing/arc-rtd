@@ -1,6 +1,6 @@
 (cascades)=
 
-# Cascades
+# Cascades, CPU/GPU Cluster
 
 ## Overview
 

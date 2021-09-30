@@ -1,6 +1,6 @@
 (dragonstooth)=
 
-# DragonsTooth
+# DragonsTooth, High-Throughput Computing
 
 ## Overview
 
