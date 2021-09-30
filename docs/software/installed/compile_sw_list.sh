@@ -17,7 +17,7 @@ function list_sw() {
 
   #insert header
   sed -i '1s/^/\n```\n/' $file
-  sed -i '1s/^/\nWe realize this list is long, but we provide it here for users who want to peruse and\/or search for what they need.\n/' $file
+  sed -i '1s/^/\nWe realize this list is long, but we provide it here for users who want to peruse and\/or search for what they need. For a more cleanly-formatted option, see [this table](sw_table).\n/' $file
   sed -i "1s/^/\n# List of Software Modules on ${syslong}\n/" $file
   sed -i "1s/^/(sw_${sysid})=\n/" $file
 
