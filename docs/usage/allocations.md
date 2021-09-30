@@ -1,6 +1,6 @@
 (allocations)=
 
-# Allocations 
+#Allocations 
 
 (introduction)=
 ##Introduction
