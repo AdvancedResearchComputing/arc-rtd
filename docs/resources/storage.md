@@ -36,16 +36,16 @@ The file system that provides Project and Work directories on [TinkerCliffs](tin
 * Files in your Work directory can count against your Project quota if they have that project\'s GID
 * Files in your Project directory can count against your Work quota if they have your personal GID
 
-You can check your Project and Work quotas with the [`quota` command](quota). You can check the GID associated with your files with `ll` (the same as `ls -l`) and can change the group with `chgrp` (`chgrp -R` for recursive on a directory). You can find files in a more automated fashion with `find` -- see the example below. As an example, here we find some files in `/projects/mygroup` that are owned by `mypid`:
+You can check your Project and Work quotas with the [`quota` command](quota). You can check the GID associated with your files with `ll` (the same as `ls -l`) and can change the group with `chgrp` (`chgrp -R` for recursive on a directory). You can find files in a more automated fashion with `find` -- see the example below. As an example, here we find some files in `/projects/myproject` that are owned by `mypid`:
 
 ```
-[jkrometi@tinkercliffs2 ~]$ find /projects/SIAllocation/test -group jkrometi
-/projects/SIAllocation/test
-/projects/SIAllocation/test/datafile
-/projects/SIAllocation/test/test.txt
-[mypid@tinkercliffs2 ~]$ ls -ld /projects/mygroup/test/
-drwxrwxr-x 2 mypid mypid 2 Oct  4 08:43 /projects/mygroup/test/
-[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+[mypid@tinkercliffs2 ~]$ find /projects/myproject/test -group mypid
+/projects/myproject/test
+/projects/myproject/test/datafile
+/projects/myproject/test/test.txt
+[mypid@tinkercliffs2 ~]$ ls -ld /projects/myproject/test/
+drwxrwxr-x 2 mypid mypid 2 Oct  4 08:43 /projects/myproject/test/
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/myproject/test/
 total 1.1G
 -rw-rw-r-- 1 mypid mypid 1.0G Oct  4 08:43 datafile
 -rw-rw-r-- 1 mypid mypid    5 Jun  8 10:51 test.txt
@@ -54,13 +54,13 @@ total 1.1G
 These files will count against `mypid`\'s Work quota. We change their ownership to the associated group with `chgrp -R`:
 
 ```
-[mypid@tinkercliffs2 ~]$ chgrp -R arc.mygroup /projects/mygroup/test
-[mypid@tinkercliffs2 ~]$ ls -ld /projects/mygroup/test/
-drwxrwxr-x 2 mypid arc.mygroup 2 Oct  4 08:43 /projects/mygroup/test/
-[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+[mypid@tinkercliffs2 ~]$ chgrp -R arc.myproject /projects/myproject/test
+[mypid@tinkercliffs2 ~]$ ls -ld /projects/myproject/test/
+drwxrwxr-x 2 mypid arc.myproject 2 Oct  4 08:43 /projects/myproject/test/
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/myproject/test/
 total 1.1G
--rw-rw-r-- 1 mypid arc.mygroup 1.0G Oct  4 08:43 datafile
--rw-rw-r-- 1 mypid arc.mygroup    5 Jun  8 10:51 test.txt
+-rw-rw-r-- 1 mypid arc.myproject 1.0G Oct  4 08:43 datafile
+-rw-rw-r-- 1 mypid arc.myproject    5 Jun  8 10:51 test.txt
 ```
 
 The files will now count against the Project quota.
@@ -68,15 +68,15 @@ The files will now count against the Project quota.
 A more automated example would be to have `find` both locate _and change ownership_ of the files:
 
 ```
-[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/myproject/test/
 total 1.1G
 -rw-rw-r-- 1 mypid mypid 1.0G Oct  4 08:43 datafile
 -rw-rw-r-- 1 mypid mypid    5 Jun  8 10:51 test.txt
-[mypid@tinkercliffs2 ~]$ find /projects/mygroup/test -group mypid -exec chgrp arc.mygroup {} +
-[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+[mypid@tinkercliffs2 ~]$ find /projects/myproject/test -group mypid -exec chgrp arc.myproject {} +
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/myproject/test/
 total 1.1G
--rw-rw-r-- 1 mypid arc.mygroup 1.0G Oct  4 08:43 datafile
--rw-rw-r-- 1 mypid arc.mygroup    5 Jun  8 10:51 test.txt
+-rw-rw-r-- 1 mypid arc.myproject 1.0G Oct  4 08:43 datafile
+-rw-rw-r-- 1 mypid arc.myproject    5 Jun  8 10:51 test.txt
 ```
 
 
@@ -84,8 +84,8 @@ total 1.1G
 ## Work
 
 Work provides users with fast, user-focused storage for use during simulations or other research computing applications. However, it encompasses two paradigms depending on the cluster where it is being used: 
-- On TinkerCliffs and Infer, it provides 1 TB of user-focused storage that is not subject to a time limit. 
-- On Cascades, DragonsTooth, and Huckleberry, it provides up to 14 TB of space. However, ARC reserves the right to purge files older than 120 days from this file system. It is therefore aimed at temporary files, checkpoint files, and other scratch files that might be created during a run but are not needed long-term. Work for a given system can be reached via the variable `$WORK`. So if a user wishes to navigate to Work directory, they can simply type cd `$WORK`. 
+- On [TinkerCliffs](tinkercliffs) and [Infer](infer), it provides 1 TB of user-focused storage that is not subject to a time limit. 
+- On [Cascades](cascades), [DragonsTooth](dragonstooth), and [Huckleberry](huckleberry), it provides up to 14 TB of space. However, ARC reserves the right to purge files older than 120 days from this file system. It is therefore aimed at temporary files, checkpoint files, and other scratch files that might be created during a run but are not needed long-term. Work for a given system can be reached via the variable `$WORK`. So if a user wishes to navigate to Work directory, they can simply type cd `$WORK`. 
 
 (archive)=
 ## Archive
