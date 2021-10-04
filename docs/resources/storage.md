@@ -28,7 +28,57 @@ Home provides long-term storage for system-specific data or files, such as insta
 (project)=
 ## Group and Project
 
-Project (on [TinkerCliffs](/tinkercliffs) and [Infer](/infer)) and Group (on [Cascades](/cascades), [DragonsTooth](/dragonstooth), and [Huckleberry](/huckleberry)) provide long-term storage for files shared among a research project or group, facilitating collaboration and data exchange within the group. Each Virginia Tech faculty member can request group storage up to the prescribed limit at no cost by requesting a storage allocation via [ColdFront](https://coldfront.arc.vt.edu). Additional storage may be purchased through the [investment computing or cost center programs](/arc-investment-computing-and-cost-center/). 
+Project (on [TinkerCliffs](tinkercliffs) and [Infer](infer)) and Group (on [Cascades](cascades), [DragonsTooth](dragonstooth), and [Huckleberry](huckleberry)) provide long-term storage for files shared among a research project or group, facilitating collaboration and data exchange within the group. Each Virginia Tech faculty member can request group storage up to the prescribed limit at no cost by requesting a storage allocation via [ColdFront](https://coldfront.arc.vt.edu). Additional storage may be purchased through the [investment computing or cost center programs](/arc-investment-computing-and-cost-center/). 
+
+### Quotas on Project
+The file system that provides Project and Work directories on [TinkerCliffs](tinkercliffs) and [Infer](infer) does quotas based on the _group ID_ (GID) associated with files. This means that:
+
+* Files in your Work directory can count against your Project quota if they have that project\'s GID
+* Files in your Project directory can count against your Work quota if they have your personal GID
+
+You can check your Project and Work quotas with the [`quota` command](quota). You can check the GID associated with your files with `ll` (the same as `ls -l`) and can change the group with `chgrp` (`chgrp -R` for recursive on a directory). You can find files in a more automated fashion with `find` -- see the example below. As an example, here we find some files in `/projects/mygroup` that are owned by `mypid`:
+
+```
+[jkrometi@tinkercliffs2 ~]$ find /projects/SIAllocation/test -group jkrometi
+/projects/SIAllocation/test
+/projects/SIAllocation/test/datafile
+/projects/SIAllocation/test/test.txt
+[mypid@tinkercliffs2 ~]$ ls -ld /projects/mygroup/test/
+drwxrwxr-x 2 mypid mypid 2 Oct  4 08:43 /projects/mygroup/test/
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+total 1.1G
+-rw-rw-r-- 1 mypid mypid 1.0G Oct  4 08:43 datafile
+-rw-rw-r-- 1 mypid mypid    5 Jun  8 10:51 test.txt
+```
+
+These files will count against `mypid`\'s Work quota. We change their ownership to the associated group with `chgrp -R`:
+
+```
+[mypid@tinkercliffs2 ~]$ chgrp -R arc.mygroup /projects/mygroup/test
+[mypid@tinkercliffs2 ~]$ ls -ld /projects/mygroup/test/
+drwxrwxr-x 2 mypid arc.mygroup 2 Oct  4 08:43 /projects/mygroup/test/
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+total 1.1G
+-rw-rw-r-- 1 mypid arc.mygroup 1.0G Oct  4 08:43 datafile
+-rw-rw-r-- 1 mypid arc.mygroup    5 Jun  8 10:51 test.txt
+```
+
+The files will now count against the Project quota.
+
+A more automated example would be to have `find` both locate _and change ownership_ of the files:
+
+```
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+total 1.1G
+-rw-rw-r-- 1 mypid mypid 1.0G Oct  4 08:43 datafile
+-rw-rw-r-- 1 mypid mypid    5 Jun  8 10:51 test.txt
+[mypid@tinkercliffs2 ~]$ find /projects/mygroup/test -group mypid -exec chgrp arc.mygroup {} +
+[mypid@tinkercliffs2 ~]$ ls -lh /projects/mygroup/test/
+total 1.1G
+-rw-rw-r-- 1 mypid arc.mygroup 1.0G Oct  4 08:43 datafile
+-rw-rw-r-- 1 mypid arc.mygroup    5 Jun  8 10:51 test.txt
+```
+
 
 (work)=
 ## Work
@@ -69,3 +119,18 @@ Running jobs are given a workspace on the local hard drive on each compute node.
 ## Memory
 
 Running jobs have access to an in-memory mount on compute nodes via the `$TMPFS` environment variable. This should provide very fast read/write speeds for jobs doing I/O to files that fit in memory (see the [system documentation](/computing) for the amount of memory per node on each system). Please note that these files are removed at the end of a job, so any results or files to be kept after the job ends must be copied to Work or Home.
+
+(quota)=
+## Checking Usage
+You can check your current storage usage (in addition to your [compute allocation](allocations) usage) with the `quota` command:
+
+```
+[mypid@tinkercliffs2 ~]$ quota
+USER       FILESYS/SET                         DATA (GiB)   QUOTA (GiB) FILES      QUOTA      NOTE 
+mypid      /home                               584.2        596         -          -           
+
+           BEEGFS                                                                              
+mypid      /projects/myproject1                109.3        931                                
+mypid      /projects/myproject2                2648.4       25600                              
+mypid      /work/mypid                         2.7          931                                
+```
