@@ -160,9 +160,9 @@ setup_app --base=/projects/myproject julia 1.6.1-foss-2020b
 
 
 (faq_diskquota)=
-## What does a Disk quota exceeded error mean?
+## What does a "Disk quota exceeded" error mean?
 
-This typically means that one of your [storage locations](storage) has exceeded the maximum allowable size. You will need to reduce the space consumed in order to run jobs successfully again.
+This typically means that one of your [storage locations](storage) has exceeded the maximum allowable size. You will need to reduce the space consumed in order to run jobs successfully again. Note that the quota system for Project and Work storage on [TinkerCliffs](tinkercliffs) and [Infer](infer) can be counterintuitive in some ways, so if you are getting a "quota exceeded" error on those file systems and think you should not be, see [this description](bgfs_quota) for details and fixes.
 
 
 (faq_chgrp)=

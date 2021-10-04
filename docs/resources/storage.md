@@ -30,6 +30,7 @@ Home provides long-term storage for system-specific data or files, such as insta
 
 Project (on [TinkerCliffs](tinkercliffs) and [Infer](infer)) and Group (on [Cascades](cascades), [DragonsTooth](dragonstooth), and [Huckleberry](huckleberry)) provide long-term storage for files shared among a research project or group, facilitating collaboration and data exchange within the group. Each Virginia Tech faculty member can request group storage up to the prescribed limit at no cost by requesting a storage allocation via [ColdFront](https://coldfront.arc.vt.edu). Additional storage may be purchased through the [investment computing or cost center programs](/arc-investment-computing-and-cost-center/). 
 
+(bgfs_quota)=
 ### Quotas on Project
 The file system that provides Project and Work directories on [TinkerCliffs](tinkercliffs) and [Infer](infer) does quotas based on the _group ID_ (GID) associated with files. This means that:
 
@@ -84,7 +85,7 @@ total 1.1G
 ## Work
 
 Work provides users with fast, user-focused storage for use during simulations or other research computing applications. However, it encompasses two paradigms depending on the cluster where it is being used: 
-- On [TinkerCliffs](tinkercliffs) and [Infer](infer), it provides 1 TB of user-focused storage that is not subject to a time limit. 
+- On [TinkerCliffs](tinkercliffs) and [Infer](infer), it provides 1 TB of user-focused storage that is not subject to a time limit. Note that this quota is enforced by the GID associated with files and not by directory, so files in Project storage can wind up being counted against your Work quota; see [here](bgfs_quota) for details and fixes.
 - On [Cascades](cascades), [DragonsTooth](dragonstooth), and [Huckleberry](huckleberry), it provides up to 14 TB of space. However, ARC reserves the right to purge files older than 120 days from this file system. It is therefore aimed at temporary files, checkpoint files, and other scratch files that might be created during a run but are not needed long-term. Work for a given system can be reached via the variable `$WORK`. So if a user wishes to navigate to Work directory, they can simply type cd `$WORK`. 
 
 (archive)=
