@@ -39,8 +39,8 @@ Priority determines position in \"line\":
 | Quality of Service (QoS)  | Available by/through:  |
 | ------------ | ------------ |
 | priority (high)  | for-fee via cost-center  |
-% | contributor (medium)  | projects with updated grant/paper/talk data  |
 | normal (default)  | normal  |
+% | contributor (medium)  | projects with updated grant/paper/talk data  |
 
 ## Current Cost Structure
 
