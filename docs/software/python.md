@@ -17,7 +17,7 @@ There are two types of environments in which the python application can be used 
 - Command-line interface. You can also start python from the command line after loading the required software module. 
 
 ```{note}
-larger computations should be submitted as jobs, via a [traditional job submission](slurm) script.
+Larger computations should be submitted as jobs, via a [traditional job submission](slurm) script.
 ```
 
 ## Managing environments
@@ -35,10 +35,20 @@ pip install plotly kaleido
 Source activating the environment ensures later conda or pip installs will install into the environment location.  For a more full discussion and examples, please see the Anaconda documentation:  
 <https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>
 
-```{note}
-If you prefer to use python without an environment, you will need to set `PYTHONUSERBASE` env variable to a location you can write to.
+## Running without environments
+
+If you prefer to use python without an environment, you will need to set the `PYTHONUSERBASE` environment variable to a location you can write to. For example:
+
 ```
-> export PYTHONUSERBASE=$HOME/python3
+#load a python module
+module reset; module load Python/3.8.6-GCCcore-10.2.0
+#give python a directory where it can install/load personalized packages
+#you may want to make this more specific to cluster/node type/python version
+export PYTHONUSERBASE=$HOME/python3
+#install a package (--user tells python to install to the location 
+#specified by PYTHONUSERBASE)
+pip install --user plotly
+```
 
 ## Command line running of Python scripts
 
