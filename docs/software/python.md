@@ -24,7 +24,7 @@ Larger computations should be submitted as jobs, via a [traditional job submissi
 
 The power of python is through extension of the base functionality via python packages.  Managing and configuring your local python environment is best accomplished through a combination of a package manager (pip or conda) and an evironment manager Anaconda (or miniconda or micoromamba).  Creation and use of conda environments allows one to activate the environment for later use.  You can have several environments, each with different software dependencies, where you activate the one of interest at run time.  Commonly, you will create a conda env, install software into it via conda/pip and then activate it for use.  For example:
 
-```
+```bash
 module load Anaconda3/2020.11
 conda create -n mypy3 python=3.8 pip 
 source activate mypy3
@@ -39,7 +39,7 @@ Source activating the environment ensures later conda or pip installs will insta
 
 If you prefer to use python without an environment, you will need to set the `PYTHONUSERBASE` environment variable to a location you can write to. For example:
 
-```
+```bash
 #load a python module
 module reset; module load Python/3.8.6-GCCcore-10.2.0
 #give python a directory where it can install/load personalized packages
@@ -115,6 +115,6 @@ The slurm log contains any output you would have seen had you typed `python viol
 
 ## Parallel Computing in Python
 
-Coming soon-ish
+Coming soon-ish. In the meantime, an mpi4py example is [provided as part of ARC\'s examples repository](https://github.com/AdvancedResearchComputing/examples/tree/master/mpi4py).
 
 

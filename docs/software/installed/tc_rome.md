@@ -138,13 +138,16 @@ We realize this list is long, but we provide it here for users who want to perus
    AtomPAW/4.1.0.5-intel-2019b
    Autoconf/2.69-GCCcore-8.3.0
    Autoconf/2.69-GCCcore-9.3.0
-   Autoconf/2.69-GCCcore-10.2.0                            (D)
+   Autoconf/2.69-GCCcore-10.2.0
+   Autoconf/2.71-GCCcore-10.3.0                            (D)
    Automake/1.16.1-GCCcore-8.3.0
    Automake/1.16.1-GCCcore-9.3.0
-   Automake/1.16.2-GCCcore-10.2.0                          (D)
+   Automake/1.16.2-GCCcore-10.2.0
+   Automake/1.16.3-GCCcore-10.3.0                          (D)
    Autotools/20180311-GCCcore-8.3.0
    Autotools/20180311-GCCcore-9.3.0
-   Autotools/20200321-GCCcore-10.2.0                       (D)
+   Autotools/20200321-GCCcore-10.2.0
+   Autotools/20210128-GCCcore-10.3.0                       (D)
    BCFtools/1.10.2-GCC-9.3.0
    BCFtools/1.11-GCC-10.2.0                                (D)
    BEDTools/2.29.2-GCC-9.3.0
@@ -165,7 +168,10 @@ We realize this list is long, but we provide it here for users who want to perus
    Bison/3.5.3-intel-2019b
    Bison/3.5.3
    Bison/3.7.1-GCCcore-10.2.0
-   Bison/3.7.1                                             (D)
+   Bison/3.7.1
+   Bison/3.7.6-GCCcore-10.3.0
+   Bison/3.7.6
+   Bison/3.7.91                                            (D)
    Boost/1.71.0-iimpi-2019b
    Boost/1.72.0-gompi-2020a
    Boost/1.74.0-GCC-10.2.0                                 (D)
@@ -177,6 +183,7 @@ We realize this list is long, but we provide it here for users who want to perus
    CMake/3.18.4-GCCcore-10.2.0                             (D)
    CP2K/6.1-foss-2020a
    DB/18.1.40-GCCcore-10.2.0
+   DB/18.1.40-GCCcore-10.3.0                               (D)
    DBus/1.13.12-GCCcore-8.3.0
    DBus/1.13.12-GCCcore-9.3.0
    DBus/1.13.18-GCCcore-10.2.0                             (D)
@@ -210,11 +217,13 @@ We realize this list is long, but we provide it here for users who want to perus
    FriBidi/1.0.10-GCCcore-10.2.0                           (D)
    GCC/8.3.0
    GCC/9.3.0
-   GCC/10.2.0                                              (D)
+   GCC/10.2.0
+   GCC/10.3.0                                              (D)
    GCCcore/8.2.0
    GCCcore/8.3.0
    GCCcore/9.3.0
-   GCCcore/10.2.0                                          (D)
+   GCCcore/10.2.0
+   GCCcore/10.3.0                                          (D)
    GDAL/3.0.4-foss-2020a-Python-3.8.2
    GEOS/3.8.1-GCC-9.3.0-Python-3.8.2
    GLPK/4.65-GCCcore-8.3.0
@@ -303,6 +312,7 @@ We realize this list is long, but we provide it here for users who want to perus
    M4/1.4.18-GCCcore-8.3.0
    M4/1.4.18-GCCcore-9.3.0
    M4/1.4.18-GCCcore-10.2.0
+   M4/1.4.18-GCCcore-10.3.0
    M4/1.4.18                                               (D)
    MATLAB/2019b
    METIS/5.1.0-GCCcore-8.3.0
@@ -354,9 +364,11 @@ We realize this list is long, but we provide it here for users who want to perus
    OpenMPI/3.1.4-iccifort-2019.5.281
    OpenMPI/4.0.3-GCC-9.3.0
    OpenMPI/4.0.3-iccifort-2019.5.281
-   OpenMPI/4.0.5-GCC-10.2.0                                (D)
+   OpenMPI/4.0.5-GCC-10.2.0
+   OpenMPI/4.1.1-GCC-10.3.0                                (D)
    OpenMolcas/18.09-intel-2019b-Python-3.7.4
    OpenMolcas/19.11-intel-2019b-Python-3.7.4               (D)
+   OpenSSL/1.1
    OpenSSL/1.1.1e-GCCcore-9.3.0
    OpenSSL/1.1.1e-intel-2019b                              (D)
    PCRE/8.43-GCCcore-8.3.0
@@ -370,7 +382,8 @@ We realize this list is long, but we provide it here for users who want to perus
    PLUMED/2.5.1-foss-2020a
    PLUMED/2.6.0-foss-2020a-Python-3.8.2                    (D)
    PMIx/3.1.5-GCCcore-8.3.0
-   PMIx/3.1.5-GCCcore-10.2.0                               (D)
+   PMIx/3.1.5-GCCcore-10.2.0
+   PMIx/3.2.3-GCCcore-10.3.0                               (D)
    PROJ/7.0.0-GCCcore-9.3.0
    Pango/1.44.7-GCCcore-8.3.0
    Pango/1.44.7-GCCcore-9.3.0
@@ -378,7 +391,8 @@ We realize this list is long, but we provide it here for users who want to perus
    ParaView/5.8.0-foss-2020a-Python-3.8.2-mpi
    Perl/5.30.0-GCCcore-8.3.0
    Perl/5.30.2-GCCcore-9.3.0
-   Perl/5.32.0-GCCcore-10.2.0                              (D)
+   Perl/5.32.0-GCCcore-10.2.0
+   Perl/5.32.1-GCCcore-10.3.0                              (D)
    Pillow/6.2.1-GCCcore-8.3.0
    Pillow/7.0.0-GCCcore-9.3.0-Python-3.8.2
    Pillow/8.0.1-GCCcore-10.2.0                             (D)
@@ -400,7 +414,9 @@ We realize this list is long, but we provide it here for users who want to perus
    QIIME2/2020.6
    Qt5/5.13.1-GCCcore-8.3.0
    Qt5/5.14.1-GCCcore-9.3.0                                (D)
+   Qualimap/2.2.1-foss-2020b-R-4.0.3
    QuantumESPRESSO/6.5-intel-2019b
+   R-bundle-Bioconductor/3.12-foss-2020b-R-4.0.3
    R/4.0.2-foss-2020a
    R/4.0.3-foss-2020b                                      (D)
    Ruby/2.7.2-GCCcore-9.3.0
@@ -446,7 +462,8 @@ We realize this list is long, but we provide it here for users who want to perus
    TopHat/2.1.2-iimpi-2019b
    UCX/1.8.0-GCCcore-8.3.0
    UCX/1.8.0-GCCcore-9.3.0
-   UCX/1.9.0-GCCcore-10.2.0                                (D)
+   UCX/1.9.0-GCCcore-10.2.0
+   UCX/1.10.0-GCCcore-10.3.0                               (D)
    UDUNITS/2.2.26-GCCcore-8.3.0
    UDUNITS/2.2.26-GCCcore-9.3.0
    UDUNITS/2.2.26-GCCcore-10.2.0                           (D)
@@ -455,6 +472,7 @@ We realize this list is long, but we provide it here for users who want to perus
    VTK/8.2.0-foss-2020a-Python-3.8.2
    Valgrind/3.16.1-gompi-2020a
    Valgrind/3.16.1-iimpi-2019b                             (D)
+   VirtualGL/2.6.2-GCCcore-9.3.0
    Voro++/0.4.6-GCCcore-9.3.0
    WPS/4.2-foss-2020b-dmpar
    WRF/4.1.3-intel-2019b-dmpar
@@ -470,6 +488,7 @@ We realize this list is long, but we provide it here for users who want to perus
    XZ/5.2.5-GCCcore-8.3.0
    XZ/5.2.5-GCCcore-9.3.0
    XZ/5.2.5-GCCcore-10.2.0
+   XZ/5.2.5-GCCcore-10.3.0
    XZ/5.2.5-intel-2019b                                    (D)
    Xvfb/1.20.9-GCCcore-10.2.0
    Yasm/1.3.0-GCCcore-8.3.0
@@ -490,7 +509,9 @@ We realize this list is long, but we provide it here for users who want to perus
    binutils/2.34-intel-2019b
    binutils/2.34
    binutils/2.35-GCCcore-10.2.0
-   binutils/2.35                                           (D)
+   binutils/2.35
+   binutils/2.36.1-GCCcore-10.3.0
+   binutils/2.36.1                                         (D)
    bokeh/2.0.2-foss-2020a-Python-3.8.2
    bokeh/2.2.3-foss-2020b-Python-3.8.6                     (D)
    bzip2/1.0.8-GCCcore-8.3.0
@@ -512,12 +533,14 @@ We realize this list is long, but we provide it here for users who want to perus
    expat/2.2.7-GCCcore-8.3.0
    expat/2.2.9-GCCcore-9.3.0
    expat/2.2.9-GCCcore-10.2.0
+   expat/2.2.9-GCCcore-10.3.0
    expat/2.2.9-intel-2019b                                 (D)
    flatbuffers-python/1.12-GCCcore-10.2.0
    flatbuffers/1.12.0-GCCcore-10.2.0
    flex/2.6.4-GCCcore-8.3.0
    flex/2.6.4-GCCcore-9.3.0
    flex/2.6.4-GCCcore-10.2.0
+   flex/2.6.4-GCCcore-10.3.0
    flex/2.6.4                                              (D)
    fontconfig/2.13.1-GCCcore-8.3.0
    fontconfig/2.13.92-GCCcore-9.3.0
@@ -550,6 +573,7 @@ We realize this list is long, but we provide it here for users who want to perus
    gperf/3.1-GCCcore-9.3.0
    gperf/3.1-GCCcore-10.2.0                                (D)
    gperftools/2.8-GCCcore-10.2.0
+   groff/1.22.4-GCCcore-10.3.0
    gzip/1.10-GCCcore-9.3.0
    gzip/1.10-GCCcore-10.2.0                                (D)
    h5py/2.10.0-foss-2020a-Python-3.8.2
@@ -557,11 +581,13 @@ We realize this list is long, but we provide it here for users who want to perus
    help2man/1.47.7-GCCcore-8.2.0
    help2man/1.47.8-GCCcore-8.3.0
    help2man/1.47.12-GCCcore-9.3.0
-   help2man/1.47.16-GCCcore-10.2.0                         (D)
+   help2man/1.47.16-GCCcore-10.2.0
+   help2man/1.48.3-GCCcore-10.3.0                          (D)
    hwloc/1.11.12-GCCcore-8.3.0
    hwloc/2.2.0-GCCcore-8.3.0
    hwloc/2.2.0-GCCcore-9.3.0
    hwloc/2.2.0-GCCcore-10.2.0
+   hwloc/2.4.1-GCCcore-10.3.0
    hypothesis/4.44.2-GCCcore-8.3.0-Python-3.7.4
    hypothesis/5.6.0-GCCcore-9.3.0-Python-3.8.2
    hypothesis/5.41.2-GCCcore-10.2.0
@@ -592,9 +618,11 @@ We realize this list is long, but we provide it here for users who want to perus
    libepoxy/1.5.4-GCCcore-10.2.0                           (D)
    libevent/2.1.11-GCCcore-8.3.0
    libevent/2.1.11-GCCcore-9.3.0
-   libevent/2.1.12-GCCcore-10.2.0                          (D)
+   libevent/2.1.12-GCCcore-10.2.0
+   libevent/2.1.12-GCCcore-10.3.0                          (D)
    libfabric/1.11.0-GCCcore-8.3.0
-   libfabric/1.11.0-GCCcore-10.2.0                         (D)
+   libfabric/1.11.0-GCCcore-10.2.0
+   libfabric/1.12.1-GCCcore-10.3.0                         (D)
    libffi/3.2.1-GCCcore-8.3.0
    libffi/3.3-GCCcore-9.3.0
    libffi/3.3-GCCcore-10.2.0
@@ -615,19 +643,22 @@ We realize this list is long, but we provide it here for users who want to perus
    libpciaccess/0.16-GCCcore-8.3.0
    libpciaccess/0.16-GCCcore-9.3.0
    libpciaccess/0.16-GCCcore-10.2.0
+   libpciaccess/0.16-GCCcore-10.3.0
    libpciaccess/0.16-intel-2019b                           (D)
    libpng/1.6.37-GCCcore-8.3.0
    libpng/1.6.37-GCCcore-9.3.0
    libpng/1.6.37-GCCcore-10.2.0                            (D)
    libreadline/8.0-GCCcore-8.3.0
    libreadline/8.0-GCCcore-9.3.0
-   libreadline/8.0-GCCcore-10.2.0                          (D)
+   libreadline/8.0-GCCcore-10.2.0
+   libreadline/8.1-GCCcore-10.3.0                          (D)
    libsndfile/1.0.28-GCCcore-8.3.0
    libsndfile/1.0.28-GCCcore-9.3.0
    libsndfile/1.0.28-GCCcore-10.2.0                        (D)
    libtool/2.4.6-GCCcore-8.3.0
    libtool/2.4.6-GCCcore-9.3.0
-   libtool/2.4.6-GCCcore-10.2.0                            (D)
+   libtool/2.4.6-GCCcore-10.2.0
+   libtool/2.4.6-GCCcore-10.3.0                            (D)
    libunistring/0.9.10-GCCcore-9.3.0
    libunwind/1.3.1-GCCcore-8.3.0
    libunwind/1.3.1-GCCcore-9.3.0
@@ -641,6 +672,7 @@ We realize this list is long, but we provide it here for users who want to perus
    libxml2/2.9.10-GCCcore-8.3.0
    libxml2/2.9.10-GCCcore-9.3.0
    libxml2/2.9.10-GCCcore-10.2.0
+   libxml2/2.9.10-GCCcore-10.3.0
    libxml2/2.9.10-intel-2019b                              (D)
    libxsmm/1.10-GCC-9.3.0
    libyaml/0.2.2-GCCcore-8.3.0
@@ -649,18 +681,22 @@ We realize this list is long, but we provide it here for users who want to perus
    lpsolve/5.5.2.11-GCC-10.2.0
    lz4/1.9.2-GCCcore-9.3.0
    lz4/1.9.2-GCCcore-10.2.0                                (D)
+   makeinfo/6.7-GCCcore-10.3.0
    matplotlib/3.2.1-foss-2020a-Python-3.8.2
    matplotlib/3.3.3-foss-2020b                             (D)
    minimap2/2.17-GCCcore-9.3.0
    molmod/1.4.5-foss-2020a-Python-3.8.2
    mpi4py/3.0.2-gompi-2020a-timed-pingpong
-   mpi4py/3.0.2-iimpi-2019b-timed-pingpong                 (D)
+   mpi4py/3.0.2-iimpi-2019b-timed-pingpong
+   mpi4py/3.1.1-gompi-2020b-timed-pingpong                 (D)
    nanopolish/0.13.2-foss-2020a-Python-3.8.2
+   ncdf4/1.17-foss-2020b-R-4.0.3
    ncurses/6.0
    ncurses/6.1-GCCcore-8.3.0
    ncurses/6.1
    ncurses/6.2-GCCcore-9.3.0
    ncurses/6.2-GCCcore-10.2.0
+   ncurses/6.2-GCCcore-10.3.0
    ncurses/6.2-intel-2019b
    ncurses/6.2                                             (D)
    netCDF-Fortran/4.4.4-intel-2019b
@@ -679,17 +715,20 @@ We realize this list is long, but we provide it here for users who want to perus
    numactl/2.0.12-GCCcore-8.3.0
    numactl/2.0.13-GCCcore-8.3.0
    numactl/2.0.13-GCCcore-9.3.0
-   numactl/2.0.13-GCCcore-10.2.0                           (D)
+   numactl/2.0.13-GCCcore-10.2.0
+   numactl/2.0.14-GCCcore-10.3.0                           (D)
    p4est/2.2-intel-2019b
    parallel/20190922-GCCcore-8.3.0
    parallel/20200522-GCCcore-9.3.0                         (D)
    picard/2.21.6-Java-11
+   pigz/2.6-GCCcore-10.3.0
    pixman/0.38.4-GCCcore-8.3.0
    pixman/0.38.4-GCCcore-9.3.0
    pixman/0.40.0-GCCcore-10.2.0                            (D)
    pkg-config/0.29.2-GCCcore-8.3.0
    pkg-config/0.29.2-GCCcore-9.3.0
-   pkg-config/0.29.2-GCCcore-10.2.0                        (D)
+   pkg-config/0.29.2-GCCcore-10.2.0
+   pkg-config/0.29.2-GCCcore-10.3.0                        (D)
    pkgconfig/1.5.1-GCCcore-9.3.0-Python-3.8.2
    pkgconfig/1.5.1-GCCcore-10.2.0-python                   (D)
    prodigal/2.6.3-GCCcore-10.2.0
@@ -731,12 +770,14 @@ We realize this list is long, but we provide it here for users who want to perus
    x265/3.3-GCCcore-10.2.0                                 (D)
    xorg-macros/1.19.2-GCCcore-8.3.0
    xorg-macros/1.19.2-GCCcore-9.3.0
-   xorg-macros/1.19.2-GCCcore-10.2.0                       (D)
+   xorg-macros/1.19.2-GCCcore-10.2.0
+   xorg-macros/1.19.3-GCCcore-10.3.0                       (D)
    yaff/1.6.0-foss-2020a-Python-3.8.2
    zlib/1.2.11-GCCcore-8.2.0
    zlib/1.2.11-GCCcore-8.3.0
    zlib/1.2.11-GCCcore-9.3.0
    zlib/1.2.11-GCCcore-10.2.0
+   zlib/1.2.11-GCCcore-10.3.0
    zlib/1.2.11                                             (D)
    zstd/1.4.4-GCCcore-9.3.0
    zstd/1.4.5-GCCcore-10.2.0                               (D)
