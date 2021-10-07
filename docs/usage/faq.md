@@ -20,7 +20,7 @@ If you have checked all of the above and are still not sure why you cannot log i
 (faq_cost)=
 ## How much does it cost to use ARC\'s systems?
 
-ARC\'s [systems](compute) are free, though privileged access can be purchased through the [Investment Program](https://arc.vt.edu/investment/). For most systems, this means that Virginia Tech researchers can simply request an account to get access. Use of the clusters (submitting and running jobs) does require an approved [allocation](allocations), which in turn requires some basic information to be provided, but getting an allocation does not require monetary payment of any kind. More information on how to get started with ARC is [here](started). More information on the Investment Program is [here](https://arc.vt.edu/investment/).
+ARC\'s [systems](compute) are free to use, within limits. This means that Virginia Tech researchers can simply request an account to get access and run. Usage beyond fairly restrictive personal limits does require an approved [allocation](allocations) requested by a faculty member or project principal investigator; this requires some basic information to be provided, but getting an allocation does not require monetary payment of any kind. Researchers who need access to more resources beyond what we provide for free or who would like to purchase dedicated hardware can do so through our [Cost Center](costcenter) or [Investment](invest) programs. More information on how to get started with ARC is [here](started). 
 
 
 (faq_jobstuck)=
