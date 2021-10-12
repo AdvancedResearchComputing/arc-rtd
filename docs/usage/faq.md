@@ -43,15 +43,15 @@ Other common reasons:
 | `Priority` or `Resources` | These two are the most common reasons given for a job being pending (PD). They simply mean that the job is waiting in the queue for resources to become available. |
 | `QOSMaxJobsPerUserLimit` | QOS applied to the partition restricts users to a maximum number of concurrent running jobs. As your jobs complete, queued jobs will be allowed to start. |
 | `QOSMaxCpuMinutesPerJobLimit` | QOS applied to the partition restricts jobs to a maximum number of CPU-minutes. To run, the job must request either fewer CPUs or less time. |
-| `PartitionTimeLimit` | requested timelimit exceeds the maximum for the partition |
-| `AssocGrpBillingMinutes` | The [allocation](allocation) to which your submitted the job has exceeded its available resources (e.g., in the [free tier](free) |
+| `PartitionTimeLimit` | Requested timelimit exceeds the maximum for the partition |
+| `AssocGrpBillingMinutes` | The [allocation](allocations) to which your submitted the job has exceeded its available resources (e.g., in the [free tier](free)) |
 |  |
 
 
 (faq_loginjob)=
 ## Why can\'t I run on the login node?
 
-One of the most common beginner mistakes on compute clusters is to log into the cluster and then immediately start running a computation. When you log into a cluster, you land on a _login node_. Login nodes are individual computers that represent a very small segment of the overall cluster and, crucially, are shared by _many_ of the users who are logged into the cluster at a given time. So while basic tasks (editing files, checking jobs, perhaps making simple plots or compiling software) are fine to do on the login nodes, when you run a computationally-intensive task on the login node, you are adversely impacting other users (since the node is shared) while getting worse performance for yourself (by not using the bulk of the cluster). You should therefore submit your computationally intensive tasks to compute nodes by submitting a job to the scheduler. See [here](slurm) for documentation about job submission; we also have a [video tutorial](video) that will walk you through the process in a few minutes.
+One of the most common beginner mistakes on compute clusters is to log into the cluster and then immediately start running a computation. When you log into a cluster, you land on a _login node_. Login nodes are individual computers that represent a very small segment of the overall cluster and, crucially, are shared by _many_ of the users who are logged into the cluster at a given time. So while basic tasks (editing files, checking jobs, perhaps making simple plots or compiling software) are fine to do on the login nodes, when you run a computationally-intensive task on the login node, you are adversely impacting other users (since the node is shared) while getting worse performance for yourself (by not using the bulk of the cluster). You should therefore submit your computationally intensive tasks to compute nodes by submitting a job to the scheduler. See [here](slurm) for documentation about job submission; we also have a [video tutorial](video_job) that will walk you through the process in a few minutes. Users who run problematic programs on the login node can have those tasks killed without warning. Users who repeatedly violate this policy arc subject to having their ARC account suspended.
 
 
 (faq_jobstart)=
