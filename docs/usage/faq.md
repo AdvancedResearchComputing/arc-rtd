@@ -38,12 +38,20 @@ This job has been submitted with a request for 64 nodes which exceeds the per-jo
 
 Other common reasons:
 
-| Priority/Resources | these two are the most common reasons given for a job being pending (PD). They simply mean that the job is waiting in the queue for resources to become available. |
+| Reason | Meaning |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Priority` or `Resources` | These two are the most common reasons given for a job being pending (PD). They simply mean that the job is waiting in the queue for resources to become available. |
 | `QOSMaxJobsPerUserLimit` | QOS applied to the partition restricts users to a maximum number of concurrent running jobs. As your jobs complete, queued jobs will be allowed to start. |
 | `QOSMaxCpuMinutesPerJobLimit` | QOS applied to the partition restricts jobs to a maximum number of CPU-minutes. To run, the job must request either fewer CPUs or less time. |
 | `PartitionTimeLimit` | requested timelimit exceeds the maximum for the partition |
+| `AssocGrpBillingMinutes` | The [allocation](allocation) to which your submitted the job has exceeded its available resources (e.g., in the [free tier](free) |
 |  |
+
+
+(faq_loginjob)=
+## Why can\'t I run on the login node?
+
+One of the most common beginner mistakes on compute clusters is to log into the cluster and then immediately start running a computation. When you log into a cluster, you land on a _login node_. Login nodes are individual computers that represent a very small segment of the overall cluster and, crucially, are shared by _many_ of the users who are logged into the cluster at a given time. So while basic tasks (editing files, checking jobs, perhaps making simple plots or compiling software) are fine to do on the login nodes, when you run a computationally-intensive task on the login node, you are adversely impacting other users (since the node is shared) while getting worse performance for yourself (by not using the bulk of the cluster). You should therefore submit your computationally intensive tasks to compute nodes by submitting a job to the scheduler. See [here](slurm) for documentation about job submission; we also have a [video tutorial](video) that will walk you through the process in a few minutes.
 
 
 (faq_jobstart)=
@@ -159,12 +167,6 @@ setup_app --base=/projects/myproject julia 1.6.1-foss-2020b
 ```
 
 
-(faq_diskquota)=
-## What does a "Disk quota exceeded" error mean?
-
-This typically means that one of your [storage locations](storage) has exceeded the maximum allowable size. You will need to reduce the space consumed in order to run jobs successfully again. Note that the quota system for Project and Work storage on [TinkerCliffs](tinkercliffs) and [Infer](infer) can be counterintuitive in some ways, so if you are getting a "quota exceeded" error on those file systems and think you should not be, see [this description](bgfs_quota) for details and fixes.
-
-
 (faq_chgrp)=
 ## What is the best way to make sure everyone in my group has the same access to all the files in our shared directory?
 
@@ -180,6 +182,35 @@ find /projects/MYGROUPNAME -uid `id -u` -exec chmod g+r arc.MYGROUPNAME {} \;
 ```
 
 Any member of the group who has files in the shared directory with their GID will need to run that command. Group ownership of files in the shared directories is inherited for newly created files and for files transferred with `rsync` with the correct options, but `scp` generally does not respect the parent gid, unfortunately.
+
+
+(faq_diskquota)=
+## What does a "Disk quota exceeded" error mean?
+
+This typically means that one of your [storage locations](storage) has exceeded the maximum allowable size. You will need to reduce the space consumed in order to run jobs successfully again. Note that the quota system for Project and Work storage on [TinkerCliffs](tinkercliffs) and [Infer](infer) can be counterintuitive in some ways, so if you are getting a "quota exceeded" error on those file systems and think you should not be, see [this description](bgfs_quota) for details and fixes.
+
+
+(faq_nomodule)=
+## What does a `module: command not found` error mean?
+
+If your job returns an error that looks like
+
+```
+/cm/local/apps/slurm/var/spool/job275621/slurm_script: line 11: module: command not found
+```
+
+then you are likely hitting a race condition during job startup. We are occassionally seeing this issue on [TinkerCliffs](tinkercliffs) but have been unable to identify a cause or tie it to specific nodes. When resubmitted, these jobs typically run without incident. However, you should be able to ensure that your job will not fail with this error by adding the following lines to your submission script before any commands (e.g., `module` commands) are run:
+
+```bash
+if [ -z ${HOME+x} ]; then
+  export HOME=$(echo ~)
+  source /etc/profile
+  source /etc/bashrc
+  source $HOME/.bashrc
+fi
+```
+
+These lines will manually setup the environment should Slurm fail to do so.
 
 
 (faq_oom)=
