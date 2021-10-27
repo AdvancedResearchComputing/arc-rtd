@@ -8,7 +8,7 @@
 
 ## Availability
 
-MATLAB is available on [several ARC systems](/software). ARC maintains a Matlab Distributed Computing Server license for parallel Matlab through cooperation with the university's [IT Procurement and Licensing Solutions](https://itpals.vt.edu/), who also offer discounted licenses to departments and students (note that MATLAB is also included in some of the [Student Bundles](http://www2.ita.vt.edu/software/student/bundles/index.html)). 
+MATLAB is available on [several ARC systems](/software). ARC maintains a MATLAB Distributed Computing Server license for parallel MATLAB through cooperation with the university's [IT Procurement and Licensing Solutions](https://itpals.vt.edu/), who also offer discounted licenses to departments and students (note that MATLAB is also included in some of the [Student Bundles](http://www2.ita.vt.edu/software/student/bundles/index.html)). 
 
 ## Interface
 
@@ -33,11 +33,11 @@ Right now this documentation applies to TinkerCliffs and Infer only, and only al
 ```
 
 ### Setup
-Setup is as simple as starting Matlab on a login node and then running
+Setup is as simple as starting MATLAB on a login node and then running
 ```
 >> configCluster
 ```
-**Note:** Do this once on TinkerCliffs or Infer, or anytime you switch between clusters. (Or anytime you start Matlab - it won't hurt to run it more often than necessary.)
+**Note:** Do this once on TinkerCliffs or Infer, or anytime you switch between clusters. (Or anytime you start MATLAB - it won't hurt to run it more often than necessary.)
 
 ### Running Jobs
 After that, the key commands are:
@@ -61,11 +61,11 @@ MATLAB also comes with a [Job Monitor](https://www.mathworks.com/help/parallel-c
 
 ### Remote Output Files
 
-Remote Matlab jobs start in the directory specified by the `CurrentFolder` parameter to `batch()`. Output files written to remote jobs will be saved in this location. Alternatively, you may specify the full path to where you want it to save the file, e.g.
+Remote MATLAB jobs start in the directory specified by the `CurrentFolder` parameter to `batch()`. Output files written to remote jobs will be saved in this location. Alternatively, you may specify the full path to where you want it to save the file, e.g.
 ```
 save('/home/johndoe/output')
 ```
-Note that if you submit from your personal machine, these files will not be copied back to your local machine; you will need to manually [log into the machine](video) to get them. Alternatively, you can tell Matlab to change to the directory on the ARC cluster where job information is stored; MATLAB will automatically mirror this location to your local machine when the job completes. Here is an example command for switching to the job directory: 
+Note that if you submit from your personal machine, these files will not be copied back to your local machine; you will need to manually [log into the machine](video) to get them. Alternatively, you can tell MATLAB to change to the directory on the ARC cluster where job information is stored; MATLAB will automatically mirror this location to your local machine when the job completes. Here is an example command for switching to the job directory: 
 ```
 cd(sprintf('%s/%s',getenv('MDCE_STORAGE_LOCATION'),getenv('MDCE_JOB_LOCATION')));
 ```
@@ -121,7 +121,7 @@ ans =
 
 ## Submitting Jobs from the Linux Command Line
 
-Matlab jobs can also be submitted from the Linux command line like any other jobs; however, the parallelism is currently limited to the cores on a single node. This [example](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m) uses `parfor` to count in parallel the prime numbers between 1 and 10,000,000. (The correct answer is 664,579.) A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). To submit it as a job using your `personal` [allocation](allocations) use:
+MATLAB jobs can also be submitted from the Linux command line like any other jobs; however, the parallelism is currently limited to the cores on a single node. This [example](https://github.com/AdvancedResearchComputing/examples/blob/master/matlab/prime_fun.m) uses `parfor` to count in parallel the prime numbers between 1 and 10,000,000. (The correct answer is 664,579.) A submission script to submit it as a job from the command line is provided [here](https://github.com/AdvancedResearchComputing/examples/tree/master/matlab "here"). To submit it as a job using your `personal` [allocation](allocations) use:
 
 ```
 sbatch -Apersonal matlab_tinkercliffs_rome.sh
@@ -142,9 +142,9 @@ addpath('/home/johndoe/mydir');
 savepath('/home/johndoe/pathdef.m')
 ```
 
-## Using the Matlab Compiler (mex)
+## Using the MATLAB Compiler (mex)
 
-To compile C/C++ or Fortran code in Matlab, just make sure to load the compiler [module](modules) that you want to use before you open Matlab. Here is an example of compiling [MatConvNet](http://www.vlfeat.org/matconvnet/), which in this case requires the GCC compiler, which is available via the `foss` module: 
+To compile C/C++ or Fortran code in MATLAB, just make sure to load the compiler [module](modules) that you want to use before you open MATLAB. Here is an example of compiling [MatConvNet](http://www.vlfeat.org/matconvnet/), which in this case requires the GCC compiler, which is available via the `foss` module: 
 ```
 #load modules
 module reset; module load foss/2020b matlab/R2021a
