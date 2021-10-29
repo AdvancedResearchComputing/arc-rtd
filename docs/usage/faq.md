@@ -135,10 +135,12 @@ The `nvidia-smi` command with no other options diplays this information but prin
 
 Add a line like this to a batch script prior to starting training: 
 
-`nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max,pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory,memory.total,memory.free,memory.used --format=csv -l 5 > $SLURM_JOBID.gpu.log &`
+```
+nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,temperature.gpu,utilization.gpu,utilization.memory,memory.total,memory.free,memy.used --format=csv -l 3 > $SLURM_JOBID.gpu.log &
+```
 
 
-The `&` causes the query to run in the background and keep running until the job ends or this process is manually killed.
+The `&` causes the query to run in the background and keep running until the job ends or this process is manually killed. The `> $SLURM_JOBID.gpu.log` causes the output to be redirected to a file whose name is the numerical job id followed by `.gpu.log`.
 
 The `-l 5` is for the repeating polling interval. From the `nvidia-smi` manual:
 ```
@@ -150,19 +152,22 @@ For details on query options: `nvidia-smi --help-query-gpu`
 
 Output from `nvidia-smi` run as above looks like this: 
 ```
-2021/10/26 09:44:31.938, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
-2021/10/26 09:44:36.939, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
-2021/10/26 09:44:41.940, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
-2021/10/26 09:44:46.941, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
-2021/10/26 09:44:51.943, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:44:56.944, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:45:01.945, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:45:06.946, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:45:11.947, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:45:16.948, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:45:21.950, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
-2021/10/26 09:45:26.951, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 75 %, 2 %, 81251 MiB, 80655 MiB, 596 MiB 
-2021/10/26 09:45:31.953, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 81251 MiB, 0 MiB
+2021/10/29 16:36:30.047, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:33.048, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 58, 16 %, 4 %, 81251 MiB, 66511 MiB, 14740 MiB
+2021/10/29 16:36:33.053, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:36.054, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 65, 98 %, 15 %, 81251 MiB, 66571 MiB, 14680 MiB
+2021/10/29 16:36:36.055, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:39.055, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 67, 100 %, 36 %, 81251 MiB, 66571 MiB, 14680 MiB
+2021/10/29 16:36:39.056, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:42.057, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 54, 10 %, 2 %, 81251 MiB, 66571 MiB, 14680 MiB
+2021/10/29 16:36:42.058, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:45.059, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 54, 0 %, 0 %, 81251 MiB, 66571 MiB, 14680 MiB
+2021/10/29 16:36:45.060, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:48.060, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 68, 100 %, 26 %, 81251 MiB, 66571 MiB, 14680 MiB
+2021/10/29 16:36:48.061, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:51.062, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 52, 20 %, 3 %, 81251 MiB, 66571 MiB, 14680 MiB
+2021/10/29 16:36:51.063, A100-SXM-80GB, 00000000:CB:00.0, 460.73.01, 41, 0 %, 0 %, 81251 MiB, 81248 MiB, 3 MiB
+2021/10/29 16:36:54.064, A100-SXM-80GB, 00000000:07:00.0, 460.73.01, 52, 0 %, 0 %, 81251 MiB, 66571 MiB, 14680 MiB
 ```
 You can monitor the utilization information in near-real-time from a login node by navigating to the output directory for the job and using `tail` to follow the output with `tail -f <jobid>.gpu.log` and the CSV formatting makes it easy to analyze or generate graphics with other tools such as `python`, `R`, or `matlab`.
 
