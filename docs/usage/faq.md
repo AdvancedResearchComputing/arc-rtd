@@ -127,6 +127,44 @@ Node utilization is:
 
 This TinkerCliffs job is using all 128 cores on one node but only 48 cores on the second node. In this case, we know that the job has requested two full nodes, so some optimization may be in order to ensure that they\'re using all of the requested resources. The job is, however, using 70-75% memory on both nodes, so the resource request may be intentional. If more information is required about a given node, the command `scontrol show node tc083` can provide it. 
 
+(faq_checkrjobgpu)=
+(faq_gpuutil)=
+## How can I monitor GPU utilization during my job?
+
+The `nvidia-smi` command with no other options diplays this information but prints to standard out and only once. But there are many options which can be added to tap into lots of extended functionality of this tool.
+
+Add a line like this to a batch script prior to starting training: 
+
+`nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max,pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory,memory.total,memory.free,memory.used --format=csv -l 5 > $SLURM_JOBID.gpu.log &`
+
+
+The `&` causes the query to run in the background and keep running until the job ends or this process is manually killed.
+
+The `-l 5` is for the repeating polling interval. From the `nvidia-smi` manual:
+```
+-l SEC, --loop=SEC 
+    Continuously report query data at the specified interval, rather than the default of just once.
+```
+
+For details on query options: `nvidia-smi --help-query-gpu`
+
+Output from `nvidia-smi` run as above looks like this: 
+```
+2021/10/26 09:44:31.938, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
+2021/10/26 09:44:36.939, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
+2021/10/26 09:44:41.940, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
+2021/10/26 09:44:46.941, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 64435 MiB, 16816 MiB 
+2021/10/26 09:44:51.943, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:44:56.944, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:45:01.945, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:45:06.946, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:45:11.947, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:45:16.948, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:45:21.950, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 52227 MiB, 29024 MiB 
+2021/10/26 09:45:26.951, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 38, 75 %, 2 %, 81251 MiB, 80655 MiB, 596 MiB 
+2021/10/26 09:45:31.953, A100-SXM-80GB, 00000000:88:00.0, 460.73.01, P0, 4, 4, 37, 0 %, 0 %, 81251 MiB, 81251 MiB, 0 MiB
+```
+You can monitor the utilization information in near-real-time from a login node by navigating to the output directory for the job and using `tail` to follow the output with `tail -f <jobid>.gpu.log` and the CSV formatting makes it easy to analyze or generate graphics with other tools such as `python`, `R`, or `matlab`.
 
 (faq_swinstall)=
 ## I need a software package for my research. Can you install it for me?
