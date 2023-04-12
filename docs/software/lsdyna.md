@@ -8,7 +8,7 @@
 
 ## Availability
 
-LS-DYNA is available on [several ARC systems](/software). Virginia Tech maintains a limited quantity of LS-DYNA network licenses through the university's [IT Procurement and Licensing Solutions](https://itpals.vt.edu/) which can be used for the SMP, MPP, and Hybrid versions of LS-DYNA. LSTC al­so de­vel­ops its own pre­proces­sor, LS-Pre­Post, which is freely dis­trib­uted and runs with­out a li­cense. 
+LS-DYNA is available on [several ARC systems](/software). Virginia Tech's [IT Procurement and Licensing Solutions](https://itpals.vt.edu/) manages any centrally hosted LS-DYNA network licenses, but primarily researcher are using licenses purchased by their group or their department. These can be used for the SMP, MPP, and Hybrid versions of LS-DYNA. LSTC al­so de­vel­ops its own pre­proces­sor, LS-Pre­Post, which is freely dis­trib­uted and runs with­out a li­cense. 
 
 ### License availability
 
@@ -25,7 +25,7 @@ For the following commands to work, you must have loaded an LS-DYNA module which
 For example:
 ```
 $ module load tinkercliffs-rome/ls-dyna/10.2.0-intel-2019b
-$ export LSTC_LICENSE_SERVER=ansys.software.vt.edu
+$ export LSTC_LICENSE_SERVER=<hostname of departmental license server>
 $ lstc_qrun -L MPPDYNA
 Defaulting to server 1 specified by LSTC_LICENSE_SERVER variable
  500 LICENSE(S) AVAILABLE for PROG=MPPDYNA USER=brownm12 HOST=tinkercliffs2 IP=198.82.249.14
