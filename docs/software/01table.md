@@ -34,7 +34,7 @@
 | ------- | ------- | ------- 
 | guppyGPU | SOFTWAREDESCRIPTION | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">4.5.2</td></tr></tbody></table> 
 | julia | Julia for numerical computing | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">1.6.1-fosscuda-2020b<br>1.6.1-foss-2020b</td></tr><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">1.6.2-foss-2020b<br>1.6.1-gomkl-2020b<br>1.6.1-foss-2020b</td></tr></tbody></table> 
-| matlab | MATLAB is a programming and numeric computing platform | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">R2021a</td></tr><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">R2021a</td></tr></tbody></table> 
+| matlab | MATLAB is a programming and numeric computing platform | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">R2021a</td></tr><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">R2022b<br>R2021a</td></tr></tbody></table> 
 | AlphaFoldData | ALPHAFOLDDATADESCRIPTION | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">2022.02</td></tr></tbody></table> 
 | guppy | GUPPYDESCRIPTION | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">6.0.1</td></tr></tbody></table> 
 | StarCCM+ | STARCCM+DESCRIPTION | <table><thead></thead><tbody><tr><td><b>INFER</b></td></tr><tr><td style="background-color: white">15.04.010</td></tr><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">17.02.008</td></tr></tbody></table> 
