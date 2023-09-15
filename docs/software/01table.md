@@ -1,7 +1,7 @@
 
 (sw_table)=
  
-# Table of Software on ARC Systems
+# Tables of Software on ARC Systems
 
 <style>
 .wy-table-responsive {
