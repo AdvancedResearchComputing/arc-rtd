@@ -84,7 +84,7 @@
 | snoscan |  | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">1.0</td></tr></tbody></table> 
 | spades | SPAdes - St. Petersburg genome assembler - is an assembly toolkit containing various assembly pipelines.  | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">3.15.5</td></tr></tbody></table> 
 | sratoolkit | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives. | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">3.0.7</td></tr></tbody></table> 
-| starccm+ | STARCCM+DESCRIPTION | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">12.04.011<br>15.04.010<br>17.06.007<br>18.02.008</td></tr></tbody></table> 
+| starccm+ | STARCCM+DESCRIPTION | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">12.04.011<br>15.04.010<br>17.06.007<br>18.02.008<br>18.02.010</td></tr></tbody></table> 
 | tecplot | TECPLOTDESCRIPTION | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">17.1.0</td></tr></tbody></table> 
 | tmhmm | Prediction of transmembrane helices in proteins | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">2.0</td></tr></tbody></table> 
 | tpl-4.4.18 | TPL4.4.18DESCRIPTION | <table><thead></thead><tbody><tr><td><b>TINKERCLIFFS</b></td></tr><tr><td style="background-color: white">GCC-9.3.0<br>intel-2019b</td></tr></tbody></table> 
